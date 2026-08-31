@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | EcoNest</title>
+
+  <link rel="stylesheet" href="login.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+  <!-- =========================================
+       LOGIN PAGE
+  ========================================== -->
+
+  <main class="login-page">
+
+    <!-- =========================================
+         TOP CONTROLS
+    ========================================== -->
+
+    <div class="top-controls">
+
+      <!-- RTL / LTR -->
+      <button
+        class="control-button"
+        id="rtlButton"
+        type="button"
+        onclick="toggleRTL()"
+        aria-label="Toggle RTL"
+        title="Toggle RTL"
+      >
+        ع
+      </button>
+
+      <!-- Dark / Light -->
+      <button
+        class="control-button"
+        id="themeButton"
+        type="button"
+        onclick="toggleTheme()"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+      >
+        ☾
+      </button>
+
+    </div>
+
+
+    <!-- =========================================
+         LOGIN CARD
+    ========================================== -->
+
+    <section class="login-card">
+
+      <!-- =====================================
+           LOGO
+      ====================================== -->
+
+      <div class="login-logo">
+
+        <a href="index.html" class="logo">
+
+          <span class="logo-icon">
+            🌿
+          </span>
+
+          <span class="logo-text">
+            EcoNest
+          </span>
+
+        </a>
+
+      </div>
+
+
+      <!-- =====================================
+           HEADING
+      ====================================== -->
+
+      <div class="login-heading">
+
+        <span class="welcome-label">
+          Welcome back
+        </span>
+
+        <h1>
+          Sign in to your account
+        </h1>
+
+        <p>
+          Manage your eco-friendly home services
+          from one simple place.
+        </p>
+
+      </div>
+
+
+      <!-- =====================================
+           LOGIN FORM
+      ====================================== -->
+
+      <form
+        class="login-form"
+        id="loginForm"
+        onsubmit="loginUser(event)"
+      >
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+          <label for="email">
+            Email Address
+          </label>
+
+          <div class="input-wrapper">
+
+            <span class="input-icon">
+              ✉
+            </span>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+          <div class="label-row">
+
+            <label for="password">
+              Password
+            </label>
+
+          </div>
+
+
+          <div class="input-wrapper password-wrapper">
+
+            <span class="input-icon">
+              🔒
+            </span>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+
+            <button
+              type="button"
+              class="password-toggle"
+              id="passwordToggle"
+              onclick="togglePassword()"
+              aria-label="Show password"
+            >
+              👁
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- REMEMBER + FORGOT -->
+
+        <div class="login-options">
+
+          <label class="remember-option">
+
+            <input
+              type="checkbox"
+              id="remember"
+              name="remember"
+            >
+
+            <span class="custom-checkbox"></span>
+
+            <span>
+              Remember Me
+            </span>
+
+          </label>
+
+
+          <a
+            href="#"
+            class="forgot-link"
+            onclick="forgotPassword(event)"
+          >
+            Forgot Password?
+          </a>
+
+        </div>
+
+
+        <!-- LOGIN BUTTON -->
+
+        <button
+          type="submit"
+          class="login-button"
+        >
+
+          <span>
+            Login
+          </span>
+
+          <span class="button-arrow">
+            →
+          </span>
+
+        </button>
+
+      </form>
+
+
+      <!-- =====================================
+           DIVIDER
+      ====================================== -->
+
+      <div class="divider">
+
+        <span></span>
+
+        <p>
+          Or continue with
+        </p>
+
+        <span></span>
+
+      </div>
+
+
+      <!-- =====================================
+           SOCIAL LOGIN
+      ====================================== -->
+
+      <div class="social-buttons">
+
+        <!-- GOOGLE -->
+
+        <button
+          type="button"
+          class="social-button"
+          onclick="socialLogin('Google')"
+        >
+
+          <span class="google-logo">
+            G
+          </span>
+
+          <span>
+            Continue with Google
+          </span>
+
+        </button>
+
+
+        <!-- APPLE -->
+
+        <button
+          type="button"
+          class="social-button"
+          onclick="socialLogin('Apple')"
+        >
+
+          <span class="apple-logo">
+            
+          </span>
+
+          <span>
+            Continue with Apple
+          </span>
+
+        </button>
+
+      </div>
+
+
+      <!-- =====================================
+           SIGN UP
+      ====================================== -->
+
+      <div class="signup-text">
+
+        <span>
+          Don't have an account?
+        </span>
+
+        <a href="signup.html">
+          Create an account
+        </a>
+
+      </div>
+
+
+      <!-- =====================================
+           SECURITY NOTE
+      ====================================== -->
+
+      <div class="security-note">
+
+        <span class="security-icon">
+          🛡
+        </span>
+
+        <span>
+          Your information is secure and protected.
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         BACK TO WEBSITE
+    ========================================== -->
+
+    <a
+      href="index.html"
+      class="back-home"
+    >
+      <span>←</span>
+      Back to EcoNest
+    </a>
+
+  </main>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script>
+
+    /* =========================================
+       THEME
+    ========================================== */
+
+    function toggleTheme() {
+
+      document.body.classList.toggle("dark");
+
+      const isDark =
+        document.body.classList.contains("dark");
+
+      localStorage.setItem(
+        "econest-theme",
+        isDark ? "dark" : "light"
+      );
+
+      updateThemeIcon();
+
+    }
+
+
+    function updateThemeIcon() {
+
+      const themeButton =
+        document.getElementById("themeButton");
+
+      if (
+        document.body.classList.contains("dark")
+      ) {
+
+        themeButton.textContent = "☀";
+
+        themeButton.setAttribute(
+          "aria-label",
+          "Switch to light mode"
+        );
+
+      } else {
+
+        themeButton.textContent = "☾";
+
+        themeButton.setAttribute(
+          "aria-label",
+          "Switch to dark mode"
+        );
+
+      }
+
+    }
+
+
+    /* Load saved theme */
+
+    if (
+      localStorage.getItem("econest-theme") === "dark"
+    ) {
+
+      document.body.classList.add("dark");
+
+    }
+
+    updateThemeIcon();
+
+
+    /* =========================================
+       RTL / LTR
+    ========================================== */
+
+    function toggleRTL() {
+
+      const html =
+        document.documentElement;
+
+      const currentDirection =
+        html.getAttribute("dir");
+
+      const newDirection =
+        currentDirection === "rtl"
+          ? "ltr"
+          : "rtl";
+
+      html.setAttribute(
+        "dir",
+        newDirection
+      );
+
+      localStorage.setItem(
+        "econest-direction",
+        newDirection
+      );
+
+    }
+
+
+    /* Load saved direction */
+
+    const savedDirection =
+      localStorage.getItem(
+        "econest-direction"
+      );
+
+    if (savedDirection) {
+
+      document.documentElement.setAttribute(
+        "dir",
+        savedDirection
+      );
+
+    }
+
+
+    /* =========================================
+       PASSWORD VISIBILITY
+    ========================================== */
+
+    function togglePassword() {
+
+      const password =
+        document.getElementById("password");
+
+      const button =
+        document.getElementById("passwordToggle");
+
+      if (
+        password.type === "password"
+      ) {
+
+        password.type = "text";
+
+        button.textContent = "🙈";
+
+        button.setAttribute(
+          "aria-label",
+          "Hide password"
+        );
+
+      } else {
+
+        password.type = "password";
+
+        button.textContent = "👁";
+
+        button.setAttribute(
+          "aria-label",
+          "Show password"
+        );
+
+      }
+
+    }
+
+
+    /* =========================================
+       LOGIN
+    ========================================== */
+
+    function loginUser(event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const password =
+        document.getElementById("password").value;
+
+      if (!email || !password) {
+
+        alert(
+          "Please enter your email and password."
+        );
+
+        return;
+
+      }
+
+      /*
+        Connect your backend authentication here.
+
+        Example:
+
+        fetch("/api/login", {
+          method: "POST",
+          body: JSON.stringify({
+            email: email,
+            password: password
+          })
+        });
+      */
+
+      alert(
+        "Login successful!"
+      );
+
+      /*
+        After backend authentication:
+
+        window.location.href =
+          "dashboard.html";
+      */
+
+    }
+
+
+    /* =========================================
+       FORGOT PASSWORD
+    ========================================== */
+
+    function forgotPassword(event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      if (email) {
+
+        alert(
+          "Password reset instructions will be sent to " +
+          email
+        );
+
+      } else {
+
+        alert(
+          "Please enter your email address first."
+        );
+
+        document.getElementById(
+          "email"
+        ).focus();
+
+      }
+
+    }
+
+
+    /* =========================================
+       SOCIAL LOGIN
+    ========================================== */
+
+    function socialLogin(provider) {
+
+      /*
+        Connect Google / Apple OAuth
+        from your backend here.
+      */
+
+      alert(
+        provider +
+        " sign-in will be connected here."
+      );
+
+    }
+
+  </script>
+
+</body>
+
+</html>
