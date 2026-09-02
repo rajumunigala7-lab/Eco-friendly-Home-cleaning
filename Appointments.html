@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EcoNest | Appointments</title>
+
+  <link rel="stylesheet" href="dasboard.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+  <!-- =====================================================
+       SIDEBAR
+  ====================================================== -->
+
+  <aside class="sidebar" id="sidebar">
+
+<div class="sidebar-logo">
+
+  <a href="dashboard.html" class="logo">
+
+    <span class="logo-icon">
+      🌿
+    </span>
+
+    <span>
+      EcoNest
+    </span>
+
+  </a>
+
+  <button
+    class="sidebar-close"
+    onclick="toggleSidebar()"
+  >
+    ×
+  </button>
+
+</div>
+
+
+<nav class="sidebar-nav">
+
+  <span class="sidebar-title">
+    MAIN MENU
+  </span>
+
+
+  <a href="dashboard.html" class="sidebar-link">
+
+    <span class="sidebar-icon">
+      🏠
+    </span>
+
+    <span>
+      Dashboard
+    </span>
+
+  </a>
+
+
+  <a href="services.html" class="sidebar-link">
+
+    <span class="sidebar-icon">
+      🧹
+    </span>
+
+    <span>
+      Services
+    </span>
+
+  </a>
+
+
+  <a href="appointments.html" class="sidebar-link active">
+
+    <span class="sidebar-icon">
+      📅
+    </span>
+
+    <span>
+      Appointments
+    </span>
+
+  </a>
+
+
+  <a
+    href="#"
+    class="sidebar-link"
+    onclick="viewHistory()"
+  >
+
+    <span class="sidebar-icon">
+      🧾
+    </span>
+
+    <span>
+      Service History
+    </span>
+
+  </a>
+
+
+  <span class="sidebar-title">
+    ECO & ACCOUNT
+  </span>
+
+
+  <a href="#" class="sidebar-link">
+
+    <span class="sidebar-icon">
+      🌱
+    </span>
+
+    <span>
+      Eco Impact
+    </span>
+
+  </a>
+
+
+  <a href="#" class="sidebar-link">
+
+    <span class="sidebar-icon">
+      📍
+    </span>
+
+    <span>
+      Addresses
+    </span>
+
+  </a>
+
+
+  <a href="#" class="sidebar-link">
+
+    <span class="sidebar-icon">
+      👤
+    </span>
+
+    <span>
+      Profile
+    </span>
+
+  </a>
+
+
+  <a href="#" class="sidebar-link">
+
+    <span class="sidebar-icon">
+      ⚙️
+    </span>
+
+    <span>
+      Settings
+    </span>
+
+  </a>
+
+</nav>
+
+
+<div class="sidebar-bottom">
+
+  <div class="sidebar-eco-box">
+
+    <span class="sidebar-eco-icon">
+      🌿
+    </span>
+
+    <div>
+
+      <strong>
+        Eco Impact
+      </strong>
+
+      <small>
+        24.6 kg reduced
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="sidebar-logout"
+    onclick="logout()"
+  >
+
+    <span>
+      ↪
+    </span>
+
+    Logout
+
+  </button>
+
+</div>
+
+  </aside>
+
+  <!-- =====================================================
+       OVERLAY
+  ====================================================== -->
+
+  <div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    onclick="toggleSidebar()"
+  ></div>
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
+  <div class="dashboard-content">
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="dashboard-header">
+
+  <div class="dashboard-header-inner">
+
+
+    <button
+      class="menu-button"
+      onclick="toggleSidebar()"
+    >
+      ☰
+    </button>
+
+
+    <a
+      href="dashboard.html"
+      class="logo mobile-logo"
+    >
+
+     
+
+    
+
+    </a>
+
+
+    <div class="dashboard-actions">
+
+
+      <button
+        class="control-button"
+        onclick="toggleRTL()"
+        title="Toggle RTL"
+      >
+        ع
+      </button>
+
+
+      <button
+        class="control-button"
+        onclick="toggleTheme()"
+        title="Toggle dark mode"
+      >
+        ☾
+      </button>
+
+
+      <button
+        class="control-button notification-button"
+        onclick="showMessage('Notifications')"
+      >
+
+        🔔
+
+        <span class="notification-dot"></span>
+
+      </button>
+
+
+      <button
+        class="profile-button"
+        onclick="toggleProfileMenu()"
+      >
+
+        <span class="profile-avatar">
+          A
+        </span>
+
+        <span class="profile-name">
+          Amelia
+        </span>
+
+        <span class="profile-arrow">
+          ⌄
+        </span>
+
+      </button>
+
+
+      <div
+        class="profile-menu"
+        id="profileMenu"
+      >
+
+        <a href="#">
+          👤 Profile
+        </a>
+
+        <a href="#">
+          ⚙ Settings
+        </a>
+
+        <a href="#">
+          💳 Payment
+        </a>
+
+        <button onclick="logout()">
+          ↪ Logout
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     PAGE CONTENT
+====================================================== -->
+
+<main class="dashboard-main">
+
+  <div class="dashboard-container">
+
+
+    <!-- =================================================
+         PAGE HEADER
+    ================================================= -->
+
+    <section class="welcome-section">
+
+      <div>
+
+        <span class="eyebrow">
+          📅 YOUR APPOINTMENTS
+        </span>
+
+        <h1>
+          Appointments
+        </h1>
+
+        <p>
+          Manage your upcoming appointments and
+          view your previous bookings.
+        </p>
+
+      </div>
+
+
+      <button
+        class="primary-button"
+        onclick="bookService()"
+      >
+
+        <span>
+          +
+        </span>
+
+        Book a Service
+
+      </button>
+
+    </section>
+
+
+    <!-- =================================================
+         APPOINTMENT SUMMARY
+    ================================================= -->
+
+    <section class="stats-grid">
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon blue-icon">
+          📅
+        </div>
+
+        <div>
+
+          <span>
+            Upcoming
+          </span>
+
+          <strong>
+            1
+          </strong>
+
+          <small>
+            Scheduled appointment
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon green-icon">
+          ✓
+        </div>
+
+        <div>
+
+          <span>
+            Completed
+          </span>
+
+          <strong>
+            18
+          </strong>
+
+          <small>
+            Services completed
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon eco-icon">
+          🌿
+        </div>
+
+        <div>
+
+          <span>
+            Eco Friendly
+          </span>
+
+          <strong>
+            100%
+          </strong>
+
+          <small>
+            Eco-conscious services
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon rating-icon">
+          ★
+        </div>
+
+        <div>
+
+          <span>
+            Rating
+          </span>
+
+          <strong>
+            4.9
+          </strong>
+
+          <small>
+            Your customer rating
+          </small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         APPOINTMENT SECTION
+    ====================================================== -->
+
+    <section class="dashboard-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            UPCOMING
+          </span>
+
+          <h2>
+            Your Next Appointment
+          </h2>
+
+        </div>
+
+        <span class="confirmed-status">
+          Confirmed
+        </span>
+
+      </div>
+
+
+      <!-- Appointment Card -->
+
+      <div class="appointment-body">
+
+
+        <div class="appointment-date">
+
+          <span class="month">
+            AUG
+          </span>
+
+          <strong>
+            29
+          </strong>
+
+          <span>
+            SAT
+          </span>
+
+        </div>
+
+
+        <div class="appointment-info">
+
+
+          <div class="appointment-row">
+
+            <span>
+              🧹
+            </span>
+
+            <div>
+
+              <small>
+                Service
+              </small>
+
+              <strong>
+                Complete Home Cleaning
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="appointment-row">
+
+            <span>
+              ⏰
+            </span>
+
+            <div>
+
+              <small>
+                Time
+              </small>
+
+              <strong>
+                10:00 AM – 12:00 PM
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="appointment-row">
+
+            <span>
+              📍
+            </span>
+
+            <div>
+
+              <small>
+                Location
+              </small>
+
+              <strong>
+                Your Home
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="appointment-row">
+
+            <span>
+              💳
+            </span>
+
+            <div>
+
+              <small>
+                Payment
+              </small>
+
+              <strong>
+                Visa ending in 4242
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="card-actions">
+
+        <button
+          class="primary-button"
+          onclick="manageBooking()"
+        >
+          Manage Booking
+        </button>
+
+        <button
+          class="outline-button"
+          onclick="rescheduleBooking()"
+        >
+          Reschedule
+        </button>
+
+        <button
+          class="outline-button"
+          onclick="cancelBooking()"
+        >
+          Cancel Appointment
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         ALL APPOINTMENTS
+    ====================================================== -->
+
+    <section
+      class="dashboard-card"
+      style="margin-top:20px;"
+    >
+
+      <div class="card-header">
+
+        <div>
+
+          <span class="card-label">
+            BOOKING HISTORY
+          </span>
+
+          <h2>
+            All Appointments
+          </h2>
+
+        </div>
+
+
+        <select
+          id="appointmentFilter"
+          onchange="filterAppointments()"
+          style="
+            padding:10px 14px;
+            border:1px solid var(--border);
+            border-radius:9px;
+            background:var(--card);
+            color:var(--text);
+            font-family:inherit;
+            font-size:12px;
+            outline:none;
+          "
+        >
+
+          <option value="all">
+            All Appointments
+          </option>
+
+          <option value="confirmed">
+            Confirmed
+          </option>
+
+          <option value="completed">
+            Completed
+          </option>
+
+          <option value="cancelled">
+            Cancelled
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div
+        class="history-list"
+        id="appointmentList"
+      >
+
+
+        <!-- APPOINTMENT 1 -->
+
+        <div
+          class="history-row appointment-item"
+          data-status="confirmed"
+        >
+
+          <div class="history-service-icon">
+            🧹
+          </div>
+
+          <div class="history-info">
+
+            <strong>
+              Complete Home Cleaning
+            </strong>
+
+            <small>
+              August 29, 2026 • 10:00 AM
+            </small>
+
+          </div>
+
+          <div class="history-price">
+            $89
+          </div>
+
+          <span class="confirmed-status">
+            Confirmed
+          </span>
+
+        </div>
+
+
+        <!-- APPOINTMENT 2 -->
+
+        <div
+          class="history-row appointment-item"
+          data-status="completed"
+        >
+
+          <div class="history-service-icon">
+            ✨
+          </div>
+
+          <div class="history-info">
+
+            <strong>
+              Deep Cleaning
+            </strong>
+
+            <small>
+              August 12, 2026 • 11:00 AM
+            </small>
+
+          </div>
+
+          <div class="history-price">
+            $99
+          </div>
+
+          <span class="completed-status">
+            Completed
+          </span>
+
+        </div>
+
+
+        <!-- APPOINTMENT 3 -->
+
+        <div
+          class="history-row appointment-item"
+          data-status="completed"
+        >
+
+          <div class="history-service-icon">
+            🪟
+          </div>
+
+          <div class="history-info">
+
+            <strong>
+              Window Cleaning
+            </strong>
+
+            <small>
+              July 27, 2026 • 2:00 PM
+            </small>
+
+          </div>
+
+          <div class="history-price">
+            $59
+          </div>
+
+          <span class="completed-status">
+            Completed
+          </span>
+
+        </div>
+
+
+        <!-- APPOINTMENT 4 -->
+
+        <div
+          class="history-row appointment-item"
+          data-status="completed"
+        >
+
+          <div class="history-service-icon">
+            🧹
+          </div>
+
+          <div class="history-info">
+
+            <strong>
+              Home Cleaning
+            </strong>
+
+            <small>
+              July 10, 2026 • 10:30 AM
+            </small>
+
+          </div>
+
+          <div class="history-price">
+            $59
+          </div>
+
+          <span class="completed-status">
+            Completed
+          </span>
+
+        </div>
+
+
+        <!-- APPOINTMENT 5 -->
+
+        <div
+          class="history-row appointment-item"
+          data-status="cancelled"
+        >
+
+          <div class="history-service-icon">
+            🛋️
+          </div>
+
+          <div class="history-info">
+
+            <strong>
+              Sofa Cleaning
+            </strong>
+
+            <small>
+              June 21, 2026 • 1:00 PM
+            </small>
+
+          </div>
+
+          <div class="history-price">
+            $49
+          </div>
+
+          <span
+            style="
+              padding:5px 8px;
+              background:#fff0f0;
+              color:#c25555;
+              border-radius:20px;
+              font-size:9px;
+              font-weight:700;
+            "
+          >
+            Cancelled
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         BOOKING HELP
+    ====================================================== -->
+
+    <section class="eco-tip">
+
+      <div class="eco-tip-icon">
+        💡
+      </div>
+
+      <div>
+
+        <span>
+          NEED HELP?
+        </span>
+
+        <p>
+          Need to change your appointment?
+          You can reschedule or cancel your booking
+          from the appointment controls above.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </div>
+
+</main>
+
+
+<!-- MOBILE BOOK BUTTON -->
+
+<button
+  class="mobile-book-button"
+  onclick="bookService()"
+>
+  +
+</button>
+
+  </div>
+
+</div>
+
+<!----> =====================================================
+     JAVASCRIPT
+===================================================== 
+
+<script>
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+function toggleSidebar() {
+
+  const sidebar =
+    document.getElementById("sidebar");
+
+  const overlay =
+    document.getElementById("sidebarOverlay");
+
+  sidebar.classList.toggle("open");
+
+  overlay.classList.toggle("show");
+
+}
+
+
+/* =====================================================
+   THEME
+===================================================== */
+
+function toggleTheme() {
+
+  document.body.classList.toggle("dark");
+
+  const isDark =
+    document.body.classList.contains("dark");
+
+  localStorage.setItem(
+    "econest-theme",
+    isDark ? "dark" : "light"
+  );
+
+}
+
+
+if (
+  localStorage.getItem("econest-theme") === "dark"
+) {
+
+  document.body.classList.add("dark");
+
+}
+
+
+/* =====================================================
+   RTL
+===================================================== */
+
+function toggleRTL() {
+
+  const html =
+    document.documentElement;
+
+  const current =
+    html.getAttribute("dir");
+
+  const newDirection =
+    current === "rtl"
+      ? "ltr"
+      : "rtl";
+
+  html.setAttribute(
+    "dir",
+    newDirection
+  );
+
+  localStorage.setItem(
+    "econest-direction",
+    newDirection
+  );
+
+}
+
+
+const savedDirection =
+  localStorage.getItem(
+    "econest-direction"
+  );
+
+if (savedDirection) {
+
+  document.documentElement.setAttribute(
+    "dir",
+    savedDirection
+  );
+
+}
+
+
+/* =====================================================
+   PROFILE MENU
+===================================================== */
+
+function toggleProfileMenu() {
+
+  const menu =
+    document.getElementById("profileMenu");
+
+  menu.classList.toggle("show");
+
+}
+
+
+document.addEventListener(
+  "click",
+  function(event) {
+
+    const menu =
+      document.getElementById("profileMenu");
+
+    const profileButton =
+      document.querySelector(".profile-button");
+
+    if (
+      menu &&
+      profileButton &&
+      !menu.contains(event.target) &&
+      !profileButton.contains(event.target)
+    ) {
+
+      menu.classList.remove("show");
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   BOOK SERVICE
+===================================================== */
+
+function bookService() {
+
+  window.location.href =
+    "services.html";
+
+}
+
+
+/* =====================================================
+   APPOINTMENT ACTIONS
+===================================================== */
+
+function manageBooking() {
+
+  alert(
+    "Your booking details will open here."
+  );
+
+}
+
+
+function rescheduleBooking() {
+
+  alert(
+    "Choose a new date and time for your appointment."
+  );
+
+}
+
+
+function cancelBooking() {
+
+  const confirmation =
+    confirm(
+      "Are you sure you want to cancel this appointment?"
+    );
+
+  if (confirmation) {
+
+    alert(
+      "Your appointment has been cancelled."
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   FILTER APPOINTMENTS
+===================================================== */
+
+function filterAppointments() {
+
+  const filter =
+    document.getElementById(
+      "appointmentFilter"
+    ).value;
+
+  const appointments =
+    document.querySelectorAll(
+      ".appointment-item"
+    );
+
+  appointments.forEach(
+    function(appointment) {
+
+      const status =
+        appointment.getAttribute(
+          "data-status"
+        );
+
+      if (
+        filter === "all" ||
+        status === filter
+      ) {
+
+        appointment.style.display =
+          "grid";
+
+      } else {
+
+        appointment.style.display =
+          "none";
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   OTHER ACTIONS
+===================================================== */
+
+function viewHistory() {
+
+  alert(
+    "Your complete service history will open here."
+  );
+
+}
+
+
+function showMessage(section) {
+
+  alert(
+    section + " page will open here."
+  );
+
+}
+
+
+function logout() {
+
+  window.location.href =
+    "index.html";
+
+}
+
+</script>
+
+</body>
+</html>

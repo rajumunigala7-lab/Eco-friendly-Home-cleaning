@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - EcoNest</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-leaf"></i>
+        </div>
+        <span class="logo-text">EcoNest</span>
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <div class="nav-item">
+            <a href="dashboard.html" class="nav-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+        </div>
+
+        <div class="nav-item">
+            <a href="services.html" class="nav-link">
+                <i class="fa-solid fa-broom"></i>
+                <span>Services</span>
+            </a>
+        </div>
+
+        <div class="nav-item">
+            <a href="appointments.html" class="nav-link">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+        </div>
+
+        <div class="nav-item">
+            <a href="service-history.html" class="nav-link">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Service History</span>
+            </a>
+        </div>
+
+        <div class="nav-item">
+            <a href="eco-impact.html" class="nav-link">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Eco Impact</span>
+            </a>
+        </div>
+
+        <div class="nav-item">
+            <a href="addresses.html" class="nav-link">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Addresses</span>
+            </a>
+        </div>
+
+        <div class="nav-item">
+            <a href="profile.html" class="nav-link">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+
+        <div class="nav-item">
+            <a href="settings.html" class="nav-link active">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="help-card">
+            <i class="fa-solid fa-circle-question"></i>
+            <h4>Need Help?</h4>
+            <p>We're here to help you.</p>
+        </div>
+    </div>
+
+</aside>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <button class="mobile-menu" id="mobileMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="header-logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+            <span class="logo-text">EcoNest</span>
+        </div>
+
+        <div class="header-actions">
+
+            <!-- RTL -->
+            <button class="header-btn" id="rtlToggle" title="Toggle RTL">
+                <i class="fa-solid fa-language"></i>
+            </button>
+
+            <!-- Dark Mode -->
+            <button class="header-btn" id="themeToggle" title="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <!-- Notification -->
+            <button class="header-btn notification-btn"
+                    id="notificationBtn"
+                    title="Notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <!-- Profile -->
+            <div class="profile">
+
+                <button class="profile-btn" id="profileBtn">
+
+                    <div class="profile-avatar">
+                        AJ
+                    </div>
+
+                    <div class="profile-info">
+                        <span class="profile-name">Amelia Johnson</span>
+                        <span class="profile-role">Eco Member</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="profile-menu" id="profileMenu">
+
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+
+                    <a href="settings.html">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+
+                    <button class="logout" id="logoutBtn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         CONTENT
+    ================================================= -->
+
+    <div class="content">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <div class="page-title">
+                <h1>Settings</h1>
+                <p>Manage your account preferences and settings.</p>
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SETTINGS LAYOUT
+        ================================================= -->
+
+        <div class="settings-layout">
+
+
+            <!-- SETTINGS SIDEBAR -->
+
+            <div class="settings-sidebar">
+
+                <button class="settings-nav-item active"
+                        data-tab="general">
+
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>General</span>
+
+                </button>
+
+                <button class="settings-nav-item"
+                        data-tab="notifications">
+
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notifications</span>
+
+                </button>
+
+                <button class="settings-nav-item"
+                        data-tab="privacy">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Privacy</span>
+
+                </button>
+
+                <button class="settings-nav-item"
+                        data-tab="security">
+
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Security</span>
+
+                </button>
+
+                <button class="settings-nav-item"
+                        data-tab="appearance">
+
+                    <i class="fa-solid fa-palette"></i>
+                    <span>Appearance</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- SETTINGS CONTENT -->
+
+            <div class="settings-content">
+
+
+                <!-- =================================================
+                     GENERAL
+                ================================================= -->
+
+                <section class="settings-panel active" id="general">
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>General Settings</h2>
+
+                            <p>
+                                Customize your basic account preferences.
+                            </p>
+
+                        </div>
+
+
+                        <div class="settings-form">
+
+                            <div class="settings-field">
+
+                                <label for="language">
+                                    Language
+                                </label>
+
+                                <select id="language">
+
+                                    <option value="en">
+                                        English
+                                    </option>
+
+                                    <option value="hi">
+                                        Hindi
+                                    </option>
+
+                                    <option value="te">
+                                        Telugu
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="settings-field">
+
+                                <label for="timezone">
+                                    Timezone
+                                </label>
+
+                                <select id="timezone">
+
+                                    <option value="asia-kolkata">
+                                        India Standard Time (IST)
+                                    </option>
+
+                                    <option value="utc">
+                                        UTC
+                                    </option>
+
+                                    <option value="asia-dubai">
+                                        Gulf Standard Time
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="settings-field">
+
+                                <label for="currency">
+                                    Currency
+                                </label>
+
+                                <select id="currency">
+
+                                    <option value="inr">
+                                        Indian Rupee (₹)
+                                    </option>
+
+                                    <option value="usd">
+                                        US Dollar ($)
+                                    </option>
+
+                                    <option value="eur">
+                                        Euro (€)
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-actions">
+
+                            <button class="btn btn-primary"
+                                    id="saveGeneral">
+
+                                <i class="fa-solid fa-check"></i>
+                                Save Changes
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     NOTIFICATIONS
+                ================================================= -->
+
+                <section class="settings-panel" id="notifications">
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>Notification Settings</h2>
+
+                            <p>
+                                Choose how you want to receive notifications.
+                            </p>
+
+                        </div>
+
+
+                        <div class="settings-options">
+
+
+                            <!-- Appointment Reminders -->
+
+                            <div class="settings-option">
+
+                                <div class="settings-option-info">
+
+                                    <div class="settings-option-icon">
+                                        <i class="fa-solid fa-calendar-check"></i>
+                                    </div>
+
+                                    <div class="settings-option-text">
+
+                                        <h4>Appointment Reminders</h4>
+
+                                        <p>
+                                            Receive reminders before your
+                                            scheduled services.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="settings-toggle">
+
+                                    <input type="checkbox"
+                                           id="appointmentReminders"
+                                           checked>
+
+                                    <span class="settings-toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- Email -->
+
+                            <div class="settings-option">
+
+                                <div class="settings-option-info">
+
+                                    <div class="settings-option-icon">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+
+                                    <div class="settings-option-text">
+
+                                        <h4>Email Notifications</h4>
+
+                                        <p>
+                                            Get important updates by email.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="settings-toggle">
+
+                                    <input type="checkbox"
+                                           id="emailNotifications"
+                                           checked>
+
+                                    <span class="settings-toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- SMS -->
+
+                            <div class="settings-option">
+
+                                <div class="settings-option-info">
+
+                                    <div class="settings-option-icon">
+                                        <i class="fa-solid fa-message"></i>
+                                    </div>
+
+                                    <div class="settings-option-text">
+
+                                        <h4>SMS Notifications</h4>
+
+                                        <p>
+                                            Receive appointment updates
+                                            through SMS.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="settings-toggle">
+
+                                    <input type="checkbox"
+                                           id="smsNotifications">
+
+                                    <span class="settings-toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- Eco Tips -->
+
+                            <div class="settings-option">
+
+                                <div class="settings-option-info">
+
+                                    <div class="settings-option-icon">
+                                        <i class="fa-solid fa-leaf"></i>
+                                    </div>
+
+                                    <div class="settings-option-text">
+
+                                        <h4>Eco Tips</h4>
+
+                                        <p>
+                                            Receive useful tips for
+                                            sustainable living.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="settings-toggle">
+
+                                    <input type="checkbox"
+                                           id="ecoTips"
+                                           checked>
+
+                                    <span class="settings-toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- Promotions -->
+
+                            <div class="settings-option">
+
+                                <div class="settings-option-info">
+
+                                    <div class="settings-option-icon">
+                                        <i class="fa-solid fa-tag"></i>
+                                    </div>
+
+                                    <div class="settings-option-text">
+
+                                        <h4>Offers & Promotions</h4>
+
+                                        <p>
+                                            Receive special offers and
+                                            promotions.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="settings-toggle">
+
+                                    <input type="checkbox"
+                                           id="offers">
+
+                                    <span class="settings-toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     PRIVACY
+                ================================================= -->
+
+                <section class="settings-panel" id="privacy">
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>Privacy Settings</h2>
+
+                            <p>
+                                Control your privacy and personalization
+                                preferences.
+                            </p>
+
+                        </div>
+
+
+                        <div class="settings-options">
+
+
+                            <!-- Location -->
+
+                            <div class="settings-option">
+
+                                <div class="settings-option-info">
+
+                                    <div class="settings-option-icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+
+                                    <div class="settings-option-text">
+
+                                        <h4>Location Services</h4>
+
+                                        <p>
+                                            Allow EcoNest to use your
+                                            location for service addresses.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="settings-toggle">
+
+                                    <input type="checkbox"
+                                           id="locationServices"
+                                           checked>
+
+                                    <span class="settings-toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- Analytics -->
+
+                            <div class="settings-option">
+
+                                <div class="settings-option-info">
+
+                                    <div class="settings-option-icon">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+
+                                    <div class="settings-option-text">
+
+                                        <h4>Usage Analytics</h4>
+
+                                        <p>
+                                            Help us improve EcoNest by
+                                            sharing anonymous usage data.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="settings-toggle">
+
+                                    <input type="checkbox"
+                                           id="usageAnalytics"
+                                           checked>
+
+                                    <span class="settings-toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- Recommendations -->
+
+                            <div class="settings-option">
+
+                                <div class="settings-option-info">
+
+                                    <div class="settings-option-icon">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    </div>
+
+                                    <div class="settings-option-text">
+
+                                        <h4>Personalized Recommendations</h4>
+
+                                        <p>
+                                            Get service recommendations based
+                                            on your preferences.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="settings-toggle">
+
+                                    <input type="checkbox"
+                                           id="recommendations"
+                                           checked>
+
+                                    <span class="settings-toggle-slider"></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DELETE ACCOUNT -->
+
+                    <div class="danger-settings">
+
+                        <div class="danger-icon">
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+
+                        <div class="danger-content">
+
+                            <h4>Delete Account</h4>
+
+                            <p>
+                                Permanently delete your EcoNest account
+                                and all associated data.
+                            </p>
+
+                        </div>
+
+                        <button class="btn btn-danger"
+                                id="deleteAccountBtn">
+
+                            Delete Account
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SECURITY
+                ================================================= -->
+
+                <section class="settings-panel" id="security">
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>Security</h2>
+
+                            <p>
+                                Keep your EcoNest account secure.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Password -->
+
+                        <div class="security-setting-row">
+
+                            <div class="security-setting-info">
+
+                                <i class="fa-solid fa-key"></i>
+
+                                <div>
+
+                                    <h4>Password</h4>
+
+                                    <p>
+                                        Last changed 3 months ago
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <button class="btn btn-outline"
+                                    id="changePasswordBtn">
+
+                                Change Password
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- Two Factor -->
+
+                        <div class="security-setting-row">
+
+                            <div class="security-setting-info">
+
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                                <div>
+
+                                    <h4>Two-Factor Authentication</h4>
+
+                                    <p>
+                                        Add an extra layer of security.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <button class="btn btn-outline"
+                                    id="twoFactorBtn">
+
+                                Enable
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- Sessions -->
+
+                        <div class="security-setting-row">
+
+                            <div class="security-setting-info">
+
+                                <i class="fa-solid fa-desktop"></i>
+
+                                <div>
+
+                                    <h4>Active Sessions</h4>
+
+                                    <p>
+                                        Manage devices currently signed in.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <button class="btn btn-outline"
+                                    id="sessionsBtn">
+
+                                View Sessions
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     APPEARANCE
+                ================================================= -->
+
+                <section class="settings-panel" id="appearance">
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <h2>Appearance</h2>
+
+                            <p>
+                                Choose how EcoNest looks on your device.
+                            </p>
+
+                        </div>
+
+
+                        <div class="appearance-grid">
+
+
+                            <!-- LIGHT -->
+
+                            <div class="appearance-option active"
+                                 data-theme="light">
+
+                                <div class="appearance-preview light-preview">
+
+                                    <div class="preview-header"></div>
+
+                                    <div class="preview-content">
+
+                                        <div class="preview-sidebar"></div>
+
+                                        <div class="preview-main">
+
+                                            <div class="preview-card"></div>
+
+                                            <div class="preview-card"></div>
+
+                                            <div class="preview-card"></div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="appearance-label">
+
+                                    <strong>Light</strong>
+
+                                    <i class="fa-solid fa-circle-check"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- DARK -->
+
+                            <div class="appearance-option"
+                                 data-theme="dark">
+
+                                <div class="appearance-preview dark-preview">
+
+                                    <div class="preview-header"></div>
+
+                                    <div class="preview-content">
+
+                                        <div class="preview-sidebar"></div>
+
+                                        <div class="preview-main">
+
+                                            <div class="preview-card"></div>
+
+                                            <div class="preview-card"></div>
+
+                                            <div class="preview-card"></div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="appearance-label">
+
+                                    <strong>Dark</strong>
+
+                                    <i class="fa-solid fa-circle-check"></i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-actions">
+
+                            <button class="btn btn-primary"
+                                    id="saveAppearance">
+
+                                <i class="fa-solid fa-check"></i>
+                                Save Appearance
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ECO TIP -->
+
+                <div class="eco-tip">
+
+                    <div class="eco-tip-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div>
+
+                        <h4>Eco Tip</h4>
+
+                        <p>
+                            Small changes make a big difference.
+                            Choosing eco-friendly services helps reduce
+                            water usage, plastic waste and carbon emissions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- MOBILE BOOKING -->
+
+<button class="mobile-booking-btn"
+        id="mobileBooking"
+        title="Book a Service">
+
+    <i class="fa-solid fa-plus"></i>
+
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =================================================
+       SIDEBAR
+    ================================================= */
+
+    const sidebar = document.getElementById("sidebar");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+    if (mobileMenu) {
+
+        mobileMenu.addEventListener("click", function () {
+
+            sidebar.classList.toggle("open");
+            sidebarOverlay.classList.toggle("show");
+
+        });
+
+    }
+
+    if (sidebarOverlay) {
+
+        sidebarOverlay.addEventListener("click", function () {
+
+            sidebar.classList.remove("open");
+            sidebarOverlay.classList.remove("show");
+
+        });
+
+    }
+
+
+    /* =================================================
+       DARK MODE
+    ================================================= */
+
+    const themeToggle = document.getElementById("themeToggle");
+
+    const savedTheme = localStorage.getItem("econest-theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+        themeToggle.innerHTML =
+            '<i class="fa-solid fa-sun"></i>';
+
+    }
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark-mode");
+
+            const isDark =
+                document.body.classList.contains("dark-mode");
+
+            localStorage.setItem(
+                "econest-theme",
+                isDark ? "dark" : "light"
+            );
+
+            themeToggle.innerHTML = isDark
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+
+        });
+
+    }
+
+
+    /* =================================================
+       RTL
+    ================================================= */
+
+    const rtlToggle = document.getElementById("rtlToggle");
+
+    const savedDirection =
+        localStorage.getItem("econest-direction");
+
+    if (savedDirection === "rtl") {
+        document.body.classList.add("rtl");
+    }
+
+    if (rtlToggle) {
+
+        rtlToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("rtl");
+
+            const isRTL =
+                document.body.classList.contains("rtl");
+
+            localStorage.setItem(
+                "econest-direction",
+                isRTL ? "rtl" : "ltr"
+            );
+
+        });
+
+    }
+
+
+    /* =================================================
+       PROFILE MENU
+    ================================================= */
+
+    const profileBtn = document.getElementById("profileBtn");
+    const profileMenu = document.getElementById("profileMenu");
+
+    if (profileBtn) {
+
+        profileBtn.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            profileMenu.classList.toggle("show");
+
+        });
+
+    }
+
+    document.addEventListener("click", function () {
+
+        if (profileMenu) {
+            profileMenu.classList.remove("show");
+        }
+
+    });
+
+
+    /* =================================================
+       SETTINGS TABS
+    ================================================= */
+
+    const settingsNavItems =
+        document.querySelectorAll(".settings-nav-item");
+
+    const settingsPanels =
+        document.querySelectorAll(".settings-panel");
+
+
+    settingsNavItems.forEach(function (item) {
+
+        item.addEventListener("click", function () {
+
+            const target =
+                item.getAttribute("data-tab");
+
+
+            settingsNavItems.forEach(function (nav) {
+
+                nav.classList.remove("active");
+
+            });
+
+
+            settingsPanels.forEach(function (panel) {
+
+                panel.classList.remove("active");
+
+            });
+
+
+            item.classList.add("active");
+
+
+            const targetPanel =
+                document.getElementById(target);
+
+            if (targetPanel) {
+                targetPanel.classList.add("active");
+            }
+
+        });
+
+    });
+
+
+    /* =================================================
+       SAVE GENERAL SETTINGS
+    ================================================= */
+
+    const saveGeneral =
+        document.getElementById("saveGeneral");
+
+    if (saveGeneral) {
+
+        saveGeneral.addEventListener("click", function () {
+
+            localStorage.setItem(
+                "econest-language",
+                document.getElementById("language").value
+            );
+
+            localStorage.setItem(
+                "econest-timezone",
+                document.getElementById("timezone").value
+            );
+
+            localStorage.setItem(
+                "econest-currency",
+                document.getElementById("currency").value
+            );
+
+            alert("General settings saved successfully.");
+
+        });
+
+    }
+
+
+    /* =================================================
+       LOAD GENERAL SETTINGS
+    ================================================= */
+
+    const savedLanguage =
+        localStorage.getItem("econest-language");
+
+    const savedTimezone =
+        localStorage.getItem("econest-timezone");
+
+    const savedCurrency =
+        localStorage.getItem("econest-currency");
+
+
+    if (savedLanguage) {
+        document.getElementById("language").value =
+            savedLanguage;
+    }
+
+    if (savedTimezone) {
+        document.getElementById("timezone").value =
+            savedTimezone;
+    }
+
+    if (savedCurrency) {
+        document.getElementById("currency").value =
+            savedCurrency;
+    }
+
+
+    /* =================================================
+       NOTIFICATION SETTINGS
+    ================================================= */
+
+    const notificationSettings = [
+
+        "appointmentReminders",
+        "emailNotifications",
+        "smsNotifications",
+        "ecoTips",
+        "offers",
+        "locationServices",
+        "usageAnalytics",
+        "recommendations"
+
+    ];
+
+
+    notificationSettings.forEach(function (id) {
+
+        const checkbox =
+            document.getElementById(id);
+
+        if (!checkbox) return;
+
+
+        const saved =
+            localStorage.getItem("econest-" + id);
+
+
+        if (saved !== null) {
+
+            checkbox.checked =
+                saved === "true";
+
+        }
+
+
+        checkbox.addEventListener("change", function () {
+
+            localStorage.setItem(
+                "econest-" + id,
+                checkbox.checked
+            );
+
+        });
+
+    });
+
+
+    /* =================================================
+       APPEARANCE
+    ================================================= */
+
+    const appearanceOptions =
+        document.querySelectorAll(".appearance-option");
+
+    let selectedTheme =
+        localStorage.getItem("econest-theme") || "light";
+
+
+    appearanceOptions.forEach(function (option) {
+
+        if (
+            option.getAttribute("data-theme") ===
+            selectedTheme
+        ) {
+
+            appearanceOptions.forEach(function (item) {
+
+                item.classList.remove("active");
+
+            });
+
+            option.classList.add("active");
+
+        }
+
+
+        option.addEventListener("click", function () {
+
+            appearanceOptions.forEach(function (item) {
+
+                item.classList.remove("active");
+
+            });
+
+            option.classList.add("active");
+
+            selectedTheme =
+                option.getAttribute("data-theme");
+
+        });
+
+    });
+
+
+    const saveAppearance =
+        document.getElementById("saveAppearance");
+
+
+    if (saveAppearance) {
+
+        saveAppearance.addEventListener("click", function () {
+
+            localStorage.setItem(
+                "econest-theme",
+                selectedTheme
+            );
+
+
+            if (selectedTheme === "dark") {
+
+                document.body.classList.add("dark-mode");
+
+                themeToggle.innerHTML =
+                    '<i class="fa-solid fa-sun"></i>';
+
+            } else {
+
+                document.body.classList.remove("dark-mode");
+
+                themeToggle.innerHTML =
+                    '<i class="fa-solid fa-moon"></i>';
+
+            }
+
+
+            alert("Appearance settings saved.");
+
+        });
+
+    }
+
+
+    /* =================================================
+       CHANGE PASSWORD
+    ================================================= */
+
+    const changePasswordBtn =
+        document.getElementById("changePasswordBtn");
+
+
+    if (changePasswordBtn) {
+
+        changePasswordBtn.addEventListener("click", function () {
+
+            alert(
+                "Password change screen would open here."
+            );
+
+        });
+
+    }
+
+
+    /* =================================================
+       TWO FACTOR AUTHENTICATION
+    ================================================= */
+
+    const twoFactorBtn =
+        document.getElementById("twoFactorBtn");
+
+
+    if (twoFactorBtn) {
+
+        twoFactorBtn.addEventListener("click", function () {
+
+            if (twoFactorBtn.textContent.trim() === "Enable") {
+
+                twoFactorBtn.textContent = "Enabled";
+
+                twoFactorBtn.classList.remove("btn-outline");
+                twoFactorBtn.classList.add("btn-primary");
+
+                alert(
+                    "Two-factor authentication enabled."
+                );
+
+            } else {
+
+                twoFactorBtn.textContent = "Enable";
+
+                twoFactorBtn.classList.remove("btn-primary");
+                twoFactorBtn.classList.add("btn-outline");
+
+            }
+
+        });
+
+    }
+
+
+    /* =================================================
+       ACTIVE SESSIONS
+    ================================================= */
+
+    const sessionsBtn =
+        document.getElementById("sessionsBtn");
+
+
+    if (sessionsBtn) {
+
+        sessionsBtn.addEventListener("click", function () {
+
+            alert(
+                "You are currently signed in on 2 devices."
+            );
+
+        });
+
+    }
+
+
+    /* =================================================
+       DELETE ACCOUNT
+    ================================================= */
+
+    const deleteAccountBtn =
+        document.getElementById("deleteAccountBtn");
+
+
+    if (deleteAccountBtn) {
+
+        deleteAccountBtn.addEventListener("click", function () {
+
+            const confirmDelete =
+                confirm(
+                    "Are you sure you want to permanently delete your account?"
+                );
+
+
+            if (confirmDelete) {
+
+                alert(
+                    "Your account deletion request has been submitted."
+                );
+
+            }
+
+        });
+
+    }
+
+
+    /* =================================================
+       NOTIFICATIONS
+    ================================================= */
+
+    const notificationBtn =
+        document.getElementById("notificationBtn");
+
+
+    if (notificationBtn) {
+
+        notificationBtn.addEventListener("click", function () {
+
+            alert(
+                "You have 3 new notifications."
+            );
+
+        });
+
+    }
+
+
+    /* =================================================
+       MOBILE BOOKING
+    ================================================= */
+
+    const mobileBooking =
+        document.getElementById("mobileBooking");
+
+
+    if (mobileBooking) {
+
+        mobileBooking.addEventListener("click", function () {
+
+            window.location.href = "services.html";
+
+        });
+
+    }
+
+
+    /* =================================================
+       LOGOUT
+    ================================================= */
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener("click", function () {
+
+            const confirmLogout =
+                confirm("Are you sure you want to logout?");
+
+
+            if (confirmLogout) {
+
+                window.location.href = "login.html";
+
+            }
+
+        });
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

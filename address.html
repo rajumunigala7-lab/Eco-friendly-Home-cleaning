@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Addresses | EcoNest</title>
+
+    <link rel="stylesheet" href="address.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <span>EcoNest</span>
+
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="services.html" class="nav-item">
+                <i class="fa-solid fa-broom"></i>
+                <span>Services</span>
+            </a>
+
+            <a href="appointments.html" class="nav-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="service-history.html" class="nav-item">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Service History</span>
+            </a>
+
+            <a href="eco-impact.html" class="nav-item">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Eco Impact</span>
+            </a>
+
+            <a href="addresses.html" class="nav-item active">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Addresses</span>
+            </a>
+
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Eco Impact -->
+        <div class="sidebar-eco-box">
+
+            <div class="eco-box-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+                <strong>Eco Impact</strong>
+                <p>24.6 kg CO₂ saved</p>
+            </div>
+
+        </div>
+
+
+        <!-- Logout -->
+        <button class="sidebar-logout" id="logoutBtn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </aside>
+
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="header-logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span>EcoNest</span>
+            </div>
+
+
+            <div class="header-actions">
+
+                <!-- RTL -->
+                <button
+                    class="header-icon-btn"
+                    id="rtlToggle"
+                    title="Toggle RTL"
+                >
+                    <i class="fa-solid fa-globe"></i>
+                </button>
+
+
+                <!-- Dark Mode -->
+                <button
+                    class="header-icon-btn"
+                    id="themeToggle"
+                    title="Toggle Dark Mode"
+                >
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+
+                <!-- Notification -->
+                <button
+                    class="header-icon-btn notification-btn"
+                    id="notificationBtn"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <!-- Profile -->
+                <div class="profile-wrapper">
+
+                    <button class="profile-btn" id="profileBtn">
+
+                        <div class="profile-avatar">
+                            A
+                        </div>
+
+                        <div class="profile-info">
+                            <strong>Amelia</strong>
+                            <span>Customer</span>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="profile-menu" id="profileMenu">
+
+                        <a href="profile.html">
+                            <i class="fa-solid fa-user"></i>
+                            My Profile
+                        </a>
+
+                        <a href="settings.html">
+                            <i class="fa-solid fa-gear"></i>
+                            Settings
+                        </a>
+
+                        <button id="profileLogout">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            Logout
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PAGE
+        ========================== -->
+        <section class="page-container">
+
+            <!-- Page Header -->
+            <div class="page-header">
+
+                <div>
+                    <h1>My Addresses</h1>
+
+                    <p>
+                        Manage the addresses used for your EcoNest services.
+                    </p>
+                </div>
+
+
+                <button class="primary-btn" id="addAddressBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add New Address
+
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 ADDRESS CARDS
+            ========================== -->
+            <div class="address-grid">
+
+
+                <!-- Home -->
+                <div class="address-card">
+
+                    <div class="address-card-header">
+
+                        <div class="address-title">
+
+                            <div class="address-icon">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+
+                            <div>
+                                <h2>Home</h2>
+
+                                <span class="default-badge">
+                                    Default
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="address-menu-btn"
+                            onclick="toggleAddressMenu(this)"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+
+                        <div class="address-menu">
+
+                            <button onclick="editAddress('Home')">
+                                <i class="fa-solid fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button onclick="deleteAddress('Home')">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="address-details">
+
+                        <p>
+                            <i class="fa-solid fa-user"></i>
+                            Amelia Johnson
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            24 Green Park Avenue
+                        </p>
+
+                        <p>
+                            Hyderabad, Telangana - 500081
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            +91 98765 43210
+                        </p>
+
+                    </div>
+
+
+                    <div class="address-footer">
+
+                        <span class="address-service">
+                            <i class="fa-solid fa-broom"></i>
+                            Used for services
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Office -->
+                <div class="address-card">
+
+                    <div class="address-card-header">
+
+                        <div class="address-title">
+
+                            <div class="address-icon office">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+
+                            <div>
+                                <h2>Office</h2>
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="address-menu-btn"
+                            onclick="toggleAddressMenu(this)"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+
+                        <div class="address-menu">
+
+                            <button onclick="editAddress('Office')">
+                                <i class="fa-solid fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button onclick="deleteAddress('Office')">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="address-details">
+
+                        <p>
+                            <i class="fa-solid fa-user"></i>
+                            Amelia Johnson
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            10 Eco Business Park
+                        </p>
+
+                        <p>
+                            Hyderabad, Telangana - 500032
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            +91 98765 43210
+                        </p>
+
+                    </div>
+
+
+                    <div class="address-footer">
+
+                        <button
+                            class="set-default-btn"
+                            onclick="setDefault('Office')"
+                        >
+                            Set as Default
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Parents' House -->
+                <div class="address-card">
+
+                    <div class="address-card-header">
+
+                        <div class="address-title">
+
+                            <div class="address-icon family">
+                                <i class="fa-solid fa-people-roof"></i>
+                            </div>
+
+                            <div>
+                                <h2>Parents' House</h2>
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="address-menu-btn"
+                            onclick="toggleAddressMenu(this)"
+                        >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+
+                        <div class="address-menu">
+
+                            <button onclick="editAddress('Parents House')">
+                                <i class="fa-solid fa-pen"></i>
+                                Edit
+                            </button>
+
+                            <button onclick="deleteAddress('Parents House')">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="address-details">
+
+                        <p>
+                            <i class="fa-solid fa-user"></i>
+                            Family Residence
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            18 Lake View Road
+                        </p>
+
+                        <p>
+                            Hyderabad, Telangana - 500034
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            +91 98765 43210
+                        </p>
+
+                    </div>
+
+
+                    <div class="address-footer">
+
+                        <button
+                            class="set-default-btn"
+                            onclick="setDefault('Parents House')"
+                        >
+                            Set as Default
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Add Address -->
+                <button class="add-address-card" id="addAddressCard">
+
+                    <div class="add-address-icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+
+                    <h2>Add New Address</h2>
+
+                    <p>
+                        Save another location for your services.
+                    </p>
+
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 ADDRESS INFO
+            ========================== -->
+            <div class="dashboard-card address-info-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>
+                            Why save multiple addresses?
+                        </h2>
+
+                        <p>
+                            Make booking your eco-friendly services faster.
+                        </p>
+                    </div>
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="address-benefits">
+
+                    <div class="address-benefit">
+
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <div>
+                            <strong>Faster Booking</strong>
+
+                            <p>
+                                Select a saved address when booking your next service.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="address-benefit">
+
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <strong>Secure Information</strong>
+
+                            <p>
+                                Your address information is kept private and secure.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="address-benefit">
+
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <div>
+                            <strong>Eco-Friendly Visits</strong>
+
+                            <p>
+                                Help us plan efficient routes and reduce travel emissions.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Eco Tip -->
+            <div class="eco-tip">
+
+                <div class="eco-tip-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <div>
+
+                    <h3>Eco Tip</h3>
+
+                    <p>
+                        Keeping your service addresses updated helps our team
+                        plan efficient routes and reduce unnecessary travel.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         MOBILE BOOK BUTTON
+    ========================== -->
+    <button
+        class="mobile-book-btn"
+        id="mobileBookBtn"
+    >
+        <i class="fa-solid fa-plus"></i>
+        Book Service
+    </button>
+
+
+    <!-- =========================
+         ADD ADDRESS MODAL
+    ========================== -->
+    <div class="address-modal" id="addressModal">
+
+        <div class="address-modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <h2>Add New Address</h2>
+
+                    <p>
+                        Add a location for your EcoNest services.
+                    </p>
+                </div>
+
+                <button
+                    class="modal-close"
+                    id="modalClose"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <form id="addressForm">
+
+                <div class="form-group">
+
+                    <label for="addressName">
+                        Address Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="addressName"
+                        placeholder="Example: Home, Office"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="streetAddress">
+                        Street Address
+                    </label>
+
+                    <input
+                        type="text"
+                        id="streetAddress"
+                        placeholder="House number, street name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            placeholder="City"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="state">
+                            State
+                        </label>
+
+                        <input
+                            type="text"
+                            id="state"
+                            placeholder="State"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="zipCode">
+                            ZIP Code
+                        </label>
+
+                        <input
+                            type="text"
+                            id="zipCode"
+                            placeholder="ZIP Code"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Phone number"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <label class="checkbox-label">
+
+                    <input
+                        type="checkbox"
+                        id="makeDefault"
+                    >
+
+                    <span>
+                        Make this my default address
+                    </span>
+
+                </label>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="cancelModal"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        <i class="fa-solid fa-check"></i>
+                        Save Address
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script>
+
+        /* =========================
+           SIDEBAR
+        ========================== */
+
+        const sidebar =
+            document.getElementById("sidebar");
+
+        const sidebarOverlay =
+            document.getElementById("sidebarOverlay");
+
+        const mobileMenuBtn =
+            document.getElementById("mobileMenuBtn");
+
+        const sidebarClose =
+            document.getElementById("sidebarClose");
+
+
+        function openSidebar() {
+
+            sidebar.classList.add("open");
+            sidebarOverlay.classList.add("show");
+
+        }
+
+
+        function closeSidebar() {
+
+            sidebar.classList.remove("open");
+            sidebarOverlay.classList.remove("show");
+
+        }
+
+
+        mobileMenuBtn?.addEventListener(
+            "click",
+            openSidebar
+        );
+
+        sidebarClose?.addEventListener(
+            "click",
+            closeSidebar
+        );
+
+        sidebarOverlay?.addEventListener(
+            "click",
+            closeSidebar
+        );
+
+
+        /* =========================
+           DARK MODE
+        ========================== */
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+
+        if (localStorage.getItem("theme") === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+
+        themeToggle?.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark-mode");
+
+            const isDark =
+                document.body.classList.contains("dark-mode");
+
+            localStorage.setItem(
+                "theme",
+                isDark ? "dark" : "light"
+            );
+
+        });
+
+
+        /* =========================
+           RTL
+        ========================== */
+
+        const rtlToggle =
+            document.getElementById("rtlToggle");
+
+
+        if (localStorage.getItem("direction") === "rtl") {
+
+            document.documentElement.dir = "rtl";
+
+        }
+
+
+        rtlToggle?.addEventListener("click", () => {
+
+            const isRTL =
+                document.documentElement.dir === "rtl";
+
+            document.documentElement.dir =
+                isRTL ? "ltr" : "rtl";
+
+            localStorage.setItem(
+                "direction",
+                isRTL ? "ltr" : "rtl"
+            );
+
+        });
+
+
+        /* =========================
+           PROFILE MENU
+        ========================== */
+
+        const profileBtn =
+            document.getElementById("profileBtn");
+
+        const profileMenu =
+            document.getElementById("profileMenu");
+
+
+        profileBtn?.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            profileMenu.classList.toggle("show");
+
+        });
+
+
+        document.addEventListener("click", () => {
+
+            profileMenu?.classList.remove("show");
+
+        });
+
+
+        /* =========================
+           ADDRESS MENU
+        ========================== */
+
+        function toggleAddressMenu(button) {
+
+            const currentMenu =
+                button.parentElement.querySelector(".address-menu");
+
+            document
+                .querySelectorAll(".address-menu")
+                .forEach(menu => {
+
+                    if (menu !== currentMenu) {
+                        menu.classList.remove("show");
+                    }
+
+                });
+
+            currentMenu.classList.toggle("show");
+
+        }
+
+
+        document.addEventListener("click", (event) => {
+
+            if (
+                !event.target.closest(".address-menu-btn") &&
+                !event.target.closest(".address-menu")
+            ) {
+
+                document
+                    .querySelectorAll(".address-menu")
+                    .forEach(menu => {
+                        menu.classList.remove("show");
+                    });
+
+            }
+
+        });
+
+
+        /* =========================
+           ADD ADDRESS MODAL
+        ========================== */
+
+        const addressModal =
+            document.getElementById("addressModal");
+
+        const addAddressBtn =
+            document.getElementById("addAddressBtn");
+
+        const addAddressCard =
+            document.getElementById("addAddressCard");
+
+        const modalClose =
+            document.getElementById("modalClose");
+
+        const cancelModal =
+            document.getElementById("cancelModal");
+
+
+        function openAddressModal() {
+
+            addressModal.classList.add("show");
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+
+        function closeAddressModal() {
+
+            addressModal.classList.remove("show");
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        addAddressBtn?.addEventListener(
+            "click",
+            openAddressModal
+        );
+
+        addAddressCard?.addEventListener(
+            "click",
+            openAddressModal
+        );
+
+        modalClose?.addEventListener(
+            "click",
+            closeAddressModal
+        );
+
+        cancelModal?.addEventListener(
+            "click",
+            closeAddressModal
+        );
+
+
+        addressModal?.addEventListener("click", (event) => {
+
+            if (event.target === addressModal) {
+                closeAddressModal();
+            }
+
+        });
+
+
+        /* =========================
+           SAVE ADDRESS
+        ========================== */
+
+        const addressForm =
+            document.getElementById("addressForm");
+
+
+        addressForm?.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const addressName =
+                document.getElementById("addressName").value;
+
+            alert(
+                `"${addressName}" address has been saved successfully!`
+            );
+
+            addressForm.reset();
+
+            closeAddressModal();
+
+        });
+
+
+        /* =========================
+           EDIT ADDRESS
+        ========================== */
+
+        function editAddress(name) {
+
+            alert(
+                `Edit ${name} address`
+            );
+
+        }
+
+
+        /* =========================
+           DELETE ADDRESS
+        ========================== */
+
+        function deleteAddress(name) {
+
+            const confirmed =
+                confirm(
+                    `Are you sure you want to delete the ${name} address?`
+                );
+
+            if (confirmed) {
+
+                alert(
+                    `${name} address has been deleted.`
+                );
+
+            }
+
+        }
+
+
+        /* =========================
+           SET DEFAULT
+        ========================== */
+
+        function setDefault(name) {
+
+            alert(
+                `${name} is now your default address.`
+            );
+
+        }
+
+
+        /* =========================
+           BOOK SERVICE
+        ========================== */
+
+        function bookService() {
+
+            window.location.href = "services.html";
+
+        }
+
+
+        document
+            .getElementById("mobileBookBtn")
+            ?.addEventListener(
+                "click",
+                bookService
+            );
+
+
+        /* =========================
+           NOTIFICATIONS
+        ========================== */
+
+        document
+            .getElementById("notificationBtn")
+            ?.addEventListener("click", () => {
+
+                alert(
+                    "You have no new notifications."
+                );
+
+            });
+
+
+        /* =========================
+           LOGOUT
+        ========================== */
+
+        function logout() {
+
+            const confirmed =
+                confirm(
+                    "Are you sure you want to logout?"
+                );
+
+            if (confirmed) {
+
+                window.location.href =
+                    "login.html";
+
+            }
+
+        }
+
+
+        document
+            .getElementById("logoutBtn")
+            ?.addEventListener(
+                "click",
+                logout
+            );
+
+
+        document
+            .getElementById("profileLogout")
+            ?.addEventListener(
+                "click",
+                logout
+            );
+
+    </script>
+
+</body>
+</html>
