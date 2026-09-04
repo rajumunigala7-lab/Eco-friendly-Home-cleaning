@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoNest | Customer Dashboard</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     DASHBOARD WRAPPER
+===================================================== -->
+
+<div class="dashboard-wrapper">
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">
+                    <i class="fa-solid fa-leaf"></i>
+                </span>
+
+                <span class="logo-eco">Eco</span><span class="logo-nest">Nest</span>
+
+            </a>
+
+        </div>
+
+
+        <!-- Customer Profile -->
+        <div class="customer-mini-profile">
+
+            <div class="profile-avatar">
+                JD
+            </div>
+
+            <div class="profile-info">
+                <strong>John Doe</strong>
+                <span>EcoNest Customer</span>
+            </div>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav">
+
+            <p class="nav-heading">MAIN MENU</p>
+
+            <a href="#dashboard" class="side-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#bookings" class="side-link">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>My Bookings</span>
+            </a>
+
+            <a href="#schedule" class="side-link">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Service Schedule</span>
+            </a>
+
+            <a href="#products" class="side-link">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Green Products</span>
+            </a>
+
+            <a href="#pricing" class="side-link">
+                <i class="fa-solid fa-tags"></i>
+                <span>Pricing</span>
+            </a>
+
+
+            <p class="nav-heading">REPORTS</p>
+
+            <a href="#reports" class="side-link">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="#activity" class="side-link">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Activity</span>
+            </a>
+
+
+            <p class="nav-heading">ACCOUNT</p>
+
+            <a href="#payments" class="side-link">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Payments</span>
+            </a>
+
+            <a href="#profile" class="side-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#settings" class="side-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="sidebar-bottom">
+
+          
+            <a href="login.html" class="side-link logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="dashboard-header">
+
+            <div class="header-left">
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Open menu"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <p class="welcome-small">Welcome back 👋</p>
+                    <h1>Customer Dashboard</h1>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <!-- Search -->
+                <button class="header-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <!-- Notification -->
+                <button class="header-icon notification-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <!-- Theme -->
+                <button class="header-icon" id="themeBtn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- User -->
+                <div class="header-user">
+
+                    <div class="header-avatar">
+                        JD
+                    </div>
+
+                    <div>
+                        <strong>John Doe</strong>
+                        <span>Customer</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+        ================================================== -->
+
+        <div class="content-area" id="dashboard">
+
+
+            <!-- =============================================
+                 QUICK ACTION
+            ============================================== -->
+
+            <section class="hero-dashboard">
+
+                <div class="hero-dashboard-content">
+
+                    <span class="hero-badge">
+                        <i class="fa-solid fa-leaf"></i>
+                        Eco-friendly cleaning
+                    </span>
+
+                    <h2>
+                        Keep your space clean,
+                        <span>keep the planet green.</span>
+                    </h2>
+
+                    <p>
+                        Manage your recurring cleanings, choose non-toxic
+                        products, and keep your service schedule organized
+                        from one place.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="#bookings" class="primary-btn">
+                            <i class="fa-solid fa-plus"></i>
+                            Book a Cleaning
+                        </a>
+
+                        <a href="#schedule" class="outline-btn">
+                            <i class="fa-solid fa-calendar"></i>
+                            View Schedule
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-leaf">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 STAT CARDS
+            ============================================== -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <div class="stat-details">
+                        <span>Upcoming Cleanings</span>
+                        <strong>4</strong>
+                        <small class="positive">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            1 this week
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-repeat"></i>
+                    </div>
+
+                    <div class="stat-details">
+                        <span>Recurring Plan</span>
+                        <strong>Weekly</strong>
+                        <small>Every Monday</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+
+                    <div class="stat-details">
+                        <span>This Month</span>
+                        <strong>₹4,800</strong>
+                        <small class="positive">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            8% saved
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div class="stat-details">
+                        <span>Eco Score</span>
+                        <strong>92%</strong>
+                        <small class="positive">
+                            Excellent
+                        </small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 NEXT SERVICE
+            ============================================== -->
+
+            <section class="section-block" id="schedule">
+
+                <div class="section-title-row">
+
+                    <div>
+                        <span class="section-label">NEXT SERVICE</span>
+                        <h2>Upcoming cleaning</h2>
+                    </div>
+
+                    <a href="#bookings" class="view-all">
+                        View all
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="next-service-card">
+
+                    <div class="service-date">
+
+                        <span>MON</span>
+                        <strong>14</strong>
+                        <small>SEP 2026</small>
+
+                    </div>
+
+
+                    <div class="service-info">
+
+                        <div class="service-title-row">
+
+                            <h3>Weekly Home Cleaning</h3>
+
+                            <span class="status-badge confirmed">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+                        <p>
+                            <i class="fa-regular fa-clock"></i>
+                            10:00 AM – 12:00 PM
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Hyderabad, Telangana
+                        </p>
+
+                        <div class="eco-service-tag">
+                            <i class="fa-solid fa-leaf"></i>
+                            Non-toxic products selected
+                        </div>
+
+                    </div>
+
+
+                    <div class="service-price">
+
+                        <span>Total</span>
+
+                        <strong>₹1,200</strong>
+
+                        <button class="manage-btn">
+                            Manage
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 REPORTS
+            ============================================== -->
+
+            <section class="section-block" id="reports">
+
+                <div class="section-title-row">
+
+                    <div>
+                        <span class="section-label">REPORTS</span>
+                        <h2>Cleaning overview</h2>
+                    </div>
+
+                    <select class="period-select" id="reportPeriod">
+                        <option>Last 6 Months</option>
+                        <option>Last 12 Months</option>
+                        <option>This Year</option>
+                    </select>
+
+                </div>
+
+
+                <div class="reports-grid">
+
+                    <!-- Cleaning Frequency Chart -->
+
+                    <div class="chart-card large-chart">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <h3>Cleaning activity</h3>
+                                <p>Completed services over time</p>
+                            </div>
+
+                            <span class="chart-value">
+                                22
+                                <small>services</small>
+                            </span>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="cleaningChart"></canvas>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Spending Chart -->
+
+                    <div class="chart-card">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <h3>Monthly spending</h3>
+                                <p>Your cleaning expenses</p>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="spendingChart"></canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reports-grid second-row">
+
+                    <!-- Eco Product Usage -->
+
+                    <div class="chart-card">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <h3>Green product usage</h3>
+                                <p>Eco-friendly products selected</p>
+                            </div>
+
+                        </div>
+
+                        <div class="eco-chart-wrapper">
+
+                            <div class="donut-container">
+                                <canvas id="ecoChart"></canvas>
+
+                                <div class="donut-center">
+                                    <strong>86%</strong>
+                                    <span>Eco</span>
+                                </div>
+                            </div>
+
+                            <div class="eco-legend">
+
+                                <div>
+                                    <span class="legend-dot"></span>
+                                    Non-toxic
+                                    <strong>86%</strong>
+                                </div>
+
+                                <div>
+                                    <span class="legend-dot second"></span>
+                                    Standard
+                                    <strong>14%</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Savings -->
+
+                    <div class="chart-card">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <h3>Your savings</h3>
+                                <p>Monthly savings through EcoNest</p>
+                            </div>
+
+                            <span class="saving-total">
+                                ₹3,850
+                            </span>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="savingChart"></canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 BOOKINGS
+            ============================================== -->
+
+            <section class="section-block" id="bookings">
+
+                <div class="section-title-row">
+
+                    <div>
+                        <span class="section-label">MY BOOKINGS</span>
+                        <h2>Recent bookings</h2>
+                    </div>
+
+                    <button class="primary-small-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        New Booking
+                    </button>
+
+                </div>
+
+
+                <div class="table-card">
+
+                    <div class="table-responsive">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Frequency</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-service">
+                                            <span class="table-icon">
+                                                <i class="fa-solid fa-house"></i>
+                                            </span>
+                                            <div>
+                                                <strong>Home Cleaning</strong>
+                                                <small>2 Bedroom</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>14 Sep 2026</td>
+
+                                    <td>10:00 AM</td>
+
+                                    <td>Weekly</td>
+
+                                    <td>₹1,200</td>
+
+                                    <td>
+                                        <span class="status-badge confirmed">
+                                            Confirmed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="more-btn">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-service">
+                                            <span class="table-icon blue-icon">
+                                                <i class="fa-solid fa-couch"></i>
+                                            </span>
+                                            <div>
+                                                <strong>Deep Cleaning</strong>
+                                                <small>Living Area</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>21 Sep 2026</td>
+
+                                    <td>2:00 PM</td>
+
+                                    <td>One-time</td>
+
+                                    <td>₹2,500</td>
+
+                                    <td>
+                                        <span class="status-badge pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="more-btn">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-service">
+                                            <span class="table-icon">
+                                                <i class="fa-solid fa-building"></i>
+                                            </span>
+                                            <div>
+                                                <strong>Office Cleaning</strong>
+                                                <small>Small Office</small>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>28 Sep 2026</td>
+
+                                    <td>9:00 AM</td>
+
+                                    <td>Monthly</td>
+
+                                    <td>₹3,200</td>
+
+                                    <td>
+                                        <span class="status-badge confirmed">
+                                            Confirmed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="more-btn">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 GREEN PRODUCTS
+            ============================================== -->
+
+            <section class="section-block" id="products">
+
+                <div class="section-title-row">
+
+                    <div>
+                        <span class="section-label">ECO PRODUCTS</span>
+                        <h2>Preferred cleaning products</h2>
+                    </div>
+
+                    <a href="#" class="view-all">
+                        Manage products
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="products-grid">
+
+                    <div class="product-card selected">
+
+                        <div class="product-image green-product">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <div class="product-content">
+
+                            <span class="product-tag">
+                                Selected
+                            </span>
+
+                            <h3>Plant-Based Cleaner</h3>
+
+                            <p>
+                                Biodegradable and non-toxic
+                                surface cleaner.
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <span>
+                                    <i class="fa-solid fa-seedling"></i>
+                                    Eco certified
+                                </span>
+
+                                <i class="fa-solid fa-circle-check selected-icon"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-image blue-product">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+
+                        <div class="product-content">
+
+                            <h3>Natural Glass Cleaner</h3>
+
+                            <p>
+                                Gentle formula made with
+                                natural ingredients.
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <span>
+                                    <i class="fa-solid fa-seedling"></i>
+                                    Low chemical
+                                </span>
+
+                                <button class="select-product">
+                                    Select
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-image yellow-product">
+                            <i class="fa-solid fa-spray-can-sparkles"></i>
+                        </div>
+
+                        <div class="product-content">
+
+                            <h3>Organic Disinfectant</h3>
+
+                            <p>
+                                Powerful plant-based
+                                disinfecting solution.
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <span>
+                                    <i class="fa-solid fa-seedling"></i>
+                                    Non-toxic
+                                </span>
+
+                                <button class="select-product">
+                                    Select
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 PRICING
+            ============================================== -->
+
+            <section class="section-block" id="pricing">
+
+                <div class="section-title-row">
+
+                    <div>
+                        <span class="section-label">TRANSPARENT PRICING</span>
+                        <h2>Your current plan</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="pricing-dashboard-card">
+
+                    <div class="pricing-main">
+
+                        <div class="plan-icon">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="current-plan">
+                                CURRENT PLAN
+                            </span>
+
+                            <h3>Eco Weekly</h3>
+
+                            <p>
+                                Weekly home cleaning with
+                                eco-friendly products.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="plan-price">
+
+                        <strong>₹4,800</strong>
+
+                        <span>per month</span>
+
+                    </div>
+
+
+                    <div class="plan-features">
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            4 cleanings
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            Eco products
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            Flexible scheduling
+                        </span>
+
+                    </div>
+
+
+                    <button class="outline-btn">
+                        Manage Plan
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 PAYMENT
+            ============================================== -->
+
+            <section class="section-block" id="payments">
+
+                <div class="section-title-row">
+
+                    <div>
+                        <span class="section-label">PAYMENTS</span>
+                        <h2>Payment methods</h2>
+                    </div>
+
+                    <button class="primary-small-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Payment
+                    </button>
+
+                </div>
+
+
+                <div class="payment-grid">
+
+                    <div class="payment-card">
+
+                        <div class="card-brand">
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <span>VISA</span>
+                        </div>
+
+                        <div class="card-number">
+                            •••• &nbsp; •••• &nbsp; •••• &nbsp; 4821
+                        </div>
+
+                        <div class="card-bottom">
+
+                            <span>
+                                JOHN DOE
+                            </span>
+
+                            <span>
+                                09/28
+                            </span>
+
+                        </div>
+
+                        <span class="default-card">
+                            Default
+                        </span>
+
+                    </div>
+
+
+                    <div class="secure-payment-info">
+
+                        <div class="secure-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>Secure payments</h3>
+
+                            <p>
+                                Your payment information is encrypted
+                                and securely stored. EcoNest does not
+                                display or store your full card number.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 ACTIVITY
+            ============================================== -->
+
+            <section class="section-block" id="activity">
+
+                <div class="section-title-row">
+
+                    <div>
+                        <span class="section-label">ACTIVITY</span>
+                        <h2>Recent activity</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon green">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>Cleaning completed</strong>
+                            <p>
+                                Your weekly home cleaning was completed.
+                            </p>
+                            <span>Today, 12:30 PM</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon blue">
+                            <i class="fa-solid fa-calendar-plus"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>New booking created</strong>
+                            <p>
+                                Weekly cleaning scheduled for Sep 14.
+                            </p>
+                            <span>Yesterday, 4:20 PM</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon orange">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>Eco product selected</strong>
+                            <p>
+                                Plant-Based Cleaner added to your preferences.
+                            </p>
+                            <span>Sep 1, 2026</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 FOOTER
+            ============================================== -->
+
+            <footer class="dashboard-footer">
+
+                <div>
+                    © 2026 EcoNest Services. All rights reserved.
+                </div>
+
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Support</a>
+                </div>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- Mobile Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       MOBILE SIDEBAR
+    ===================================================== */
+
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const sidebar = document.getElementById("sidebar");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+    mobileMenuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        sidebarOverlay.classList.toggle("show");
+    });
+
+    sidebarOverlay.addEventListener("click", () => {
+        sidebar.classList.remove("open");
+        sidebarOverlay.classList.remove("show");
+    });
+
+
+    /* =====================================================
+       SIDEBAR ACTIVE LINK
+    ===================================================== */
+
+    const sideLinks = document.querySelectorAll(".side-link");
+
+    sideLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            sideLinks.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            if (link.getAttribute("href")?.startsWith("#")) {
+                link.classList.add("active");
+            }
+
+            sidebar.classList.remove("open");
+            sidebarOverlay.classList.remove("show");
+
+        });
+
+    });
+
+
+    /* =====================================================
+       DARK MODE
+    ===================================================== */
+
+    const themeBtn = document.getElementById("themeBtn");
+
+    themeBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+        const icon = themeBtn.querySelector("i");
+
+        if (document.body.classList.contains("dark-mode")) {
+
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+
+            localStorage.setItem("econest-dashboard-theme", "dark");
+
+        } else {
+
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+
+            localStorage.setItem("econest-dashboard-theme", "light");
+
+        }
+
+    });
+
+
+    if (
+        localStorage.getItem("econest-dashboard-theme") === "dark"
+    ) {
+
+        document.body.classList.add("dark-mode");
+
+        const icon = themeBtn.querySelector("i");
+
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+
+    }
+
+
+    /* =====================================================
+       CLEANING ACTIVITY CHART
+    ===================================================== */
+
+    const cleaningCtx =
+        document.getElementById("cleaningChart");
+
+    new Chart(cleaningCtx, {
+
+        type: "line",
+
+        data: {
+
+            labels: [
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep"
+            ],
+
+            datasets: [
+
+                {
+                    label: "Completed Cleanings",
+
+                    data: [
+                        12,
+                        15,
+                        13,
+                        18,
+                        20,
+                        22
+                    ],
+
+                    borderColor: "#2e7d32",
+
+                    backgroundColor:
+                        "rgba(46, 125, 50, 0.10)",
+
+                    borderWidth: 3,
+
+                    tension: 0.4,
+
+                    fill: true,
+
+                    pointRadius: 4,
+
+                    pointBackgroundColor: "#2e7d32"
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+                    display: false
+                }
+
+            },
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true,
+
+                    grid: {
+                        color: "rgba(0,0,0,0.06)"
+                    }
+
+                },
+
+                x: {
+
+                    grid: {
+                        display: false
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+
+    /* =====================================================
+       SPENDING CHART
+    ===================================================== */
+
+    const spendingCtx =
+        document.getElementById("spendingChart");
+
+    new Chart(spendingCtx, {
+
+        type: "bar",
+
+        data: {
+
+            labels: [
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep"
+            ],
+
+            datasets: [
+
+                {
+                    label: "Spending",
+
+                    data: [
+                        4200,
+                        4500,
+                        3900,
+                        5100,
+                        4600,
+                        4800
+                    ],
+
+                    backgroundColor: "#1976d2",
+
+                    borderRadius: 7,
+
+                    borderSkipped: false
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+                    display: false
+                }
+
+            },
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true,
+
+                    ticks: {
+
+                        callback: function(value) {
+                            return "₹" + value;
+                        }
+
+                    },
+
+                    grid: {
+                        color: "rgba(0,0,0,0.06)"
+                    }
+
+                },
+
+                x: {
+
+                    grid: {
+                        display: false
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+
+    /* =====================================================
+       ECO PRODUCT CHART
+    ===================================================== */
+
+    const ecoCtx =
+        document.getElementById("ecoChart");
+
+    new Chart(ecoCtx, {
+
+        type: "doughnut",
+
+        data: {
+
+            labels: [
+                "Non-toxic",
+                "Standard"
+            ],
+
+            datasets: [
+
+                {
+                    data: [
+                        86,
+                        14
+                    ],
+
+                    backgroundColor: [
+                        "#2e7d32",
+                        "#dce7df"
+                    ],
+
+                    borderWidth: 0,
+
+                    cutout: "75%"
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+                    display: false
+                }
+
+            }
+
+        }
+
+    });
+
+
+    /* =====================================================
+       SAVINGS CHART
+    ===================================================== */
+
+    const savingCtx =
+        document.getElementById("savingChart");
+
+    new Chart(savingCtx, {
+
+        type: "line",
+
+        data: {
+
+            labels: [
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep"
+            ],
+
+            datasets: [
+
+                {
+                    label: "Savings",
+
+                    data: [
+                        450,
+                        580,
+                        520,
+                        720,
+                        680,
+                        900
+                    ],
+
+                    borderColor: "#ff9800",
+
+                    backgroundColor:
+                        "rgba(255, 152, 0, 0.10)",
+
+                    borderWidth: 3,
+
+                    tension: 0.4,
+
+                    fill: true,
+
+                    pointRadius: 3
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+                    display: false
+                }
+
+            },
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true,
+
+                    ticks: {
+
+                        callback: function(value) {
+                            return "₹" + value;
+                        }
+
+                    },
+
+                    grid: {
+                        color: "rgba(0,0,0,0.06)"
+                    }
+
+                },
+
+                x: {
+
+                    grid: {
+                        display: false
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+
+    /* =====================================================
+       PRODUCT SELECTION
+    ===================================================== */
+
+    const productButtons =
+        document.querySelectorAll(".select-product");
+
+    productButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const card = button.closest(".product-card");
+
+            document
+                .querySelectorAll(".product-card")
+                .forEach(item => {
+                    item.classList.remove("selected");
+                });
+
+            card.classList.add("selected");
+
+            button.textContent = "Selected";
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

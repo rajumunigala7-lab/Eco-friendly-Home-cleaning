@@ -1,0 +1,3131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoNest | Sustainable Living Blog</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           ROOT VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --primary-light: #e8f5e9;
+
+            --secondary: #1976d2;
+            --secondary-dark: #0d47a1;
+            --secondary-light: #e3f2fd;
+
+            --white: #ffffff;
+            --black: #111111;
+
+            --text: #263238;
+            --text-light: #607d8b;
+
+            --bg: #ffffff;
+            --bg-soft: #f7faf8;
+
+            --border: #e0e0e0;
+
+            --header-light: #ffffff;
+
+            --transition: 0.3s ease;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "DM Sans", sans-serif;
+
+            transition:
+                background-color var(--transition),
+                color var(--transition);
+
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(100% - 40px, 1200px);
+            margin: 0 auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+
+            background: var(--header-light);
+
+            border-bottom: 1px solid var(--border);
+
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            min-height: 76px;
+
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            font-family: "DM Sans", sans-serif;
+            font-size: 27px;
+            font-weight: 800;
+            letter-spacing: -1.2px;
+
+            white-space: nowrap;
+        }
+
+        .logo-mark {
+            width: 31px;
+            height: 31px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--primary);
+
+            font-size: 23px;
+        }
+
+        .logo-eco {
+            color: var(--primary);
+        }
+
+        .logo-nest {
+            color: var(--secondary);
+        }
+        .logo-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+}
+
+
+        /* =====================================================
+           NAV MENU
+        ===================================================== */
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 4px;
+
+            list-style: none;
+        }
+
+        .nav-menu > a,
+        .nav-menu .dropdown > a {
+
+            position: relative;
+
+            padding: 10px 12px;
+
+            border-radius: 8px;
+
+            color: var(--text);
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .nav-menu > a:hover,
+        .nav-menu .dropdown > a:hover {
+
+            color: var(--secondary);
+
+            background: var(--secondary-light);
+        }
+
+        .nav-menu > a.active {
+
+            color: var(--primary);
+
+            background: var(--primary-light);
+        }
+
+        .nav-menu > a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            bottom: 3px;
+
+            width: 20px;
+            height: 2px;
+
+            transform: translateX(-50%);
+
+            background: var(--primary);
+
+            border-radius: 5px;
+        }
+
+
+        /* =====================================================
+           DROPDOWN
+        ===================================================== */
+
+        .dropdown {
+            position: relative;
+            list-style: none;
+        }
+
+        .dropdown-menu {
+
+            position: absolute;
+
+            top: calc(100% + 10px);
+            left: 0;
+
+            min-width: 150px;
+
+            display: none;
+
+            padding: 8px;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            box-shadow: 0 15px 35px rgba(38, 50, 56, 0.12);
+
+            list-style: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li a {
+
+            display: block;
+
+            padding: 10px 12px;
+
+            border-radius: 7px;
+
+            color: var(--text);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .dropdown-menu li a:hover {
+
+            background: var(--secondary-light);
+            color: var(--secondary);
+        }
+
+
+        /* =====================================================
+           NAV ACTIONS
+        ===================================================== */
+
+        .nav-actions {
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            gap: 8px;
+        }
+
+        .icon-button {
+
+            width: 40px;
+            height: 40px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+            border-radius: 9px;
+
+            background: var(--white);
+            color: var(--text);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .icon-button:hover {
+
+            color: var(--secondary);
+
+            border-color: var(--secondary);
+
+            background: var(--secondary-light);
+        }
+
+
+        /* =====================================================
+           COMMON BUTTON
+        ===================================================== */
+
+        .btn {
+
+            min-height: 40px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0 18px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .btn-outline {
+
+            background: var(--primary);
+            border: 1px solid var(--primary);
+
+            color: #ffffff;
+        }
+
+        .btn-outline:hover {
+
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =====================================================
+           MOBILE MENU BUTTON
+        ===================================================== */
+
+        .mobile-menu-button {
+
+            display: none;
+
+            width: 40px;
+            height: 40px;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+            border-radius: 9px;
+
+            background: var(--white);
+            color: var(--text);
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           BLOG HERO
+        ===================================================== */
+
+        .blog-hero {
+
+            position: relative;
+
+            min-height: 500px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1920&q=85");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .blog-hero-overlay {
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(13, 71, 33, 0.91) 0%,
+                    rgba(27, 94, 32, 0.72) 48%,
+                    rgba(27, 94, 32, 0.25) 100%
+                );
+        }
+
+        .blog-hero-content {
+
+            position: relative;
+            z-index: 2;
+
+            width: min(100% - 40px, 1200px);
+
+            margin: 0 auto;
+
+            padding: 100px 0;
+
+            color: #ffffff;
+        }
+
+        .hero-badge {
+
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 16px;
+
+            margin-bottom: 20px;
+
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.12);
+
+            color: #ffffff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-badge i {
+            color: #81c784;
+        }
+
+        .blog-hero h1 {
+
+            max-width: 780px;
+
+            margin: 0 0 20px;
+
+            color: #ffffff;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(42px, 6vw, 68px);
+
+            line-height: 1.08;
+
+            font-weight: 700;
+        }
+
+        .blog-hero p {
+
+            max-width: 650px;
+
+            margin: 0 0 30px;
+
+            color: rgba(255,255,255,0.9);
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+        .hero-button {
+
+            min-height: 52px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 0 25px;
+
+            border-radius: 9px;
+
+            background: var(--secondary);
+
+            border: 1px solid var(--secondary);
+
+            color: #ffffff;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            transition: var(--transition);
+        }
+
+        .hero-button:hover {
+
+            background: var(--secondary-dark);
+
+            border-color: var(--secondary-dark);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           BLOG SECTION
+        ===================================================== */
+
+        .blog-section {
+
+            padding: 100px 0;
+
+            background: var(--bg);
+        }
+
+        .section-heading {
+
+            max-width: 720px;
+
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .section-label {
+
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 14px;
+
+            color: var(--primary);
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+
+            margin: 0 0 15px;
+
+            color: var(--text);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 42px;
+
+            line-height: 1.2;
+
+            font-weight: 700;
+        }
+
+        .section-heading p {
+
+            margin: 0;
+
+            color: var(--text-light);
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           CATEGORY FILTER
+        ===================================================== */
+
+        .blog-filters {
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+
+            min-height: 40px;
+
+            padding: 0 17px;
+
+            border: 1px solid var(--border);
+            border-radius: 30px;
+
+            background: var(--white);
+
+            color: var(--text-light);
+
+            font-size: 13px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+
+            border-color: var(--secondary);
+
+            color: var(--secondary);
+
+            background: var(--secondary-light);
+        }
+
+        .filter-btn.active {
+
+            background: var(--secondary);
+
+            border-color: var(--secondary);
+
+            color: #ffffff;
+        }
+
+
+        /* =====================================================
+           FEATURED BLOG
+        ===================================================== */
+
+        .featured-post {
+
+            display: grid;
+
+            grid-template-columns: 1.15fr 1fr;
+
+            overflow: hidden;
+
+            margin-bottom: 55px;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            box-shadow: 0 10px 30px rgba(38,50,56,0.08);
+        }
+
+        .featured-image {
+
+            min-height: 390px;
+
+            overflow: hidden;
+        }
+
+        .featured-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+        .featured-post:hover .featured-image img {
+            transform: scale(1.05);
+        }
+
+        .featured-content {
+
+            padding: 48px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .post-category {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            width: fit-content;
+
+            min-height: 30px;
+
+            padding: 0 11px;
+
+            margin-bottom: 17px;
+
+            border-radius: 20px;
+
+            background: var(--secondary-light);
+
+            color: var(--secondary);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.7px;
+        }
+
+        .featured-content h3 {
+
+            margin: 0 0 15px;
+
+            color: var(--text);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 32px;
+
+            line-height: 1.25;
+        }
+
+        .featured-content p {
+
+            margin: 0 0 22px;
+
+            color: var(--text-light);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+        .post-meta {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 16px;
+
+            margin-bottom: 24px;
+
+            color: var(--text-light);
+
+            font-size: 12px;
+        }
+
+        .post-meta span {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+        }
+
+        .post-meta i {
+            color: var(--secondary);
+        }
+
+        .read-more {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            width: fit-content;
+
+            color: var(--secondary);
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--secondary-dark);
+        }
+
+        .read-more i {
+            transition: transform var(--transition);
+        }
+
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+
+
+        /* =====================================================
+           BLOG GRID
+        ===================================================== */
+
+        .blog-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+        .blog-card {
+
+            overflow: hidden;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            box-shadow: 0 8px 25px rgba(38,50,56,0.07);
+
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: #90caf9;
+
+            box-shadow: 0 18px 40px rgba(38,50,56,0.13);
+        }
+
+        .blog-image {
+
+            position: relative;
+
+            height: 220px;
+
+            overflow: hidden;
+        }
+
+        .blog-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.07);
+        }
+
+        .blog-date {
+
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            min-width: 58px;
+
+            padding: 8px;
+
+            border-radius: 9px;
+
+            background: #ffffff;
+
+            color: var(--primary);
+
+            text-align: center;
+
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .blog-date strong {
+
+            display: block;
+
+            font-size: 18px;
+
+            line-height: 1;
+        }
+
+        .blog-date small {
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-content h3 {
+
+            margin: 0 0 11px;
+
+            color: var(--text);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 21px;
+
+            line-height: 1.35;
+        }
+
+        .blog-content p {
+
+            margin: 0 0 18px;
+
+            color: var(--text-light);
+
+            font-size: 14px;
+
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           NEWSLETTER
+        ===================================================== */
+
+        .newsletter-section {
+
+            padding: 85px 0;
+
+            background: var(--bg-soft);
+        }
+
+        .newsletter-box {
+
+            position: relative;
+
+            overflow: hidden;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            padding: 55px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+
+            text-align: center;
+
+            color: #ffffff;
+        }
+
+        .newsletter-icon {
+
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 18px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.13);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            font-size: 23px;
+        }
+
+        .newsletter-box h2 {
+
+            margin: 0 0 12px;
+
+            color: #ffffff;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 35px;
+        }
+
+        .newsletter-box p {
+
+            max-width: 570px;
+
+            margin: 0 auto 25px;
+
+            color: rgba(255,255,255,0.87);
+
+            font-size: 15px;
+        }
+
+        .newsletter-form {
+
+            max-width: 560px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+
+            flex: 1;
+
+            min-height: 48px;
+
+            padding: 0 16px;
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            border-radius: 9px;
+
+            outline: none;
+
+            background: rgba(255,255,255,0.12);
+
+            color: #ffffff;
+
+            font-size: 14px;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .newsletter-form input:focus {
+            border-color: #ffffff;
+        }
+
+        .newsletter-form button {
+
+            min-height: 48px;
+
+            padding: 0 21px;
+
+            border: 1px solid #ffffff;
+
+            border-radius: 9px;
+
+            background: #ffffff;
+
+            color: var(--primary-dark);
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+
+            background: var(--secondary);
+
+            border-color: var(--secondary);
+
+            color: #ffffff;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .services-footer {
+
+            padding: 75px 0 0;
+
+            background: #17221b;
+
+            color: #ffffff;
+        }
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+
+            gap: 50px;
+
+            padding-bottom: 55px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+
+            max-width: 300px;
+
+            margin: 0 0 24px;
+
+            color: #aab9af;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .footer-social {
+
+            display: flex;
+
+            gap: 9px;
+        }
+
+        .footer-social a {
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 9px;
+
+            background: rgba(255,255,255,0.05);
+
+            color: #d9e6dc;
+
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+
+            background: var(--secondary);
+
+            border-color: var(--secondary);
+
+            color: #ffffff;
+
+            transform: translateY(-3px);
+        }
+
+        .footer-column {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+        }
+
+        .footer-column h3 {
+
+            margin: 0 0 20px;
+
+            color: #ffffff;
+
+            font-family: "DM Sans", sans-serif;
+
+            font-size: 16px;
+
+            font-weight: 800;
+        }
+
+        .footer-column a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-bottom: 12px;
+
+            color: #aab9af;
+
+            font-size: 14px;
+
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+
+            color: #64b5f6;
+
+            transform: translateX(4px);
+        }
+
+        .footer-column a i {
+
+            width: 16px;
+
+            color: #64b5f6;
+
+            font-size: 13px;
+        }
+
+        .footer-bottom {
+
+            min-height: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom p,
+        .footer-bottom a {
+
+            color: #84968b;
+
+            font-size: 13px;
+        }
+
+        .footer-bottom div {
+
+            display: flex;
+
+            gap: 20px;
+        }
+
+        .footer-bottom a:hover {
+            color: #64b5f6;
+        }
+
+
+        /* =====================================================
+           DARK MODE
+        ===================================================== */
+
+        body.dark-mode {
+
+            --bg: #101713;
+            --bg-soft: #121b16;
+
+            --text: #edf5ef;
+            --text-light: #aab9af;
+
+            --border: rgba(255,255,255,0.10);
+
+            --white: #17221b;
+
+            --header-light: #17221b;
+        }
+
+        body.dark-mode .navbar {
+
+            background: #17221b;
+
+            border-bottom-color:
+                rgba(255,255,255,0.10);
+        }
+
+        body.dark-mode .logo-eco {
+            color: #81c784;
+        }
+
+        body.dark-mode .logo-nest {
+            color: #64b5f6;
+        }
+
+        body.dark-mode .logo-mark {
+            color: #81c784;
+        }
+
+        body.dark-mode .nav-menu > a,
+        body.dark-mode .nav-menu .dropdown > a {
+            color: #e7eee9;
+        }
+
+        body.dark-mode .nav-menu > a:hover,
+        body.dark-mode .nav-menu .dropdown > a:hover {
+
+            color: #64b5f6;
+
+            background: rgba(25,118,210,0.15);
+        }
+
+        body.dark-mode .nav-menu > a.active {
+
+            color: #81c784;
+
+            background: rgba(46,125,50,0.18);
+        }
+
+        body.dark-mode .nav-menu > a.active::after {
+            background: #81c784;
+        }
+
+        body.dark-mode .dropdown-menu {
+
+            background: #17221b;
+
+            border-color:
+                rgba(255,255,255,0.10);
+        }
+
+        body.dark-mode .dropdown-menu li a {
+            color: #e7eee9;
+        }
+
+        body.dark-mode .dropdown-menu li a:hover {
+
+            background:
+                rgba(25,118,210,0.15);
+
+            color: #64b5f6;
+        }
+
+        body.dark-mode .icon-button {
+
+            background: rgba(255,255,255,0.06);
+
+            border-color:
+                rgba(255,255,255,0.18);
+
+            color: #e7eee9;
+        }
+
+        body.dark-mode .icon-button:hover {
+
+            background:
+                rgba(25,118,210,0.15);
+
+            border-color: #64b5f6;
+
+            color: #64b5f6;
+        }
+
+        body.dark-mode .mobile-menu-button {
+
+            background: #17221b;
+
+            border-color:
+                rgba(255,255,255,0.15);
+
+            color: #ffffff;
+        }
+
+        body.dark-mode .blog-card,
+        body.dark-mode .featured-post {
+
+            background: #17221b;
+
+            border-color:
+                rgba(255,255,255,0.10);
+        }
+
+        body.dark-mode .filter-btn {
+
+            background: #17221b;
+
+            border-color:
+                rgba(255,255,255,0.12);
+
+            color: #aab9af;
+        }
+
+        body.dark-mode .filter-btn:hover {
+
+            background:
+                rgba(25,118,210,0.15);
+
+            color: #64b5f6;
+        }
+
+        body.dark-mode .blog-date {
+            background: #17221b;
+            color: #81c784;
+        }
+
+        body.dark-mode .post-category {
+
+            background:
+                rgba(25,118,210,0.17);
+
+            color: #64b5f6;
+        }
+
+
+        /* =====================================================
+           RTL
+        ===================================================== */
+
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .nav-container {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .nav-actions {
+            justify-content: flex-start;
+        }
+
+        [dir="rtl"] .dropdown-menu {
+
+            left: auto;
+            right: 0;
+        }
+
+        [dir="rtl"] .blog-hero-overlay {
+
+            background:
+                linear-gradient(
+                    270deg,
+                    rgba(13,71,33,0.91) 0%,
+                    rgba(27,94,32,0.72) 48%,
+                    rgba(27,94,32,0.25) 100%
+                );
+        }
+
+        [dir="rtl"] .blog-hero-content {
+            text-align: right;
+        }
+
+        [dir="rtl"] .blog-date {
+
+            left: auto;
+            right: 15px;
+        }
+
+        [dir="rtl"] .read-more:hover i {
+            transform: translateX(-5px);
+        }
+
+        [dir="rtl"] .footer-column a:hover {
+            transform: translateX(-4px);
+        }
+
+        [dir="rtl"] .footer-bottom {
+            direction: rtl;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1050px) {
+
+            .nav-container {
+                gap: 12px;
+            }
+
+            .nav-menu {
+                gap: 0;
+            }
+
+            .nav-menu > a,
+            .nav-menu .dropdown > a {
+
+                padding: 9px 7px;
+
+                font-size: 13px;
+            }
+
+            .blog-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 40px 30px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE NAVIGATION
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .nav-container {
+
+                grid-template-columns:
+                    1fr auto;
+
+                min-height: 70px;
+            }
+
+            .mobile-menu-button {
+                display: inline-flex;
+            }
+
+            .nav-menu {
+
+                position: fixed;
+
+                top: 70px;
+
+                left: 15px;
+                right: 15px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                padding: 15px;
+
+                background: var(--white);
+
+                border: 1px solid var(--border);
+
+                border-radius: 14px;
+
+                box-shadow:
+                    0 15px 40px
+                    rgba(38,50,56,0.15);
+            }
+
+            .nav-menu.show {
+                display: flex;
+            }
+
+            .nav-menu > a,
+            .nav-menu .dropdown > a {
+
+                width: 100%;
+
+                padding: 12px 15px;
+            }
+
+            .dropdown-menu {
+
+                position: static;
+
+                width: 100%;
+
+                margin-top: 5px;
+
+                display: none;
+
+                box-shadow: none;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: none;
+            }
+
+            .dropdown.open .dropdown-menu {
+                display: block;
+            }
+
+            .nav-actions .btn {
+                display: none;
+            }
+
+            .featured-post {
+
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                min-height: 300px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 650px) {
+
+            .container {
+
+                width:
+                    min(100% - 30px, 1200px);
+            }
+
+            .nav-actions {
+                gap: 5px;
+            }
+
+            .icon-button,
+            .mobile-menu-button {
+
+                width: 37px;
+                height: 37px;
+            }
+
+            .blog-hero {
+
+                min-height: 500px;
+
+                background-position:
+                    60% center;
+            }
+
+            .blog-hero-overlay,
+            [dir="rtl"] .blog-hero-overlay {
+
+                background:
+                    rgba(13,71,33,0.78);
+            }
+
+            .blog-hero-content {
+
+                width:
+                    min(100% - 30px, 1200px);
+
+                padding: 75px 0;
+            }
+
+            .blog-hero h1 {
+                font-size: 40px;
+            }
+
+            .blog-hero p {
+                font-size: 15px;
+            }
+
+            .hero-button {
+                width: 100%;
+            }
+
+            .blog-section {
+                padding: 70px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 35px;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
+            }
+
+            .blog-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 5px;
+            }
+
+            .filter-btn {
+                flex-shrink: 0;
+            }
+
+            .featured-content {
+                padding: 28px;
+            }
+
+            .featured-content h3 {
+                font-size: 27px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-section {
+                padding: 70px 0;
+            }
+
+            .newsletter-box {
+                padding: 40px 22px;
+            }
+
+            .newsletter-box h2 {
+                font-size: 30px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom {
+
+                min-height: auto;
+
+                padding: 22px 0;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 420px) {
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .logo-mark {
+
+                width: 26px;
+                height: 26px;
+
+                font-size: 20px;
+            }
+
+            .blog-hero h1 {
+                font-size: 34px;
+            }
+
+            .section-heading h2 {
+                font-size: 28px;
+            }
+
+            .featured-content {
+                padding: 23px;
+            }
+
+            .featured-content h3 {
+                font-size: 24px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MAIN SITE
+===================================================== -->
+
+<div id="mainSite">
+
+
+    <!-- =================================================
+         NAVBAR
+    ================================================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+
+            <!-- LOGO -->
+             <a href="index.html" class="logo">
+<span class="logo-mark">
+<img src="./img/logo.png" alt="EcoNest Logo" class="logo-img">
+</span>
+ 
+    <span class="logo-eco">Eco</span>
+<span class="logo-nest">Nest</span>
+</a>
+ 
+
+            <!-- NAVIGATION -->
+
+            <nav class="nav-menu" id="navMenu">
+
+                <div class="dropdown">
+
+                    <a href="#">
+
+                        Home
+
+                        <i
+                            class="fa-solid fa-chevron-down"
+                            style="font-size:10px;margin-left:4px;">
+                        </i>
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a href="index.html">
+                                Home 1
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="home2.html">
+                                Home 2
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <a href="services.html">
+                    Services
+                </a>
+
+
+                <a href="about.html">
+                    About
+                </a>
+
+
+                <a href="Gallery.html">
+                    Gallery
+                </a>
+
+
+                <a href="Pricing.html">
+                    Pricing
+                </a>
+
+
+                <a href="blog.html" class="active">
+                    Blog
+                </a>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+
+                <a href="dasboard.html">
+                    Dashboard
+                </a>
+
+            </nav>
+
+
+            <!-- NAV ACTIONS -->
+
+            <div class="nav-actions">
+
+
+                <!-- RTL -->
+
+                <button
+                    class="icon-button"
+                    id="rtlToggle"
+                    type="button"
+                    title="Switch RTL"
+                    aria-label="Switch RTL">
+
+                    RTL
+
+                </button>
+
+
+                <!-- DARK MODE -->
+
+                <button
+                    class="icon-button"
+                    id="themeToggle"
+                    type="button"
+                    title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+
+                <!-- LOGIN -->
+
+                <a href="login.html" class="btn btn-outline">
+                    Login
+                </a>
+
+
+                <!-- MOBILE MENU -->
+
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    type="button"
+                    aria-label="Open navigation menu">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         BLOG HERO
+    ================================================= -->
+
+    <section class="blog-hero">
+
+        <div class="blog-hero-overlay"></div>
+
+
+        <div class="blog-hero-content">
+
+
+            <span class="hero-badge">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                EcoNest Journal
+
+            </span>
+
+
+            <h1>
+                Ideas for a Greener, Healthier Life
+            </h1>
+
+
+            <p>
+                Discover practical sustainability tips, eco-friendly
+                ideas, inspiring stories, and simple ways to make
+                a positive difference every day.
+            </p>
+
+
+            <a href="#latest-posts" class="hero-button">
+
+                Explore Articles
+
+                <i class="fa-solid fa-arrow-down"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         BLOG SECTION
+    ================================================= -->
+
+    <section class="blog-section" id="latest-posts">
+
+        <div class="container">
+
+
+            <!-- SECTION HEADING -->
+
+            <div class="section-heading">
+
+                <span class="section-label">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                    Latest Articles
+
+                </span>
+
+
+                <h2>
+                    Inspiration for Sustainable Living
+                </h2>
+
+
+                <p>
+                    Helpful ideas and practical knowledge to make
+                    sustainable choices easier in your everyday life.
+                </p>
+
+            </div>
+
+
+
+            <!-- CATEGORY FILTER -->
+
+            <div class="blog-filters">
+
+                <button
+                    class="filter-btn active"
+                    type="button"
+                    data-filter="all">
+
+                    All
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    type="button"
+                    data-filter="home">
+
+                    Eco Home
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    type="button"
+                    data-filter="energy">
+
+                    Clean Energy
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    type="button"
+                    data-filter="garden">
+
+                    Gardening
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    type="button"
+                    data-filter="waste">
+
+                    Waste Reduction
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FEATURED POST
+            ================================================= -->
+
+            <article class="featured-post" data-category="home">
+
+                <div class="featured-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85"
+                        alt="Sustainable modern home"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="featured-content">
+
+                    <span class="post-category">
+                        Featured Story
+                    </span>
+
+
+                    <h3>
+                        10 Simple Ways to Make Your Home More Eco-Friendly
+                    </h3>
+
+
+                    <p>
+                        From saving energy to choosing sustainable
+                        materials, small improvements around your home
+                        can create meaningful environmental benefits.
+                    </p>
+
+
+                    <div class="post-meta">
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            September 2, 2026
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            6 min read
+                        </span>
+
+                    </div>
+
+
+                    <a href="#" class="read-more">
+
+                        Read Full Article
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 BLOG GRID
+            ================================================= -->
+
+            <div class="blog-grid">
+
+
+                <!-- BLOG 1 -->
+
+                <article
+                    class="blog-card"
+                    data-category="energy">
+
+                    <div class="blog-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=85"
+                            alt="Solar panels and renewable energy"
+                            loading="lazy"
+                        >
+
+
+                        <div class="blog-date">
+
+                            <strong>28</strong>
+
+                            <small>Aug</small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-content">
+
+                        <span class="post-category">
+                            Clean Energy
+                        </span>
+
+
+                        <h3>
+                            Why Solar Energy Is Becoming a Smart Home Choice
+                        </h3>
+
+
+                        <p>
+                            Understand the everyday benefits of solar power
+                            and how renewable energy can support a cleaner
+                            future.
+                        </p>
+
+
+                        <a href="#" class="read-more">
+
+                            Read Article
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BLOG 2 -->
+
+                <article
+                    class="blog-card"
+                    data-category="garden">
+
+                    <div class="blog-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=85"
+                            alt="Green garden"
+                            loading="lazy"
+                        >
+
+
+                        <div class="blog-date">
+
+                            <strong>24</strong>
+
+                            <small>Aug</small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-content">
+
+                        <span class="post-category">
+                            Gardening
+                        </span>
+
+
+                        <h3>
+                            Create a Low-Waste Garden in Your Own Backyard
+                        </h3>
+
+
+                        <p>
+                            Learn how composting, native plants, and natural
+                            gardening techniques can transform your outdoor
+                            space.
+                        </p>
+
+
+                        <a href="#" class="read-more">
+
+                            Read Article
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BLOG 3 -->
+
+                <article
+                    class="blog-card"
+                    data-category="waste">
+
+                    <div class="blog-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=85"
+                            alt="Recycling materials"
+                            loading="lazy"
+                        >
+
+
+                        <div class="blog-date">
+
+                            <strong>20</strong>
+
+                            <small>Aug</small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-content">
+
+                        <span class="post-category">
+                            Waste Reduction
+                        </span>
+
+
+                        <h3>
+                            A Beginner's Guide to Reducing Household Waste
+                        </h3>
+
+
+                        <p>
+                            Start with simple habits that reduce unnecessary
+                            waste and make recycling and reuse part of
+                            your daily routine.
+                        </p>
+
+
+                        <a href="#" class="read-more">
+
+                            Read Article
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BLOG 4 -->
+
+                <article
+                    class="blog-card"
+                    data-category="home">
+
+                    <div class="blog-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"
+                            alt="Eco friendly interior"
+                            loading="lazy"
+                        >
+
+
+                        <div class="blog-date">
+
+                            <strong>16</strong>
+
+                            <small>Aug</small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-content">
+
+                        <span class="post-category">
+                            Eco Home
+                        </span>
+
+
+                        <h3>
+                            Sustainable Materials for a Beautiful Home
+                        </h3>
+
+
+                        <p>
+                            Explore thoughtful materials and design choices
+                            that combine comfort, style, durability, and
+                            environmental responsibility.
+                        </p>
+
+
+                        <a href="#" class="read-more">
+
+                            Read Article
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BLOG 5 -->
+
+                <article
+                    class="blog-card"
+                    data-category="energy">
+
+                    <div class="blog-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=85"
+                            alt="Wind turbines and renewable energy"
+                            loading="lazy"
+                        >
+
+
+                        <div class="blog-date">
+
+                            <strong>12</strong>
+
+                            <small>Aug</small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-content">
+
+                        <span class="post-category">
+                            Clean Energy
+                        </span>
+
+
+                        <h3>
+                            Everyday Habits That Can Lower Energy Use
+                        </h3>
+
+
+                        <p>
+                            Small changes to lighting, appliances, cooling,
+                            and daily routines can help you use energy
+                            more efficiently.
+                        </p>
+
+
+                        <a href="#" class="read-more">
+
+                            Read Article
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BLOG 6 -->
+
+                <article
+                    class="blog-card"
+                    data-category="garden">
+
+                    <div class="blog-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=85"
+                            alt="Organic vegetable garden"
+                            loading="lazy"
+                        >
+
+
+                        <div class="blog-date">
+
+                            <strong>08</strong>
+
+                            <small>Aug</small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog-content">
+
+                        <span class="post-category">
+                            Gardening
+                        </span>
+
+
+                        <h3>
+                            Grow Your Own Fresh Food With Less Waste
+                        </h3>
+
+
+                        <p>
+                            Discover practical ways to grow herbs and
+                            vegetables while conserving water and
+                            avoiding unnecessary waste.
+                        </p>
+
+
+                        <a href="#" class="read-more">
+
+                            Read Article
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         NEWSLETTER
+    ================================================= -->
+
+    <section class="newsletter-section">
+
+        <div class="container">
+
+            <div class="newsletter-box">
+
+                <div class="newsletter-icon">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                </div>
+
+
+                <h2>
+                    Stay Inspired
+                </h2>
+
+
+                <p>
+                    Get practical sustainability tips, new articles,
+                    and EcoNest updates delivered to your inbox.
+                </p>
+
+
+                <form class="newsletter-form" id="newsletterForm">
+
+                    <input
+                        type="email"
+                        id="newsletterEmail"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
+
+                    <button type="submit">
+                        Subscribe
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer class="services-footer">
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <!-- FOOTER BRAND -->
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="logo">
+
+                        <span class="logo-mark">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                        </span>
+
+                        <span class="logo-eco">Eco</span>
+                        <span class="logo-nest">Nest</span>
+
+                    </a>
+
+
+                    <p>
+                        Making sustainable living simple, practical,
+                        and accessible for everyone.
+                    </p>
+
+
+                    <div class="footer-social">
+
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- QUICK LINKS -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="services.html">
+                        Services
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="Gallery.html">
+                        Gallery
+                    </a>
+
+                </div>
+
+
+
+                <!-- USEFUL LINKS -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Useful Links
+                    </h3>
+
+                    <a href="Pricing.html">
+                        Pricing
+                    </a>
+
+                    <a href="blog.html">
+                        Blog
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="dasboard.html">
+                        Dashboard
+                    </a>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </div>
+
+
+
+                <!-- CONTACT -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Contact Us
+                    </h3>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Hyderabad, India
+
+                    </a>
+
+
+                    <a href="tel:+910000000000">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        +91 00000 00000
+
+                    </a>
+
+
+                    <a href="mailto:hello@econest.com">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        hello@econest.com
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 EcoNest. All Rights Reserved.
+                </p>
+
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       THEME TOGGLE
+    ===================================================== */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const savedTheme =
+        localStorage.getItem("econest-theme");
+
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+        themeToggle.innerHTML =
+            '<i class="fa-solid fa-sun"></i>';
+
+    }
+
+
+    themeToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark-mode");
+
+        const isDark =
+            document.body.classList.contains("dark-mode");
+
+
+        localStorage.setItem(
+            "econest-theme",
+            isDark ? "dark" : "light"
+        );
+
+
+        themeToggle.innerHTML = isDark
+
+            ? '<i class="fa-solid fa-sun"></i>'
+
+            : '<i class="fa-solid fa-moon"></i>';
+
+    });
+
+
+
+    /* =====================================================
+       RTL / LTR TOGGLE
+    ===================================================== */
+
+    const rtlToggle =
+        document.getElementById("rtlToggle");
+
+
+    const savedDirection =
+        localStorage.getItem("econest-direction");
+
+
+    if (savedDirection === "rtl") {
+
+        document.documentElement.dir = "rtl";
+
+        document.documentElement.lang = "ar";
+
+        rtlToggle.textContent = "LTR";
+
+    } else {
+
+        document.documentElement.dir = "ltr";
+
+        document.documentElement.lang = "en";
+
+        rtlToggle.textContent = "RTL";
+
+    }
+
+
+    rtlToggle.addEventListener("click", function () {
+
+        const currentDirection =
+            document.documentElement.dir;
+
+
+        if (currentDirection === "ltr") {
+
+            document.documentElement.dir = "rtl";
+
+            document.documentElement.lang = "ar";
+
+            rtlToggle.textContent = "LTR";
+
+            localStorage.setItem(
+                "econest-direction",
+                "rtl"
+            );
+
+        } else {
+
+            document.documentElement.dir = "ltr";
+
+            document.documentElement.lang = "en";
+
+            rtlToggle.textContent = "RTL";
+
+            localStorage.setItem(
+                "econest-direction",
+                "ltr"
+            );
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
+
+    const navMenu =
+        document.getElementById("navMenu");
+
+
+    mobileMenuButton.addEventListener("click", function () {
+
+        navMenu.classList.toggle("show");
+
+
+        const isOpen =
+            navMenu.classList.contains("show");
+
+
+        mobileMenuButton.innerHTML = isOpen
+
+            ? '<i class="fa-solid fa-xmark"></i>'
+
+            : '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+
+
+    /* =====================================================
+       MOBILE DROPDOWN
+    ===================================================== */
+
+    const dropdown =
+        document.querySelector(".dropdown");
+
+    const dropdownLink =
+        dropdown.querySelector(":scope > a");
+
+
+    dropdownLink.addEventListener("click", function (event) {
+
+        if (window.innerWidth <= 850) {
+
+            event.preventDefault();
+
+            dropdown.classList.toggle("open");
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU
+    ===================================================== */
+
+    document.querySelectorAll(
+        ".nav-menu > a, .dropdown-menu a"
+    ).forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navMenu.classList.remove("show");
+
+            mobileMenuButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       CLOSE MENU OUTSIDE
+    ===================================================== */
+
+    document.addEventListener("click", function (event) {
+
+        if (
+            !navMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+
+            navMenu.classList.remove("show");
+
+            mobileMenuButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       BLOG FILTER
+    ===================================================== */
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const blogCards =
+        document.querySelectorAll(".blog-card");
+
+
+    filterButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            filterButtons.forEach(function (btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+
+            const filter =
+                button.getAttribute("data-filter");
+
+
+            blogCards.forEach(function (card) {
+
+                const category =
+                    card.getAttribute("data-category");
+
+
+                if (
+                    filter === "all" ||
+                    category === filter
+                ) {
+
+                    card.style.display = "block";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       NEWSLETTER
+    ===================================================== */
+
+    const newsletterForm =
+        document.getElementById("newsletterForm");
+
+
+    newsletterForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        const email =
+            document.getElementById("newsletterEmail").value;
+
+
+        if (email.trim() !== "") {
+
+            alert(
+                "Thank you for subscribing to EcoNest!"
+            );
+
+            newsletterForm.reset();
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ===================================================== */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            navMenu.classList.remove("show");
+
+            mobileMenuButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        }
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

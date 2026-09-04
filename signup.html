@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoNest | Sign Up</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Signup CSS -->
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIGNUP PAGE
+===================================================== -->
+
+<div class="signup-page">
+
+    <!-- =================================================
+         LEFT BRAND SECTION
+    ================================================== -->
+
+    <section class="signup-brand">
+
+        <div class="brand-content">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">
+                    <i class="fa-solid fa-leaf"></i>
+                </span>
+
+                <span class="logo-eco">Eco</span><span class="logo-nest">Nest</span>
+
+            </a>
+
+
+            <!-- Brand Text -->
+
+            <div class="brand-message">
+
+                <span class="brand-badge">
+                    <i class="fa-solid fa-leaf"></i>
+                    Eco-friendly living
+                </span>
+
+                <h1>
+                    Clean your space.
+                    <span>Protect your planet.</span>
+                </h1>
+
+                <p>
+                    Join EcoNest and enjoy reliable cleaning services,
+                    eco-friendly products, flexible scheduling, and
+                    a cleaner way of living.
+                </p>
+
+            </div>
+
+
+            <!-- Benefits -->
+
+            <div class="signup-benefits">
+
+                <div class="benefit-item">
+
+                    <span class="benefit-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </span>
+
+                    <div>
+                        <strong>Eco-friendly cleaning</strong>
+                        <p>Non-toxic and planet-friendly products.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-item">
+
+                    <span class="benefit-icon blue">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </span>
+
+                    <div>
+                        <strong>Easy scheduling</strong>
+                        <p>Book and manage cleanings in one place.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-item">
+
+                    <span class="benefit-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+
+                    <div>
+                        <strong>Trusted service</strong>
+                        <p>Professional cleaning you can depend on.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Decorative Leaf -->
+
+        <div class="brand-decoration decoration-one">
+            <i class="fa-solid fa-leaf"></i>
+        </div>
+
+        <div class="brand-decoration decoration-two">
+            <i class="fa-solid fa-seedling"></i>
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         RIGHT SIGNUP SECTION
+    ================================================== -->
+
+    <section class="signup-section">
+
+        <div class="signup-container">
+
+
+            <!-- Mobile Logo -->
+
+            <div class="mobile-logo">
+
+                <a href="index.html" class="logo">
+
+                    <span class="logo-mark">
+                        <i class="fa-solid fa-leaf"></i>
+                    </span>
+
+                    <span class="logo-eco">Eco</span><span class="logo-nest">Nest</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Signup Header -->
+
+            <div class="signup-header">
+
+                <span class="form-label">
+                    CREATE ACCOUNT
+                </span>
+
+                <h2>
+                    Create your EcoNest account
+                </h2>
+
+                <p>
+                    Start your journey toward a cleaner,
+                    greener home.
+                </p>
+
+            </div>
+
+
+            <!-- Signup Form -->
+
+            <form class="signup-form" id="signupForm">
+
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="password-strength">
+
+                        <div class="strength-bars">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <small id="passwordText">
+                            Use 8 or more characters
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="confirmPasswordToggle"
+                            aria-label="Show password"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                    <small
+                        class="password-match"
+                        id="passwordMatch"
+                    ></small>
+
+                </div>
+
+
+                <!-- Terms -->
+
+                <div class="terms-row">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                        >
+
+                        <span class="custom-checkbox"></span>
+
+                        <span class="terms-text">
+                            I agree to the
+                            <a href="#">Terms of Service</a>
+                            and
+                            <a href="#">Privacy Policy</a>.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="signup-btn"
+                >
+
+                    <span>
+                        Create Account
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <!-- Divider -->
+
+                <div class="divider">
+
+                    <span>OR</span>
+
+                </div>
+
+
+                <!-- Google Signup -->
+
+                <button
+                    type="button"
+                    class="google-btn"
+                >
+
+                    <i class="fa-brands fa-google"></i>
+
+                    Continue with Google
+
+                </button>
+
+
+                <!-- Login -->
+
+                <p class="login-text">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Log in
+                    </a>
+
+                </p>
+
+            </form>
+
+
+            <!-- Footer -->
+
+            <div class="signup-footer">
+
+                <span>
+                    © 2026 EcoNest Services
+                </span>
+
+                <div>
+
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Help</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       PASSWORD TOGGLE
+    ===================================================== */
+
+    function setupPasswordToggle(buttonId, inputId) {
+
+        const button = document.getElementById(buttonId);
+        const input = document.getElementById(inputId);
+
+        button.addEventListener("click", () => {
+
+            const icon = button.querySelector("i");
+
+            if (input.type === "password") {
+
+                input.type = "text";
+
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+
+                button.setAttribute(
+                    "aria-label",
+                    "Hide password"
+                );
+
+            } else {
+
+                input.type = "password";
+
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+
+                button.setAttribute(
+                    "aria-label",
+                    "Show password"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    setupPasswordToggle(
+        "passwordToggle",
+        "password"
+    );
+
+    setupPasswordToggle(
+        "confirmPasswordToggle",
+        "confirmPassword"
+    );
+
+
+    /* =====================================================
+       PASSWORD STRENGTH
+    ===================================================== */
+
+    const password =
+        document.getElementById("password");
+
+    const strengthBars =
+        document.querySelectorAll(".strength-bars span");
+
+    const passwordText =
+        document.getElementById("passwordText");
+
+
+    password.addEventListener("input", () => {
+
+        const value = password.value;
+
+        let strength = 0;
+
+
+        if (value.length >= 8) {
+            strength++;
+        }
+
+        if (/[A-Z]/.test(value)) {
+            strength++;
+        }
+
+        if (/[0-9]/.test(value)) {
+            strength++;
+        }
+
+        if (/[^A-Za-z0-9]/.test(value)) {
+            strength++;
+        }
+
+
+        strengthBars.forEach((bar, index) => {
+
+            bar.classList.toggle(
+                "active",
+                index < strength
+            );
+
+        });
+
+
+        if (value.length === 0) {
+
+            passwordText.textContent =
+                "Use 8 or more characters";
+
+        } else if (strength === 1) {
+
+            passwordText.textContent =
+                "Weak password";
+
+        } else if (strength === 2) {
+
+            passwordText.textContent =
+                "Fair password";
+
+        } else if (strength === 3) {
+
+            passwordText.textContent =
+                "Good password";
+
+        } else {
+
+            passwordText.textContent =
+                "Strong password";
+
+        }
+
+    });
+
+
+    /* =====================================================
+       CONFIRM PASSWORD
+    ===================================================== */
+
+    const confirmPassword =
+        document.getElementById("confirmPassword");
+
+    const passwordMatch =
+        document.getElementById("passwordMatch");
+
+
+    confirmPassword.addEventListener("input", () => {
+
+        if (confirmPassword.value === "") {
+
+            passwordMatch.textContent = "";
+
+            return;
+
+        }
+
+
+        if (
+            confirmPassword.value ===
+            password.value
+        ) {
+
+            passwordMatch.textContent =
+                "Passwords match";
+
+            passwordMatch.className =
+                "password-match success";
+
+        } else {
+
+            passwordMatch.textContent =
+                "Passwords do not match";
+
+            passwordMatch.className =
+                "password-match error";
+
+        }
+
+    });
+
+
+    /* =====================================================
+       SIGNUP FORM
+    ===================================================== */
+
+    const signupForm =
+        document.getElementById("signupForm");
+
+
+    signupForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+
+        if (
+            password.value !==
+            confirmPassword.value
+        ) {
+
+            alert(
+                "Please make sure both passwords match."
+            );
+
+            confirmPassword.focus();
+
+            return;
+
+        }
+
+
+        const terms =
+            document.getElementById("terms");
+
+
+        if (!terms.checked) {
+
+            alert(
+                "Please agree to the Terms of Service and Privacy Policy."
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * Demo signup action.
+         *
+         * Connect this form to your backend/database
+         * when implementing real authentication.
+         */
+
+        alert(
+            "Account created successfully! Welcome to EcoNest."
+        );
+
+
+        window.location.href =
+            "dashboard.html";
+
+    });
+
+</script>
+
+</body>
+</html>

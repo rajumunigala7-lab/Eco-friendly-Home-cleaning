@@ -4,106 +4,184 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pricing | EcoNest</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="pricing.css">
+    <title>EcoNest | Pricing</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Pricing CSS -->
+    <link rel="stylesheet" href="pricing.css">
 
 </head>
+
 
 <body>
 
 
 <!-- =====================================================
-     NAVBAR
+     HEADER
 ===================================================== -->
 
 <header class="navbar">
 
     <div class="container nav-container">
 
+
         <!-- LOGO -->
 
         <a href="index.html" class="logo">
 
-            <span class="logo-icon">
-                🌿
+            <span class="logo-mark">
+                <i class="fa-solid fa-leaf"></i>
             </span>
 
-            <span>
-                EcoNest
-            </span>
+            <span>EcoNest</span>
 
         </a>
 
 
+
         <!-- NAVIGATION -->
 
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="navMenu">
 
-            <a href="home.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-         <a href="Gallery.html">Gallery</a>
-        <a href="#pricing.html">Pricing</a>
-        <a href="#contact.html">contact</a>
-         <a href="dasboard.html">dashboard</a>
-       
+
+            <!-- HOME DROPDOWN -->
+
+            <div class="dropdown">
+
+                <button
+                    class="dropbtn"
+                    type="button"
+                >
+
+                    Home
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="dropdown-content">
+
+                    <a href="index.html">
+                        Home1
+                    </a>
+
+                    <a href="index.html">
+                          Home2
+                        
+                    </a>
+
+                
+                </div>
+
+            </div>
+
+
+            <a href="services.html">
+                Services
+            </a>
+
+
+            <a href="about.html">
+                About
+            </a>
+
+
+            <a href="Gallery.html">
+                Gallery
+            </a>
+
+
+            <a
+                href="Pricing.html"
+                class="active"
+            >
+                Pricing
+            </a>
+
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+
+            <a href="dasboard.html">
+                Dashboard
+            </a>
+
+
         </nav>
+
 
 
         <!-- NAV ACTIONS -->
 
         <div class="nav-actions">
 
+
             <!-- RTL -->
 
             <button
+                id="rtlToggle"
                 class="icon-button"
-                onclick="toggleRTL()"
-                aria-label="Toggle RTL">
-
-                ع
-
+                type="button"
+            >
+                RTL
             </button>
 
 
-            <!-- DARK MODE -->
+            <!-- DARK / LIGHT -->
 
             <button
+                id="themeToggle"
                 class="icon-button"
-                onclick="toggleTheme()"
-                aria-label="Toggle dark mode">
-
-                ☾
-
+                type="button"
+                aria-label="Toggle dark mode"
+            >
+                <i class="fa-solid fa-moon"></i>
             </button>
 
 
-            <a href="login.html"
-               class="btn btn-outline">
+            <!-- LOGIN -->
 
+            <a
+                href="login.html"
+                class="btn btn-outline"
+            >
                 Login
-
             </a>
 
 
-            <a href="signup.html"
-               class="btn btn-primary">
+            <!-- MOBILE MENU -->
 
-                Get Started
+            <button
+                id="mobileMenuButton"
+                class="mobile-menu-button"
+                type="button"
+                aria-label="Open navigation menu"
+            >
 
-            </a>
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
 
         </div>
 
@@ -121,48 +199,70 @@
 
     <div class="container">
 
-        <span class="eyebrow">
-            🌿 Simple & Transparent Pricing
-        </span>
+        <div class="pricing-hero-content">
 
 
-        <h1>
-            Choose the right plan
-            <span>for your home.</span>
-        </h1>
+            <span class="pricing-badge">
 
+                <i class="fa-solid fa-seedling"></i>
 
-        <p>
-            Flexible home service plans designed to make
-            professional and eco-conscious home care simple.
-        </p>
+                Simple & Sustainable Plans
 
-
-        <!-- BILLING TOGGLE -->
-
-        <div class="billing-wrapper">
-
-            <span class="billing-label active-label">
-                Monthly
             </span>
 
 
-            <label class="billing-switch">
 
-                <input
-                    type="checkbox"
-                    id="billingToggle"
-                    onchange="toggleBilling()">
+            <h1>
 
-                <span class="slider"></span>
+                Choose a Plan for a
 
-            </label>
+                <span>
+                    Greener Future
+                </span>
+
+            </h1>
 
 
-            <span class="billing-label">
-                Yearly
-                <small>Save 20%</small>
-            </span>
+
+            <p>
+
+                Flexible EcoNest plans designed to help homes,
+                families, and businesses reduce waste, save
+                resources, and create healthier sustainable spaces.
+
+            </p>
+
+
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="#plans"
+                    class="btn btn-primary"
+                >
+
+                    View Plans
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="btn btn-light-outline"
+                >
+
+                    Talk to Us
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+            </div>
+
 
         </div>
 
@@ -173,343 +273,596 @@
 
 
 <!-- =====================================================
-     PRICING CARDS
+     INTRODUCTION
 ===================================================== -->
 
-<section class="pricing-section">
+<section class="pricing-intro section">
 
     <div class="container">
+
+
+        <div class="section-heading">
+
+
+            <div class="eyebrow">
+                ECO-FRIENDLY INVESTMENT
+            </div>
+
+
+            <h2>
+                Plans That Grow With Your Lifestyle
+            </h2>
+
+
+            <p>
+
+                Whether you are beginning your sustainability
+                journey or already living green, EcoNest has
+                a plan designed around your needs.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- IMAGE CARDS -->
+
+        <div class="pricing-image-row">
+
+
+            <!-- CARD 1 -->
+
+            <div class="pricing-image-card">
+
+                <div class="pricing-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=85"
+                        alt="Green sustainable landscape"
+                    >
+
+                </div>
+
+
+                <div class="pricing-image-content">
+
+                    <span>
+                        For Beginners
+                    </span>
+
+                    <h3>
+                        Start Small
+                    </h3>
+
+                    <p>
+
+                        Simple tools and guidance to introduce
+                        sustainable habits into everyday life.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="pricing-image-card">
+
+                <div class="pricing-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85"
+                        alt="Modern sustainable home"
+                    >
+
+                </div>
+
+
+                <div class="pricing-image-content">
+
+                    <span>
+                        For Families
+                    </span>
+
+                    <h3>
+                        Live Greener
+                    </h3>
+
+                    <p>
+
+                        Smart solutions for families looking to
+                        reduce consumption and create an eco-friendly home.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="pricing-image-card">
+
+                <div class="pricing-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=85"
+                        alt="Sustainable business workspace"
+                    >
+
+                </div>
+
+
+                <div class="pricing-image-content">
+
+                    <span>
+                        For Businesses
+                    </span>
+
+                    <h3>
+                        Make an Impact
+                    </h3>
+
+                    <p>
+
+                        Advanced sustainability insights and
+                        support for environmentally responsible businesses.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRICING PLANS
+===================================================== -->
+
+<section
+    class="plans-section section-soft"
+    id="plans"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+
+            <div class="eyebrow">
+                OUR PLANS
+            </div>
+
+
+            <h2>
+                Find Your EcoNest Plan
+            </h2>
+
+
+            <p>
+
+                Start with the essentials and upgrade whenever
+                you are ready for more advanced sustainability features.
+
+            </p>
+
+
+        </div>
+
 
 
         <div class="pricing-grid">
 
 
-            <!-- =========================
-                 BASIC PLAN
-            ========================== -->
+            <!-- =================================================
+                 STARTER PLAN
+            ================================================= -->
 
             <div class="pricing-card">
 
-                <div class="plan-icon">
-                    🌱
-                </div>
 
+                <div class="plan-image">
 
-                <h2>
-                    Essential
-                </h2>
-
-
-                <p class="plan-description">
-                    Perfect for smaller homes and occasional
-                    professional cleaning.
-                </p>
-
-
-                <div class="price">
-
-                    <span class="currency">
-                        $
-                    </span>
-
-                    <span
-                        class="price-number"
-                        data-monthly="29"
-                        data-yearly="23">
-
-                        29
-
-                    </span>
-
-                    <span class="price-period">
-                        / month
-                    </span>
+                    <img
+                        src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=85"
+                        alt="Plants representing sustainability"
+                    >
 
                 </div>
 
 
-                <p class="billing-note">
-                    Billed monthly
-                </p>
+
+                <div class="pricing-card-body">
 
 
-                <a href="signup.html"
-                   class="plan-button">
-
-                    Choose Essential
-
-                </a>
+                    <span class="plan-label">
+                        ESSENTIAL
+                    </span>
 
 
-                <div class="plan-divider"></div>
+                    <h3>
+                        Green Starter
+                    </h3>
 
 
-                <h4>
-                    What's included
-                </h4>
+                    <p class="plan-description">
+
+                        Everything you need to begin your
+                        sustainable lifestyle.
+
+                    </p>
 
 
-                <ul class="feature-list">
 
-                    <li>
-                        <span>✓</span>
-                        1 home cleaning per month
-                    </li>
+                    <div class="price">
 
-                    <li>
-                        <span>✓</span>
-                        Eco-friendly products
-                    </li>
+                        <span class="currency">
+                            ₹
+                        </span>
 
-                    <li>
-                        <span>✓</span>
-                        Basic kitchen cleaning
-                    </li>
+                        <span class="amount">
+                            499
+                        </span>
 
-                    <li>
-                        <span>✓</span>
-                        Bathroom cleaning
-                    </li>
+                        <span class="period">
+                            /month
+                        </span>
 
-                    <li>
-                        <span>✓</span>
-                        Bedroom cleaning
-                    </li>
+                    </div>
 
-                    <li class="disabled">
-                        <span>×</span>
-                        Priority booking
-                    </li>
 
-                    <li class="disabled">
-                        <span>×</span>
-                        Deep cleaning
-                    </li>
 
-                </ul>
+                    <a
+                        href="contact.html"
+                        class="plan-button"
+                    >
+                        Choose Starter
+                    </a>
+
+
+
+                    <ul class="plan-features">
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Personal Eco Profile
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Basic Sustainability Tips
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Monthly Eco Report
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Waste Reduction Guide
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Email Support
+
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
 
             </div>
 
 
 
-            <!-- =========================
-                 POPULAR PLAN
-            ========================== -->
+            <!-- =================================================
+                 ECO HOME PLAN
+            ================================================= -->
 
             <div class="pricing-card popular">
 
-                <div class="popular-badge">
-                    Most Popular
+
+                <div class="popular-label">
+                    MOST POPULAR
                 </div>
 
 
-                <div class="plan-icon">
-                    🌿
-                </div>
+                <div class="plan-image">
 
-
-                <h2>
-                    Comfort
-                </h2>
-
-
-                <p class="plan-description">
-                    Our most popular plan for busy households
-                    that want consistent home care.
-                </p>
-
-
-                <div class="price">
-
-                    <span class="currency">
-                        $
-                    </span>
-
-                    <span
-                        class="price-number"
-                        data-monthly="59"
-                        data-yearly="47">
-
-                        59
-
-                    </span>
-
-                    <span class="price-period">
-                        / month
-                    </span>
+                    <img
+                        src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=800&q=85"
+                        alt="Eco-friendly modern interior"
+                    >
 
                 </div>
 
 
-                <p class="billing-note">
-                    Billed monthly
-                </p>
+
+                <div class="pricing-card-body">
 
 
-                <a href="signup.html"
-                   class="plan-button">
-
-                    Choose Comfort
-
-                </a>
+                    <span class="plan-label">
+                        RECOMMENDED
+                    </span>
 
 
-                <div class="plan-divider"></div>
+                    <h3>
+                        Eco Home
+                    </h3>
 
 
-                <h4>
-                    Everything in Essential, plus
-                </h4>
+                    <p class="plan-description">
+
+                        A complete sustainability toolkit
+                        for modern households.
+
+                    </p>
 
 
-                <ul class="feature-list">
 
-                    <li>
-                        <span>✓</span>
-                        2 home cleanings per month
-                    </li>
+                    <div class="price">
 
-                    <li>
-                        <span>✓</span>
-                        Deep kitchen cleaning
-                    </li>
+                        <span class="currency">
+                            ₹
+                        </span>
 
-                    <li>
-                        <span>✓</span>
-                        Deep bathroom cleaning
-                    </li>
+                        <span class="amount">
+                            999
+                        </span>
 
-                    <li>
-                        <span>✓</span>
-                        Priority booking
-                    </li>
+                        <span class="period">
+                            /month
+                        </span>
 
-                    <li>
-                        <span>✓</span>
-                        Interior appliance cleaning
-                    </li>
+                    </div>
 
-                    <li>
-                        <span>✓</span>
-                        Flexible scheduling
-                    </li>
 
-                    <li>
-                        <span>✓</span>
-                        Customer support
-                    </li>
 
-                </ul>
+                    <a
+                        href="contact.html"
+                        class="plan-button"
+                    >
+                        Choose Eco Home
+                    </a>
+
+
+
+                    <ul class="plan-features">
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Everything in Starter
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Smart Energy Tracking
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Water Usage Insights
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Personalized Eco Goals
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Priority Support
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Monthly Consultation
+
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
 
             </div>
 
 
 
-            <!-- =========================
-                 PREMIUM PLAN
-            ========================== -->
+            <!-- =================================================
+                 BUSINESS PLAN
+            ================================================= -->
 
             <div class="pricing-card">
 
-                <div class="plan-icon">
-                    ✨
-                </div>
 
+                <div class="plan-image">
 
-                <h2>
-                    Complete
-                </h2>
-
-
-                <p class="plan-description">
-                    Complete home care for families and larger
-                    homes that need extra attention.
-                </p>
-
-
-                <div class="price">
-
-                    <span class="currency">
-                        $
-                    </span>
-
-                    <span
-                        class="price-number"
-                        data-monthly="99"
-                        data-yearly="79">
-
-                        99
-
-                    </span>
-
-                    <span class="price-period">
-                        / month
-                    </span>
+                    <img
+                        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=85"
+                        alt="Sustainable business workspace"
+                    >
 
                 </div>
 
 
-                <p class="billing-note">
-                    Billed monthly
-                </p>
+
+                <div class="pricing-card-body">
 
 
-                <a href="signup.html"
-                   class="plan-button">
-
-                    Choose Complete
-
-                </a>
+                    <span class="plan-label">
+                        ADVANCED
+                    </span>
 
 
-                <div class="plan-divider"></div>
+                    <h3>
+                        Eco Business
+                    </h3>
 
 
-                <h4>
-                    Everything in Comfort, plus
-                </h4>
+                    <p class="plan-description">
+
+                        Powerful sustainability tools for
+                        growing organizations.
+
+                    </p>
 
 
-                <ul class="feature-list">
 
-                    <li>
-                        <span>✓</span>
-                        4 home cleanings per month
-                    </li>
+                    <div class="price">
 
-                    <li>
-                        <span>✓</span>
-                        Full deep cleaning
-                    </li>
+                        <span class="currency">
+                            ₹
+                        </span>
 
-                    <li>
-                        <span>✓</span>
-                        Window cleaning
-                    </li>
+                        <span class="amount">
+                            2499
+                        </span>
 
-                    <li>
-                        <span>✓</span>
-                        Laundry assistance
-                    </li>
+                        <span class="period">
+                            /month
+                        </span>
 
-                    <li>
-                        <span>✓</span>
-                        Organization support
-                    </li>
+                    </div>
 
-                    <li>
-                        <span>✓</span>
-                        Priority support
-                    </li>
 
-                    <li>
-                        <span>✓</span>
-                        Personalized home care
-                    </li>
 
-                </ul>
+                    <a
+                        href="contact.html"
+                        class="plan-button"
+                    >
+                        Choose Business
+                    </a>
+
+
+
+                    <ul class="plan-features">
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Everything in Eco Home
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Business Sustainability Dashboard
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Team Management
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Advanced Reports
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Carbon Impact Tracking
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Dedicated Support
+
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
 
             </div>
+
 
         </div>
 
@@ -520,45 +873,164 @@
 
 
 <!-- =====================================================
-     CUSTOM PLAN
+     BENEFITS
 ===================================================== -->
 
-<section class="custom-plan">
+<section class="benefits-section section">
 
     <div class="container">
 
-        <div class="custom-plan-card">
 
-            <div class="custom-icon">
-                🏡
+        <div class="benefits-wrapper">
+
+
+            <!-- IMAGE -->
+
+            <div class="benefits-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=85"
+                    alt="Green plants"
+                >
+
+
+                <div class="image-stat">
+
+                    <strong>
+                        30%
+                    </strong>
+
+                    <span>
+                        Average resource savings
+                    </span>
+
+                </div>
+
             </div>
 
 
-            <div class="custom-content">
 
-                <span class="eyebrow">
-                    Need something different?
-                </span>
+            <!-- CONTENT -->
+
+            <div class="benefits-content">
+
+
+                <div class="eyebrow">
+                    WHY ECONEST
+                </div>
+
 
                 <h2>
-                    Build a plan for your home.
+                    More Than a Subscription
                 </h2>
+
 
                 <p>
-                    Every home is different. Tell us what you
-                    need and we'll help create a personalized
-                    service plan.
+
+                    EcoNest helps turn sustainability from a goal
+                    into an everyday habit. Our plans combine useful
+                    insights, practical guidance, and measurable results.
+
                 </p>
+
+
+
+                <div class="benefit-list">
+
+
+                    <!-- BENEFIT 1 -->
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                Track Your Progress
+                            </h4>
+
+                            <p>
+
+                                Understand how your everyday decisions
+                                affect your environmental footprint.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BENEFIT 2 -->
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                Build Better Habits
+                            </h4>
+
+                            <p>
+
+                                Get practical recommendations that
+                                fit naturally into your lifestyle.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BENEFIT 3 -->
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon">
+
+                            <i class="fa-solid fa-earth-americas"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                Create Real Impact
+                            </h4>
+
+                            <p>
+
+                                Small changes become meaningful
+                                environmental improvements over time.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
 
             </div>
 
-
-            <a href="contact.html"
-               class="btn btn-primary">
-
-                Contact Us →
-
-            </a>
 
         </div>
 
@@ -569,262 +1041,208 @@
 
 
 <!-- =====================================================
-     FEATURES COMPARISON
+     COMPARISON
 ===================================================== -->
 
-<section class="comparison-section">
+<section class="comparison-section section-soft">
 
     <div class="container">
+
 
         <div class="section-heading">
 
-            <span class="eyebrow">
-                📋 Compare Plans
-            </span>
+
+            <div class="eyebrow">
+                PLAN COMPARISON
+            </div>
+
 
             <h2>
-                Everything you need,
-                at a glance.
+                Compare EcoNest Plans
             </h2>
+
 
             <p>
-                Compare our plans and find the one that
-                works best for your home.
+
+                Choose the features that matter most
+                for your sustainability journey.
+
             </p>
 
-        </div>
-
-
-        <div class="comparison-table">
-
-            <div class="comparison-row table-header">
-
-                <div>
-                    Feature
-                </div>
-
-                <div>
-                    Essential
-                </div>
-
-                <div>
-                    Comfort
-                </div>
-
-                <div>
-                    Complete
-                </div>
-
-            </div>
-
-
-            <div class="comparison-row">
-
-                <div>
-                    Monthly cleaning
-                </div>
-
-                <div>
-                    1
-                </div>
-
-                <div>
-                    2
-                </div>
-
-                <div>
-                    4
-                </div>
-
-            </div>
-
-
-            <div class="comparison-row">
-
-                <div>
-                    Eco-friendly products
-                </div>
-
-                <div>✓</div>
-
-                <div>✓</div>
-
-                <div>✓</div>
-
-            </div>
-
-
-            <div class="comparison-row">
-
-                <div>
-                    Deep cleaning
-                </div>
-
-                <div>—</div>
-
-                <div>✓</div>
-
-                <div>✓</div>
-
-            </div>
-
-
-            <div class="comparison-row">
-
-                <div>
-                    Priority booking
-                </div>
-
-                <div>—</div>
-
-                <div>✓</div>
-
-                <div>✓</div>
-
-            </div>
-
-
-            <div class="comparison-row">
-
-                <div>
-                    Window cleaning
-                </div>
-
-                <div>—</div>
-
-                <div>—</div>
-
-                <div>✓</div>
-
-            </div>
-
-
-            <div class="comparison-row">
-
-                <div>
-                    Laundry assistance
-                </div>
-
-                <div>—</div>
-
-                <div>—</div>
-
-                <div>✓</div>
-
-            </div>
-
-
-            <div class="comparison-row">
-
-                <div>
-                    Priority support
-                </div>
-
-                <div>—</div>
-
-                <div>—</div>
-
-                <div>✓</div>
-
-            </div>
 
         </div>
 
-    </div>
-
-</section>
 
 
-
-<!-- =====================================================
-     HOW IT WORKS
-===================================================== -->
-
-<section class="steps-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="eyebrow">
-                ✨ Simple Process
-            </span>
-
-            <h2>
-                Start enjoying a cleaner home
-                in three steps.
-            </h2>
-
-        </div>
+        <div class="comparison-table-wrapper">
 
 
-        <div class="steps-grid">
+            <table class="comparison-table">
 
 
-            <div class="step-card">
+                <thead>
 
-                <div class="step-number">
-                    01
-                </div>
+                    <tr>
 
-                <div class="step-icon">
-                    📋
-                </div>
+                        <th>
+                            Features
+                        </th>
 
-                <h3>
-                    Choose a Plan
-                </h3>
+                        <th>
+                            Green Starter
+                        </th>
 
-                <p>
-                    Select the plan that fits your home
-                    and lifestyle.
-                </p>
+                        <th class="featured-column">
+                            Eco Home
+                        </th>
 
-            </div>
+                        <th>
+                            Eco Business
+                        </th>
 
+                    </tr>
 
-            <div class="step-card">
-
-                <div class="step-number">
-                    02
-                </div>
-
-                <div class="step-icon">
-                    📅
-                </div>
-
-                <h3>
-                    Schedule
-                </h3>
-
-                <p>
-                    Choose a convenient date and time
-                    for your service.
-                </p>
-
-            </div>
+                </thead>
 
 
-            <div class="step-card">
 
-                <div class="step-number">
-                    03
-                </div>
+                <tbody>
 
-                <div class="step-icon">
-                    🌿
-                </div>
 
-                <h3>
-                    Relax
-                </h3>
+                    <tr>
 
-                <p>
-                    Our professionals take care of your
-                    home while you enjoy your time.
-                </p>
+                        <td>
+                            Eco Profile
+                        </td>
 
-            </div>
+                        <td>
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                        <td class="featured-column">
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+                            Monthly Reports
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                        <td class="featured-column">
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+                            Energy Tracking
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-minus"></i>
+                        </td>
+
+                        <td class="featured-column">
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+                            Water Insights
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-minus"></i>
+                        </td>
+
+                        <td class="featured-column">
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+                            Carbon Tracking
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-minus"></i>
+                        </td>
+
+                        <td class="featured-column">
+                            <i class="fa-solid fa-minus"></i>
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+                            Dedicated Support
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-minus"></i>
+                        </td>
+
+                        <td class="featured-column">
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                        <td>
+                            <i class="fa-solid fa-check"></i>
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
 
         </div>
 
@@ -835,156 +1253,74 @@
 
 
 <!-- =====================================================
-     FAQ
-===================================================== -->
-
-<section class="faq-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="eyebrow">
-                ❓ Pricing FAQ
-            </span>
-
-            <h2>
-                Questions about pricing?
-            </h2>
-
-        </div>
-
-
-        <div class="faq-list">
-
-
-            <details>
-
-                <summary>
-                    Can I cancel my plan anytime?
-                    <span>+</span>
-                </summary>
-
-                <p>
-                    Yes. You can cancel your EcoNest plan
-                    whenever you need. Your current service
-                    period will remain active until it ends.
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    Can I change my plan later?
-                    <span>+</span>
-                </summary>
-
-                <p>
-                    Absolutely. You can upgrade or downgrade
-                    your plan based on your changing needs.
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    Do yearly plans save money?
-                    <span>+</span>
-                </summary>
-
-                <p>
-                    Yes. Choosing yearly billing gives you
-                    a 20% discount compared with monthly billing.
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    Are cleaning products included?
-                    <span>+</span>
-                </summary>
-
-                <p>
-                    Yes. Standard cleaning products are included
-                    with all EcoNest plans.
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    Can I request additional services?
-                    <span>+</span>
-                </summary>
-
-                <p>
-                    Yes. Additional services may be available
-                    depending on your location and requirements.
-                    Contact our team for personalized options.
-                </p>
-
-            </details>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CTA
+     FINAL CTA
 ===================================================== -->
 
 <section class="pricing-cta">
 
     <div class="container">
 
-        <div class="cta-content">
 
-            <span class="eyebrow">
-                🌱 Better home. Better living.
-            </span>
-
-            <h2>
-                Ready to make your home
-                <span>feel better?</span>
-            </h2>
-
-            <p>
-                Choose a plan today and let EcoNest take
-                care of the rest.
-            </p>
+        <div class="cta-box">
 
 
-            <div class="cta-buttons">
+            <div class="cta-image">
 
-                <a href="signup.html"
-                   class="btn btn-light btn-large">
-
-                    Get Started →
-
-                </a>
-
-
-                <a href="services.html"
-                   class="btn btn-outline-light btn-large">
-
-                    View Services
-
-                </a>
+                <img
+                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=85"
+                    alt="Green forest"
+                >
 
             </div>
+
+
+
+            <div class="cta-content">
+
+
+                <span class="cta-eyebrow">
+                    READY TO GO GREEN?
+                </span>
+
+
+                <h2>
+                    Start Your Sustainable Journey Today
+                </h2>
+
+
+                <p>
+
+                    Choose an EcoNest plan and take the next step
+                    toward a healthier home and a healthier planet.
+
+                </p>
+
+
+
+                <div class="cta-buttons">
+
+
+                    <a
+                        href="#plans"
+                        class="btn btn-white"
+                    >
+                        View Plans
+                    </a>
+
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-cta-outline"
+                    >
+                        Contact Us
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
 
         </div>
 
@@ -998,189 +1334,287 @@
      FOOTER
 ===================================================== -->
 
-<footer>
+<footer class="footer">
 
-    <div class="container footer-grid">
-
-
-        <!-- BRAND -->
-
-        <div class="footer-brand">
-
-            <a href="index.html"
-               class="logo">
-
-                <span class="logo-icon">
-                    🌿
-                </span>
-
-                <span>
-                    EcoNest
-                </span>
-
-            </a>
+    <div class="container">
 
 
-            <p>
-                Better home services for better everyday
-                living, with thoughtful choices for people
-                and the planet.
-            </p>
+        <div class="footer-grid">
 
 
-            <div class="social-links">
+            <!-- BRAND -->
 
-                <a href="#">
-                    f
+            <div class="footer-brand">
+
+
+                <a
+                    href="index.html"
+                    class="footer-logo"
+                >
+
+                    <span class="logo-mark">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </span>
+
+                    <span>
+                        EcoNest
+                    </span>
+
                 </a>
 
-                <a href="#">
-                    ◎
-                </a>
 
-                <a href="#">
-                    𝕏
-                </a>
+                <p>
 
-                <a href="#">
-                    in
-                </a>
+                    Building a greener future through smarter,
+                    simpler, and more sustainable everyday choices.
+
+                </p>
+
+
+
+                <div class="social-links">
+
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Twitter"
+                    >
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+
+                </div>
 
             </div>
 
-        </div>
 
 
-        <!-- COMPANY -->
-
-        <div class="footer-column">
-
-            <h4>
-                Company
-            </h4>
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="services.html">
-                Services
-            </a>
-
-            <a href="pricing.html">
-                Pricing
-            </a>
-
-            <a href="#">
-                Reviews
-            </a>
-
-        </div>
-
-
-        <!-- SERVICES -->
-
-        <div class="footer-column">
-
-            <h4>
-                Services
-            </h4>
-
-            <a href="services.html">
-                Home Cleaning
-            </a>
-
-            <a href="services.html">
-                Deep Cleaning
-            </a>
-
-            <a href="services.html">
-                Eco Cleaning
-            </a>
-
-            <a href="services.html">
-                Home Care
-            </a>
-
-        </div>
-
-
-        <!-- SUPPORT -->
-
-        <div class="footer-column">
-
-            <h4>
-                Support
-            </h4>
-
-            <a href="contact.html">
-                Contact Us
-            </a>
-
-            <a href="#">
-                Privacy Policy
-            </a>
-
-            <a href="#">
-                Terms & Conditions
-            </a>
-
-            <a href="#">
-                Help Center
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- FOOTER BOTTOM -->
-
-    <div class="footer-bottom">
-
-        <div class="container footer-bottom-inner">
-
-            <p>
-                © 2026 EcoNest. All rights reserved.
-            </p>
-
+            <!-- QUICK LINKS -->
 
             <div>
 
+                <h3 class="footer-title">
+                    Quick Links
+                </h3>
+
+
+                <ul class="footer-links">
+
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="services.html">
+                            Services
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="Gallery.html">
+                            Gallery
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="Pricing.html">
+                            Pricing
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- USEFUL LINKS -->
+
+            <div>
+
+                <h3 class="footer-title">
+                    Useful Links
+                </h3>
+
+
+                <ul class="footer-links">
+
+
+                    <li>
+                        <a href="dasboard.html">
+                            Dashboard
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="contact.html">
+                            Contact Us
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            FAQs
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            Support
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div>
+
+                <h3 class="footer-title">
+                    Contact Us
+                </h3>
+
+
+                <ul class="footer-contact">
+
+
+                    <li>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <span>
+                            Hyderabad, Telangana, India
+                        </span>
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <span>
+                            +91 98765 43210
+                        </span>
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <span>
+                            hello@econest.com
+                        </span>
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <span>
+                            Mon - Sat: 9:00 AM - 6:00 PM
+                        </span>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+
+            <p>
+                © 2026 EcoNest. All Rights Reserved.
+            </p>
+
+
+            <div class="footer-bottom-links">
+
                 <a href="#">
-                    Privacy
+                    Privacy Policy
                 </a>
 
                 <a href="#">
-                    Terms
-                </a>
-
-                <a href="#">
-                    Cookies
+                    Terms & Conditions
                 </a>
 
             </div>
 
+
         </div>
+
 
     </div>
 
 </footer>
-
-
-
-<!-- =====================================================
-     FLOATING CONTACT
-===================================================== -->
-
-<a
-    href="mailto:hello@econest.com"
-    class="floating-contact"
-    aria-label="Contact EcoNest">
-
-    ✉
-
-</a>
 
 
 
@@ -1191,216 +1625,436 @@
 <script>
 
 
-/* =========================================
-   BILLING TOGGLE
-========================================= */
+/* =====================================================
+   PAGE LOAD
+===================================================== */
 
-function toggleBilling() {
-
-    const toggle =
-        document.getElementById("billingToggle");
-
-    const prices =
-        document.querySelectorAll(".price-number");
-
-    const notes =
-        document.querySelectorAll(".billing-note");
-
-    const labels =
-        document.querySelectorAll(".billing-label");
+document.addEventListener("DOMContentLoaded", function () {
 
 
-    if (toggle.checked) {
+    /* =================================================
+       THEME TOGGLE
+    ================================================= */
 
-        prices.forEach(function(price) {
-
-            price.textContent =
-                price.dataset.yearly;
-
-        });
+    const themeToggle =
+        document.getElementById("themeToggle");
 
 
-        notes.forEach(function(note) {
-
-            note.textContent =
-                "Billed yearly";
-
-        });
+    const savedTheme =
+        localStorage.getItem("econest-theme");
 
 
-        labels[0].classList.remove(
-            "active-label"
-        );
+    if (savedTheme === "dark") {
 
-        labels[1].classList.add(
-            "active-label"
-        );
+        document.body.classList.add("dark-mode");
 
     }
 
-    else {
 
-        prices.forEach(function(price) {
+    function updateThemeIcon() {
 
-            price.textContent =
-                price.dataset.monthly;
+        if (
+            document.body.classList.contains("dark-mode")
+        ) {
 
-        });
+            themeToggle.innerHTML =
+                '<i class="fa-solid fa-sun"></i>';
 
+            themeToggle.setAttribute(
+                "aria-label",
+                "Switch to light mode"
+            );
 
-        notes.forEach(function(note) {
+        } else {
 
-            note.textContent =
-                "Billed monthly";
+            themeToggle.innerHTML =
+                '<i class="fa-solid fa-moon"></i>';
 
-        });
+            themeToggle.setAttribute(
+                "aria-label",
+                "Switch to dark mode"
+            );
 
-
-        labels[1].classList.remove(
-            "active-label"
-        );
-
-        labels[0].classList.add(
-            "active-label"
-        );
+        }
 
     }
-
-}
-
-
-
-/* =========================================
-   DARK / LIGHT MODE
-========================================= */
-
-function toggleTheme() {
-
-    document.body.classList.toggle("dark");
-
-
-    const isDark =
-        document.body.classList.contains("dark");
-
-
-    localStorage.setItem(
-        "econest-theme",
-        isDark ? "dark" : "light"
-    );
 
 
     updateThemeIcon();
 
-}
+
+    themeToggle.addEventListener(
+        "click",
+        function () {
 
 
-function updateThemeIcon() {
+            document.body.classList.toggle(
+                "dark-mode"
+            );
 
-    const button =
+
+            const isDark =
+                document.body.classList.contains(
+                    "dark-mode"
+                );
+
+
+            localStorage.setItem(
+                "econest-theme",
+                isDark ? "dark" : "light"
+            );
+
+
+            updateThemeIcon();
+
+
+        }
+    );
+
+
+
+    /* =================================================
+       RTL TOGGLE
+    ================================================= */
+
+    const rtlToggle =
+        document.getElementById("rtlToggle");
+
+
+    const savedDirection =
+        localStorage.getItem(
+            "econest-direction"
+        );
+
+
+    if (savedDirection === "rtl") {
+
+        document.documentElement.dir = "rtl";
+
+        document.documentElement.lang = "ar";
+
+    } else {
+
+        document.documentElement.dir = "ltr";
+
+        document.documentElement.lang = "en";
+
+    }
+
+
+
+    rtlToggle.addEventListener(
+        "click",
+        function () {
+
+
+            const isRTL =
+                document.documentElement.dir === "rtl";
+
+
+            if (isRTL) {
+
+
+                document.documentElement.dir = "ltr";
+
+                document.documentElement.lang = "en";
+
+
+                localStorage.setItem(
+                    "econest-direction",
+                    "ltr"
+                );
+
+
+            } else {
+
+
+                document.documentElement.dir = "rtl";
+
+                document.documentElement.lang = "ar";
+
+
+                localStorage.setItem(
+                    "econest-direction",
+                    "rtl"
+                );
+
+
+            }
+
+
+        }
+    );
+
+
+
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
+
+    const mobileMenuButton =
+        document.getElementById(
+            "mobileMenuButton"
+        );
+
+
+    const navMenu =
+        document.getElementById(
+            "navMenu"
+        );
+
+
+    mobileMenuButton.addEventListener(
+        "click",
+        function () {
+
+
+            navMenu.classList.toggle(
+                "show"
+            );
+
+
+            const icon =
+                mobileMenuButton.querySelector(
+                    "i"
+                );
+
+
+            if (
+                navMenu.classList.contains(
+                    "show"
+                )
+            ) {
+
+                icon.classList.remove(
+                    "fa-bars"
+                );
+
+                icon.classList.add(
+                    "fa-xmark"
+                );
+
+            } else {
+
+                icon.classList.remove(
+                    "fa-xmark"
+                );
+
+                icon.classList.add(
+                    "fa-bars"
+                );
+
+            }
+
+
+        }
+    );
+
+
+
+    /* =================================================
+       MOBILE HOME DROPDOWN
+    ================================================= */
+
+    const dropdown =
         document.querySelector(
-            '[aria-label="Toggle dark mode"], [aria-label="Switch to light mode"]'
+            ".dropdown"
         );
 
 
-    if (!button) return;
-
-
-    if (
-        document.body.classList.contains("dark")
-    ) {
-
-        button.textContent = "☀";
-
-        button.setAttribute(
-            "aria-label",
-            "Switch to light mode"
+    const dropButton =
+        dropdown.querySelector(
+            ".dropbtn"
         );
 
-    }
 
-    else {
+    dropButton.addEventListener(
+        "click",
+        function (event) {
 
-        button.textContent = "☾";
 
-        button.setAttribute(
-            "aria-label",
-            "Switch to dark mode"
+            if (window.innerWidth <= 850) {
+
+                event.preventDefault();
+
+                dropdown.classList.toggle(
+                    "open"
+                );
+
+            }
+
+
+        }
+    );
+
+
+
+    /* =================================================
+       CLOSE MENU AFTER LINK CLICK
+    ================================================= */
+
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-menu a"
         );
 
-    }
 
-}
-
-
-/* Load saved theme */
-
-if (
-    localStorage.getItem("econest-theme")
-    === "dark"
-) {
-
-    document.body.classList.add("dark");
-
-}
+    navLinks.forEach(function (link) {
 
 
-updateThemeIcon();
+        link.addEventListener(
+            "click",
+            function () {
+
+
+                if (window.innerWidth <= 850) {
+
+
+                    navMenu.classList.remove(
+                        "show"
+                    );
+
+
+                    dropdown.classList.remove(
+                        "open"
+                    );
+
+
+                    const icon =
+                        mobileMenuButton.querySelector(
+                            "i"
+                        );
+
+
+                    icon.classList.remove(
+                        "fa-xmark"
+                    );
+
+
+                    icon.classList.add(
+                        "fa-bars"
+                    );
+
+
+                }
+
+
+            }
+        );
+
+
+    });
 
 
 
-/* =========================================
-   RTL TOGGLE
-========================================= */
+    /* =================================================
+       CLOSE MENU OUTSIDE
+    ================================================= */
 
-function toggleRTL() {
-
-    const html =
-        document.documentElement;
-
-
-    const currentDirection =
-        html.getAttribute("dir");
+    document.addEventListener(
+        "click",
+        function (event) {
 
 
-    const newDirection =
-        currentDirection === "rtl"
-            ? "ltr"
-            : "rtl";
+            const clickedInside =
+                navMenu.contains(
+                    event.target
+                ) ||
+                mobileMenuButton.contains(
+                    event.target
+                );
 
 
-    html.setAttribute(
-        "dir",
-        newDirection
+            if (
+                !clickedInside &&
+                window.innerWidth <= 850
+            ) {
+
+
+                navMenu.classList.remove(
+                    "show"
+                );
+
+
+                dropdown.classList.remove(
+                    "open"
+                );
+
+
+                const icon =
+                    mobileMenuButton.querySelector(
+                        "i"
+                    );
+
+
+                icon.classList.remove(
+                    "fa-xmark"
+                );
+
+
+                icon.classList.add(
+                    "fa-bars"
+                );
+
+
+            }
+
+
+        }
     );
 
 
-    localStorage.setItem(
-        "econest-direction",
-        newDirection
+
+    /* =================================================
+       ESCAPE KEY
+    ================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+
+            if (event.key === "Escape") {
+
+
+                navMenu.classList.remove(
+                    "show"
+                );
+
+
+                dropdown.classList.remove(
+                    "open"
+                );
+
+
+                const icon =
+                    mobileMenuButton.querySelector(
+                        "i"
+                    );
+
+
+                icon.classList.remove(
+                    "fa-xmark"
+                );
+
+
+                icon.classList.add(
+                    "fa-bars"
+                );
+
+
+            }
+
+
+        }
     );
 
-}
 
-
-/* Load saved direction */
-
-const savedDirection =
-    localStorage.getItem(
-        "econest-direction"
-    );
-
-
-if (savedDirection) {
-
-    document.documentElement.setAttribute(
-        "dir",
-        savedDirection
-    );
-
-}
+});
 
 </script>
 
 
 </body>
+
 </html>

@@ -1,0 +1,994 @@
+/* =====================================================
+   ECONEST FOOTER
+   Green + Blue Theme
+   Light / Dark Mode
+   RTL / LTR
+   Responsive
+===================================================== */
+
+
+/* =====================================================
+   COLOR VARIABLES
+===================================================== */
+
+:root {
+
+    /* PRIMARY - GREEN */
+    --primary: #16a34a;
+    --primary-light: #22c55e;
+    --primary-dark: #15803d;
+
+    /* SECONDARY - BLUE */
+    --secondary: #2563eb;
+    --secondary-light: #60a5fa;
+    --secondary-dark: #1d4ed8;
+
+    /* FOOTER */
+    --footer-bg: #071a16;
+    --footer-bg-light: #0d241e;
+
+    --footer-text: #ffffff;
+    --footer-muted: #a7b8b0;
+
+    --footer-border: #29453b;
+
+    --white: #ffffff;
+
+    /* EFFECTS */
+    --footer-shadow: 0 10px 35px rgba(0, 0, 0, 0.20);
+
+    --transition: 0.3s ease;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+
+    --footer-bg: #030f0b;
+    --footer-bg-light: #071a14;
+
+    --footer-text: #f8fafc;
+    --footer-muted: #9fb3aa;
+
+    --footer-border: #1d3930;
+
+    --footer-shadow: 0 10px 40px rgba(0, 0, 0, 0.40);
+}
+
+
+/* =====================================================
+   BASIC RESET FOR FOOTER
+===================================================== */
+
+.econest-footer,
+.econest-footer * {
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAIN FOOTER
+===================================================== */
+
+.econest-footer {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 70px;
+
+    background: var(--footer-bg);
+
+    color: var(--footer-text);
+
+    overflow: hidden;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+
+/* =====================================================
+   TOP COLOR LINE
+===================================================== */
+
+.econest-footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-light),
+        var(--secondary),
+        var(--secondary-light)
+    );
+}
+
+
+/* =====================================================
+   FOOTER CONTAINER
+===================================================== */
+
+.econest-footer .container {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   FOOTER GRID
+===================================================== */
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1.25fr;
+
+    gap: 50px;
+
+    padding: 75px 0 55px;
+}
+
+
+/* =====================================================
+   FOOTER BRAND
+===================================================== */
+
+.footer-brand {
+
+    min-width: 0;
+}
+
+
+/* =====================================================
+   FOOTER LOGO
+===================================================== */
+
+.footer-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+
+    text-decoration: none;
+}
+
+
+/* LOGO MARK */
+
+.footer-logo-mark {
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+/* LOGO IMAGE */
+
+.footer-logo-img {
+
+    width: 46px;
+    height: 46px;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* ECO */
+
+.footer-logo-eco {
+
+    color: var(--primary-light);
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* NEST */
+
+.footer-logo-nest {
+
+    color: var(--secondary-light);
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    margin-left: -7px;
+}
+
+
+/* =====================================================
+   BRAND DESCRIPTION
+===================================================== */
+
+.footer-brand > p {
+
+    max-width: 330px;
+
+    margin: 0;
+
+    color: var(--footer-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   SOCIAL MEDIA
+===================================================== */
+
+.footer-social {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 26px;
+}
+
+
+/* SOCIAL BUTTON */
+
+.footer-social a {
+
+    width: 41px;
+    height: 41px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--footer-border);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--footer-text);
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+/* SOCIAL HOVER */
+
+.footer-social a:hover {
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    color: var(--white);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(22, 163, 74, 0.28);
+}
+
+
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
+
+.footer-column {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =====================================================
+   COLUMN TITLE
+===================================================== */
+
+.footer-column h3 {
+
+    position: relative;
+
+    margin: 0 0 25px;
+
+    padding: 0;
+
+    color: var(--footer-text);
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* TITLE UNDERLINE */
+
+.footer-column h3::after {
+
+    content: "";
+
+    display: block;
+
+    width: 42px;
+    height: 3px;
+
+    margin-top: 9px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+}
+
+
+/* =====================================================
+   FOOTER LINKS
+===================================================== */
+
+.footer-column > a {
+
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 15px;
+
+    color: var(--footer-muted);
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    text-decoration: none;
+
+    transition:
+        color var(--transition),
+        padding var(--transition);
+}
+
+
+/* LAST LINK */
+
+.footer-column > a:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   LINK ICONS
+===================================================== */
+
+.footer-column > a > i {
+
+    width: 16px;
+
+    flex-shrink: 0;
+
+    color: var(--secondary);
+
+    font-size: 11px;
+
+    text-align: center;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+
+/* =====================================================
+   LINK HOVER
+===================================================== */
+
+.footer-column > a:hover {
+
+    color: var(--primary-light);
+
+    padding-left: 5px;
+}
+
+
+.footer-column > a:hover > i {
+
+    color: var(--secondary-light);
+
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   CONTACT COLUMN
+===================================================== */
+
+.footer-contact > a {
+
+    align-items: flex-start;
+
+    margin-bottom: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* CONTACT ICON */
+
+.footer-contact > a > i {
+
+    width: 18px;
+
+    margin-top: 4px;
+
+    color: var(--primary-light);
+
+    font-size: 14px;
+}
+
+
+/* CONTACT HOVER */
+
+.footer-contact > a:hover > i {
+
+    color: var(--secondary-light);
+
+    transform: scale(1.1);
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-top: 1px solid var(--footer-border);
+}
+
+
+/* =====================================================
+   COPYRIGHT
+===================================================== */
+
+.footer-bottom p {
+
+    margin: 0;
+
+    color: var(--footer-muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* BRAND IN COPYRIGHT */
+
+.footer-bottom p span {
+
+    color: var(--primary-light);
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   BOTTOM LINKS
+===================================================== */
+
+.footer-bottom-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+.footer-bottom-links a {
+
+    color: var(--footer-muted);
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: color var(--transition);
+}
+
+
+.footer-bottom-links a:hover {
+
+    color: var(--secondary-light);
+}
+
+
+/* =====================================================
+   FOCUS ACCESSIBILITY
+===================================================== */
+
+.econest-footer a:focus-visible {
+
+    outline: 2px solid var(--secondary-light);
+
+    outline-offset: 4px;
+
+    border-radius: 4px;
+}
+
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .econest-footer {
+
+    direction: rtl;
+
+    text-align: right;
+}
+
+
+/* GRID */
+
+html[dir="rtl"] .footer-grid {
+
+    direction: rtl;
+}
+
+
+/* LOGO */
+
+html[dir="rtl"] .footer-logo {
+
+    flex-direction: row;
+}
+
+
+/* LOGO TEXT */
+
+html[dir="rtl"] .footer-logo-nest {
+
+    margin-left: 0;
+
+    margin-right: -7px;
+}
+
+
+/* TITLE UNDERLINE */
+
+html[dir="rtl"] .footer-column h3::after {
+
+    margin-right: 0;
+
+    margin-left: auto;
+}
+
+
+/* FOOTER LINKS */
+
+html[dir="rtl"] .footer-column > a:hover {
+
+    padding-left: 0;
+
+    padding-right: 5px;
+}
+
+
+html[dir="rtl"] .footer-column > a:hover > i {
+
+    transform: translateX(-4px);
+}
+
+
+/* SOCIAL */
+
+html[dir="rtl"] .footer-social {
+
+    direction: rtl;
+}
+
+
+/* BOTTOM */
+
+html[dir="rtl"] .footer-bottom {
+
+    direction: rtl;
+}
+
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .footer-grid {
+
+        grid-template-columns:
+            1.3fr
+            1fr
+            1fr;
+
+        gap: 40px;
+    }
+
+
+    .footer-brand {
+
+        grid-column: span 3;
+    }
+
+
+    .footer-brand > p {
+
+        max-width: 560px;
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .econest-footer {
+
+        margin-top: 55px;
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 42px 35px;
+
+        padding: 60px 0 45px;
+    }
+
+
+    .footer-brand {
+
+        grid-column: span 2;
+    }
+
+
+    .footer-column h3 {
+
+        font-size: 17px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .footer-column > a {
+
+        font-size: 13px;
+
+        margin-bottom: 13px;
+    }
+
+
+    .footer-bottom {
+
+        min-height: auto;
+
+        padding: 22px 0;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .econest-footer {
+
+        margin-top: 45px;
+    }
+
+
+    .econest-footer .container {
+
+        width: 88%;
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 36px;
+
+        padding: 52px 0 42px;
+    }
+
+
+    .footer-brand {
+
+        grid-column: auto;
+    }
+
+
+    /* LOGO */
+
+    .footer-logo-mark {
+
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .footer-logo-img {
+
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .footer-logo-eco,
+    .footer-logo-nest {
+
+        font-size: 23px;
+    }
+
+
+    /* DESCRIPTION */
+
+    .footer-brand > p {
+
+        max-width: 100%;
+
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+
+    /* SOCIAL */
+
+    .footer-social {
+
+        margin-top: 21px;
+
+        gap: 9px;
+    }
+
+
+    .footer-social a {
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 13px;
+    }
+
+
+    /* TITLES */
+
+    .footer-column h3 {
+
+        font-size: 17px;
+
+        margin-bottom: 18px;
+    }
+
+
+    /* LINKS */
+
+    .footer-column > a {
+
+        font-size: 13px;
+
+        margin-bottom: 12px;
+    }
+
+
+    /* CONTACT */
+
+    .footer-contact > a {
+
+        font-size: 13px;
+
+        margin-bottom: 15px;
+    }
+
+
+    /* BOTTOM */
+
+    .footer-bottom {
+
+        padding: 20px 0;
+
+        gap: 12px;
+    }
+
+
+    .footer-bottom p {
+
+        font-size: 12px;
+    }
+
+
+    .footer-bottom-links {
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .footer-bottom-links a {
+
+        font-size: 12px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .econest-footer .container {
+
+        width: 90%;
+    }
+
+
+    .footer-grid {
+
+        padding-top: 42px;
+
+        padding-bottom: 35px;
+    }
+
+
+    .footer-logo-mark {
+
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .footer-logo-img {
+
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .footer-logo-eco,
+    .footer-logo-nest {
+
+        font-size: 21px;
+    }
+
+
+    .footer-brand > p {
+
+        font-size: 12px;
+    }
+
+
+    .footer-column h3 {
+
+        font-size: 16px;
+    }
+
+
+    .footer-column > a,
+    .footer-contact > a {
+
+        font-size: 12px;
+    }
+
+
+    .footer-social a {
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 12px;
+    }
+
+
+    .footer-bottom p,
+    .footer-bottom-links a {
+
+        font-size: 11px;
+    }
+}

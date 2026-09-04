@@ -1,942 +1,983 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact Us | EcoNest</title>
+    <title>Contact Us | EcoNest</title>
 
-  <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="contact.css">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet"
-  >
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-  <!-- ==================================================
-       HEADER
-  =================================================== -->
-
-  <header class="navbar">
-
+<!-- ================= HEADER ================= -->
+<header class="navbar">
     <div class="container nav-container">
 
-      <!-- Logo -->
-      <a href="index.html" class="logo">
-        <span class="logo-icon">🌿</span>
-        <span>EcoNest</span>
-      </a>
-
-
-      <!-- Navigation -->
-      <nav class="nav-menu">
-
-        <a href="home.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-         <a href="Gallery.html">Gallery</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="contact.html">contact</a>
-         <a href="dasboard.html">dashboard</a>
-       
-
-      </nav>
-
-
-      <!-- Navigation Actions -->
-      <div class="nav-actions">
-
-        <!-- RTL -->
-        <button
-          class="icon-button"
-          onclick="toggleRTL()"
-          aria-label="Toggle RTL"
-        >
-          ع
-        </button>
-
-
-        <!-- Theme -->
-        <button
-          class="icon-button theme-button"
-          onclick="toggleTheme()"
-          aria-label="Toggle dark mode"
-        >
-          ☾
-        </button>
-
-
-        <!-- Login -->
-        <a
-          href="login.html"
-          class="btn btn-outline nav-login"
-        >
-          Login
+        <a href="index.html" class="logo">
+            <span class="logo-mark">
+                <i class="fa-solid fa-leaf"></i>
+            </span>
+            <span>EcoNest</span>
         </a>
 
+        <nav class="nav-menu" id="navMenu">
 
-        <!-- Sign Up -->
-        <a
-          href="signup.html"
-          class="btn btn-primary"
-        >
-          Get Started
+            <div class="dropdown">
+                <button class="dropbtn" type="button">
+                    Home
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-content">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#why-us">Why EcoNest</a>
+                </div>
+            </div>
+
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="dasboard.html">Dashboard</a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button id="rtlToggle" class="icon-button" title="Toggle RTL">
+                RTL
+            </button>
+
+            <button id="themeToggle" class="icon-button" title="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <a href="login.html" class="btn btn-outline">
+                Login
+            </a>
+
+            <button id="mobileMenuButton" class="mobile-menu-button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </div>
+</header>
+
+
+<!-- ================= CONTACT HERO ================= -->
+<section class="contact-hero">
+
+    <div class="contact-hero-overlay"></div>
+
+    <div class="container hero-content">
+
+        <span class="hero-badge">
+            <i class="fa-solid fa-leaf"></i>
+            Let's Grow Together
+        </span>
+
+        <h1>
+            Get in Touch<br>
+            With EcoNest
+        </h1>
+
+        <p>
+            Have a question, idea, or need help creating a greener lifestyle?
+            Our team is here to help you every step of the way.
+        </p>
+
+        <a href="#contact-form" class="btn btn-primary">
+            Send a Message
+            <i class="fa-solid fa-arrow-right"></i>
         </a>
-
-      </div>
 
     </div>
 
-  </header>
+</section>
 
 
-  <!-- ==================================================
-       PAGE HERO
-  =================================================== -->
-
-  <section class="page-hero">
+<!-- ================= CONTACT INTRO ================= -->
+<section class="section contact-intro">
 
     <div class="container">
 
-      <span class="eyebrow">
-        🌱 We'd Love to Hear From You
-      </span>
+        <div class="section-heading">
 
-      <h1>
-        Let's make your home
-        <span>cleaner & greener.</span>
-      </h1>
-
-      <p>
-        Have a question, need help choosing a service,
-        or ready to book? Our friendly team is here to help.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- ==================================================
-       CONTACT SECTION
-  =================================================== -->
-
-  <section class="contact-section">
-
-    <div class="container contact-grid">
-
-
-      <!-- LEFT CONTENT -->
-
-      <div class="contact-info">
-
-        <span class="eyebrow">
-          Get In Touch
-        </span>
-
-        <h2>
-          We're here to help
-        </h2>
-
-        <p class="contact-intro">
-          Whether you have a question about our services,
-          need help with a booking, or simply want to say hello,
-          feel free to reach out.
-        </p>
-
-
-        <!-- Contact Item -->
-
-        <div class="contact-item">
-
-          <div class="contact-icon">
-            📞
-          </div>
-
-          <div>
-
-            <span>Call Us</span>
-
-            <h3>
-              +1 800 555 0199
-            </h3>
-
-            <p>
-              Monday – Saturday, 8 AM – 7 PM
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- Contact Item -->
-
-        <div class="contact-item">
-
-          <div class="contact-icon">
-            ✉️
-          </div>
-
-          <div>
-
-            <span>Email Us</span>
-
-            <h3>
-              hello@econest.example
-            </h3>
-
-            <p>
-              We usually reply within one business day.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- Contact Item -->
-
-        <div class="contact-item">
-
-          <div class="contact-icon">
-            📍
-          </div>
-
-          <div>
-
-            <span>Service Area</span>
-
-            <h3>
-              Your Local Community
-            </h3>
-
-            <p>
-              Serving homes and families in your local area.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- Eco Message -->
-
-        <div class="eco-note">
-
-          <div class="eco-note-icon">
-            🌿
-          </div>
-
-          <div>
-
-            <strong>
-              Better for your home. Better for the planet.
-            </strong>
-
-            <p>
-              Every service is designed with responsible
-              cleaning practices in mind.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- RIGHT FORM -->
-
-      <div class="contact-form-card">
-
-        <div class="form-header">
-
-          <span class="form-icon">
-            ✨
-          </span>
-
-          <div>
+            <span class="section-tag">
+                Contact EcoNest
+            </span>
 
             <h2>
-              Send us a message
+                We'd Love to Hear From You
             </h2>
 
             <p>
-              Fill out the form and we'll get back to you.
+                Whether you're looking for sustainable solutions, have questions
+                about our services, or simply want to share your ideas, reach out
+                to us. We are always happy to connect.
             </p>
 
-          </div>
+        </div>
+
+        <div class="contact-cards">
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h3>Visit Us</h3>
+
+                <p>
+                    Hyderabad, Telangana,<br>
+                    India
+                </p>
+
+                <a href="#map">
+                    View on Map
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <h3>Call Us</h3>
+
+                <p>
+                    +91 98765 43210
+                </p>
+
+                <a href="tel:+919876543210">
+                    Call Now
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <h3>Email Us</h3>
+
+                <p>
+                    hello@econest.com
+                </p>
+
+                <a href="mailto:hello@econest.com">
+                    Send Email
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <h3>Working Hours</h3>
+
+                <p>
+                    Monday – Saturday<br>
+                    9:00 AM – 6:00 PM
+                </p>
+
+                <span>
+                    Sunday Closed
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT FORM ================= -->
+<section class="section section-soft" id="contact-form">
+
+    <div class="container contact-form-layout">
+
+        <!-- Form Image -->
+        <div class="contact-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+                alt="EcoNest sustainable workspace"
+            >
+
+            <div class="image-card">
+
+                <div class="image-card-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <div>
+                    <strong>Building a Greener Future</strong>
+                    <span>One step at a time.</span>
+                </div>
+
+            </div>
 
         </div>
 
 
-        <form
-          id="contactForm"
-          onsubmit="submitContact(event)"
-        >
+        <!-- Form -->
+        <div class="form-wrapper">
 
-
-          <!-- Name -->
-
-          <div class="form-group">
-
-            <label for="name">
-              Full Name
-            </label>
-
-            <input
-              id="name"
-              type="text"
-              placeholder="Enter your full name"
-              required
-            >
-
-          </div>
-
-
-          <!-- Email -->
-
-          <div class="form-group">
-
-            <label for="email">
-              Email Address
-            </label>
-
-            <input
-              id="email"
-              type="email"
-              placeholder="you@example.com"
-              required
-            >
-
-          </div>
-
-
-          <!-- Phone -->
-
-          <div class="form-group">
-
-            <label for="phone">
-              Phone Number
-            </label>
-
-            <input
-              id="phone"
-              type="tel"
-              placeholder="+1 000 000 0000"
-            >
-
-          </div>
-
-
-          <!-- Service -->
-
-          <div class="form-group">
-
-            <label for="service">
-              What can we help with?
-            </label>
-
-            <select
-              id="service"
-              required
-            >
-
-              <option value="">
-                Select a service
-              </option>
-
-              <option value="home-cleaning">
-                Home Cleaning
-              </option>
-
-              <option value="deep-cleaning">
-                Deep Cleaning
-              </option>
-
-              <option value="window-cleaning">
-                Window Cleaning
-              </option>
-
-              <option value="eco-sanitization">
-                Eco Sanitization
-              </option>
-
-              <option value="move-cleaning">
-                Move In / Move Out
-              </option>
-
-              <option value="maintenance">
-                Home Maintenance
-              </option>
-
-              <option value="general">
-                General Question
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <!-- Message -->
-
-          <div class="form-group">
-
-            <label for="message">
-              Your Message
-            </label>
-
-            <textarea
-              id="message"
-              rows="6"
-              placeholder="Tell us how we can help..."
-              required
-            ></textarea>
-
-          </div>
-
-
-          <!-- Checkbox -->
-
-          <label class="privacy-check">
-
-            <input
-              type="checkbox"
-              required
-            >
-
-            <span>
-              I agree to the EcoNest
-              <a href="#">Privacy Policy</a>.
+            <span class="section-tag">
+                Send Us a Message
             </span>
 
-          </label>
+            <h2>
+                Let's Start a Conversation
+            </h2>
+
+            <p class="form-intro">
+                Fill out the form below and our team will get back to you
+                as soon as possible.
+            </p>
+
+            <form id="contactForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name"
+                                required
+                            >
+                        </div>
+                    </div>
 
 
-          <!-- Submit -->
+                    <div class="form-group">
+                        <label for="email">
+                            Email Address
+                        </label>
 
-          <button
-            type="submit"
-            class="btn btn-primary submit-button"
-          >
-            Send Message
-            <span>→</span>
-          </button>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope"></i>
 
-        </form>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+                        </div>
+                    </div>
 
-      </div>
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+91 98765 43210"
+                            >
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-tag"></i>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="How can we help?"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Your Message
+                    </label>
+
+                    <div class="textarea-wrapper">
+
+                        <i class="fa-solid fa-message"></i>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <label class="checkbox-label">
+
+                    <input type="checkbox" required>
+
+                    <span>
+                        I agree to the EcoNest terms and privacy policy.
+                    </span>
+
+                </label>
+
+
+                <button type="submit" class="btn btn-primary submit-btn">
+
+                    Send Message
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+                <p id="formMessage" class="form-message"></p>
+
+            </form>
+
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- ==================================================
-       WHY CONTACT US
-  =================================================== -->
-
-  <section class="why-section">
+<!-- ================= MAP SECTION ================= -->
+<section class="section map-section" id="map">
 
     <div class="container">
 
-      <div class="section-heading">
+        <div class="section-heading">
 
-        <span class="eyebrow">
-          Why EcoNest
-        </span>
+            <span class="section-tag">
+                Find Us
+            </span>
 
-        <h2>
-          Support that cares
-        </h2>
+            <h2>
+                Visit EcoNest
+            </h2>
 
-        <p>
-          We're committed to making every part of your
-          EcoNest experience simple and comfortable.
-        </p>
-
-      </div>
-
-
-      <div class="support-grid">
-
-
-        <div class="support-card">
-
-          <div class="support-icon">
-            💬
-          </div>
-
-          <h3>
-            Friendly Support
-          </h3>
-
-          <p>
-            Our team is always happy to answer questions
-            and help you choose the right service.
-          </p>
+            <p>
+                Come meet us in Hyderabad and let's talk about creating
+                a more sustainable future together.
+            </p>
 
         </div>
 
 
-        <div class="support-card">
+        <div class="map-container">
 
-          <div class="support-icon">
-            ⚡
-          </div>
+            <iframe
+                src="https://www.google.com/maps?q=Hyderabad%2C%20Telangana%2C%20India&output=embed"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
 
-          <h3>
-            Quick Response
-          </h3>
+            <div class="map-info">
 
-          <p>
-            Send us a message and we'll respond as quickly
-            as possible during business hours.
-          </p>
+                <div class="map-info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                    <h3>EcoNest</h3>
+
+                    <p>
+                        Hyderabad, Telangana, India
+                    </p>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Hyderabad%2C%20Telangana%2C%20India"
+                        target="_blank"
+                    >
+                        Get Directions
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
 
         </div>
-
-
-        <div class="support-card">
-
-          <div class="support-icon">
-            🌿
-          </div>
-
-          <h3>
-            Eco-Conscious
-          </h3>
-
-          <p>
-            We're here to help you create a cleaner,
-            healthier and greener home.
-          </p>
-
-        </div>
-
-      </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- ==================================================
-       FAQ
-  =================================================== -->
-
-  <section class="faq-section">
-
-    <div class="container faq-container">
-
-      <div class="section-heading">
-
-        <span class="eyebrow">
-          Quick Answers
-        </span>
-
-        <h2>
-          Frequently asked questions
-        </h2>
-
-      </div>
-
-
-      <div class="faq-list">
-
-
-        <details>
-
-          <summary>
-            How quickly will you respond?
-            <span>+</span>
-          </summary>
-
-          <p>
-            We usually respond to email and contact requests
-            within one business day.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Can I request a specific cleaning service?
-            <span>+</span>
-          </summary>
-
-          <p>
-            Yes. Select your preferred service in the contact
-            form and tell us what your home needs.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Can I schedule recurring cleaning?
-            <span>+</span>
-          </summary>
-
-          <p>
-            Yes. We offer recurring service options to help
-            you maintain a consistently clean home.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Do you use eco-friendly products?
-            <span>+</span>
-          </summary>
-
-          <p>
-            EcoNest prioritizes environmentally responsible
-            products and cleaning practices.
-          </p>
-
-        </details>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ==================================================
-       CTA
-  =================================================== -->
-
-  <section class="contact-cta">
+<!-- ================= FAQ ================= -->
+<section class="section section-soft">
 
     <div class="container">
 
-      <div class="cta-box">
+        <div class="section-heading">
+
+            <span class="section-tag">
+                Quick Answers
+            </span>
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+        </div>
+
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        How quickly will I receive a response?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        We usually respond to enquiries within one business day.
+                        For urgent requests, you can contact us directly by phone.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Can EcoNest help with sustainable home solutions?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Our team can help you explore practical ways to
+                        make your home more energy efficient, eco-friendly,
+                        and sustainable.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Do you provide business sustainability solutions?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Absolutely. We offer sustainability guidance and
+                        solutions designed for businesses of different sizes
+                        and industries.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Where is EcoNest located?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        EcoNest is based in Hyderabad, Telangana, India.
+                        You can use the map above to find our location.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+<section class="contact-cta">
+
+    <div class="cta-overlay"></div>
+
+    <div class="container cta-content">
 
         <div>
 
-          <span class="eyebrow">
-            Ready when you are
-          </span>
+            <span class="section-tag cta-tag">
+                Ready to Make a Difference?
+            </span>
 
-          <h2>
-            A cleaner home is just a click away.
-          </h2>
+            <h2>
+                Let's Build a Greener Future Together
+            </h2>
 
-          <p>
-            Explore our services and find the right
-            solution for your home.
-          </p>
-
-        </div>
-
-
-        <div class="cta-buttons">
-
-          <a
-            href="services.html"
-            class="btn btn-primary"
-          >
-            Explore Services
-          </a>
-
-          <a
-            href="pricing.html"
-            class="btn btn-outline"
-          >
-            View Pricing
-          </a>
+            <p>
+                Start your sustainability journey with EcoNest today.
+            </p>
 
         </div>
 
-      </div>
+        <a href="#contact-form" class="btn btn-light-outline">
+            Contact Us
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- ==================================================
-       FOOTER
-  =================================================== -->
-
-  <footer>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
 
     <div class="container footer-grid">
 
+        <!-- Brand -->
+        <div class="footer-brand">
 
-      <!-- Brand -->
+            <a href="index.html" class="footer-logo">
 
-      <div class="footer-brand">
+                <span class="logo-mark">
+                    <i class="fa-solid fa-leaf"></i>
+                </span>
 
-        <a
-          href="index.html"
-          class="logo"
-        >
+                <span>EcoNest</span>
 
-          <span class="logo-icon">
-            🌿
-          </span>
+            </a>
 
-          <span>
-            EcoNest
-          </span>
+            <p>
+                Creating a greener tomorrow through sustainable solutions,
+                smarter choices, and meaningful action.
+            </p>
 
-        </a>
+            <div class="social-links">
 
-        <p>
-          Cleaner homes. Healthier living.
-          A greener future.
-        </p>
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
 
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
 
-        <div class="social-links">
+                <a href="#" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
 
-          <a href="#" aria-label="Facebook">
-            f
-          </a>
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
 
-          <a href="#" aria-label="X">
-            𝕏
-          </a>
-
-          <a href="#" aria-label="Instagram">
-            ◎
-          </a>
-
-          <a href="#" aria-label="LinkedIn">
-            in
-          </a>
+            </div>
 
         </div>
 
-      </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
 
 
-      <!-- Services -->
+        <!-- Useful Links -->
+        <div class="footer-column">
 
-      <div class="footer-column">
+            <h3>Useful Links</h3>
 
-        <h4>
-          Services
-        </h4>
+            <a href="#">Blog</a>
+            <a href="#">FAQ</a>
+            <a href="#">Sustainability Guide</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
 
-        <a href="services.html">
-          Home Cleaning
-        </a>
-
-        <a href="services.html">
-          Deep Cleaning
-        </a>
-
-        <a href="services.html">
-          Window Cleaning
-        </a>
-
-        <a href="services.html">
-          Eco Sanitization
-        </a>
-
-      </div>
+        </div>
 
 
-      <!-- Company -->
+        <!-- Contact -->
+        <div class="footer-column footer-contact">
 
-      <div class="footer-column">
+            <h3>Contact Us</h3>
 
-        <h4>
-          Company
-        </h4>
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Hyderabad, Telangana, India
+            </p>
 
-        <a href="about.html">
-          About Us
-        </a>
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +91 98765 43210
+            </p>
 
-        <a href="how-it-works.html">
-          How It Works
-        </a>
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                hello@econest.com
+            </p>
 
-        <a href="pricing.html">
-          Pricing
-        </a>
+            <p>
+                <i class="fa-solid fa-clock"></i>
+                Mon - Sat: 9:00 AM - 6:00 PM
+            </p>
 
-        <a href="contact.html">
-          Contact
-        </a>
-
-      </div>
-
-
-      <!-- Account -->
-
-      <div class="footer-column">
-
-        <h4>
-          Account
-        </h4>
-
-        <a href="login.html">
-          Login
-        </a>
-
-        <a href="signup.html">
-          Sign Up
-        </a>
-
-        <a href="#">
-          Privacy Policy
-        </a>
-
-        <a href="#">
-          Terms of Service
-        </a>
-
-      </div>
+        </div>
 
     </div>
 
-
-    <!-- Footer Bottom -->
 
     <div class="footer-bottom">
 
-      <div class="container footer-bottom-inner">
+        <div class="container footer-bottom-content">
 
-        <p>
-          © 2026 EcoNest. All rights reserved.
-        </p>
+            <p>
+                © 2026 EcoNest. All Rights Reserved.
+            </p>
 
-        <p>
-          🌿 Cleaning with care.
-        </p>
+            <div>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
 
-      </div>
+        </div>
 
     </div>
 
-  </footer>
+</footer>
 
 
-  <!-- ==================================================
-       JAVASCRIPT
-  =================================================== -->
+<!-- ================= JAVASCRIPT ================= -->
+<script>
 
-  <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    /* ===============================
-       DARK / LIGHT MODE
-    =============================== */
+    /* ================= THEME TOGGLE ================= */
 
-    function toggleTheme() {
+    const themeToggle = document.getElementById("themeToggle");
 
-      document.body.classList.toggle("dark");
+    const savedTheme = localStorage.getItem("econest-theme");
 
-      const isDark =
-        document.body.classList.contains("dark");
-
-      localStorage.setItem(
-        "theme",
-        isDark ? "dark" : "light"
-      );
-
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
     }
 
+    themeToggle.addEventListener("click", function () {
 
-    /* Load saved theme */
+        document.body.classList.toggle("dark-mode");
 
-    if (
-      localStorage.getItem("theme") === "dark"
-    ) {
+        const isDark =
+            document.body.classList.contains("dark-mode");
 
-      document.body.classList.add("dark");
+        localStorage.setItem(
+            "econest-theme",
+            isDark ? "dark" : "light"
+        );
 
-    }
+        themeToggle.innerHTML = isDark
+            ? '<i class="fa-solid fa-sun"></i>'
+            : '<i class="fa-solid fa-moon"></i>';
 
-
-    /* ===============================
-       RTL
-    =============================== */
-
-    function toggleRTL() {
-
-      const html =
-        document.documentElement;
-
-      const current =
-        html.getAttribute("dir");
-
-      const newDirection =
-        current === "rtl"
-          ? "ltr"
-          : "rtl";
-
-      html.setAttribute(
-        "dir",
-        newDirection
-      );
-
-      localStorage.setItem(
-        "direction",
-        newDirection
-      );
-
-    }
+    });
 
 
-    /* Load saved direction */
+    /* ================= RTL TOGGLE ================= */
+
+    const rtlToggle = document.getElementById("rtlToggle");
 
     const savedDirection =
-      localStorage.getItem("direction");
+        localStorage.getItem("econest-direction");
 
-    if (savedDirection) {
+    if (savedDirection === "rtl") {
 
-      document.documentElement.setAttribute(
-        "dir",
-        savedDirection
-      );
+        document.documentElement.dir = "rtl";
+        document.documentElement.lang = "ar";
 
     }
 
+    rtlToggle.addEventListener("click", function () {
 
-    /* ===============================
-       CONTACT FORM
-    =============================== */
+        const html = document.documentElement;
 
-    function submitContact(event) {
+        if (html.dir === "rtl") {
 
-      event.preventDefault();
+            html.dir = "ltr";
+            html.lang = "en";
 
-      alert(
-        "Thank you! Your message has been sent successfully."
-      );
+            localStorage.setItem(
+                "econest-direction",
+                "ltr"
+            );
 
-      document
-        .getElementById("contactForm")
-        .reset();
+        } else {
 
-    }
+            html.dir = "rtl";
+            html.lang = "ar";
 
-  </script>
+            localStorage.setItem(
+                "econest-direction",
+                "rtl"
+            );
+
+        }
+
+    });
+
+
+    /* ================= MOBILE MENU ================= */
+
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
+
+    const navMenu =
+        document.getElementById("navMenu");
+
+    mobileMenuButton.addEventListener("click", function () {
+
+        navMenu.classList.toggle("show");
+
+        const isOpen =
+            navMenu.classList.contains("show");
+
+        mobileMenuButton.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+
+    /* ================= DROPDOWN ================= */
+
+    const dropdown =
+        document.querySelector(".dropdown");
+
+    const dropbtn =
+        document.querySelector(".dropbtn");
+
+    dropbtn.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        dropdown.classList.toggle("open");
+
+    });
+
+
+    document.addEventListener("click", function (event) {
+
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove("open");
+        }
+
+    });
+
+
+    /* ================= FAQ ================= */
+
+    const faqQuestions =
+        document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach(function (question) {
+
+        question.addEventListener("click", function () {
+
+            const item =
+                question.parentElement;
+
+            const isOpen =
+                item.classList.contains("active");
+
+            document
+                .querySelectorAll(".faq-item")
+                .forEach(function (faq) {
+
+                    faq.classList.remove("active");
+
+                    const icon =
+                        faq.querySelector(".faq-question i");
+
+                    icon.className =
+                        "fa-solid fa-plus";
+
+                });
+
+
+            if (!isOpen) {
+
+                item.classList.add("active");
+
+                const icon =
+                    question.querySelector("i");
+
+                icon.className =
+                    "fa-solid fa-minus";
+
+            }
+
+        });
+
+    });
+
+
+    /* ================= CONTACT FORM ================= */
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+    const formMessage =
+        document.getElementById("formMessage");
+
+
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        formMessage.textContent =
+            "Thank you, " + name +
+            "! Your message has been received. We'll get back to you soon.";
+
+        formMessage.classList.add("success");
+
+        contactForm.reset();
+
+        setTimeout(function () {
+
+            formMessage.textContent = "";
+            formMessage.classList.remove("success");
+
+        }, 6000);
+
+    });
+
+
+    /* ================= CLOSE MOBILE MENU ================= */
+
+    const navLinks =
+        document.querySelectorAll(".nav-menu a");
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navMenu.classList.remove("show");
+
+            mobileMenuButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
-

@@ -1,0 +1,2859 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoNest | Premium Eco-Friendly Home Services</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="service.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           ROOT VARIABLES
+        ===================================================== */
+
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --primary-light: #e8f5e9;
+
+            --secondary: #1976d2;
+            --secondary-dark: #0d47a1;
+            --secondary-light: #e3f2fd;
+
+            --white: #ffffff;
+            --black: #111111;
+
+            --text: #263238;
+            --text-light: #607d8b;
+
+            --bg: #ffffff;
+            --bg-soft: #f7faf8;
+
+            --border: #e0e0e0;
+
+            --header-light: #ffffff;
+
+            --transition: 0.3s ease;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            background: var(--bg);
+            color: var(--text);
+
+            font-family: "DM Sans", sans-serif;
+
+            transition:
+                background-color var(--transition),
+                color var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(100% - 40px, 1200px);
+            margin: 0 auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+
+            background: var(--header-light);
+
+            border-bottom: 1px solid var(--border);
+
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            min-height: 76px;
+
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: var(--primary);
+
+            font-family: "DM Sans", sans-serif;
+            font-size: 27px;
+            font-weight: 800;
+            letter-spacing: -1.2px;
+
+            white-space: nowrap;
+        }
+
+        .logo-mark {
+            width: 31px;
+            height: 31px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--primary);
+
+            font-size: 23px;
+        }
+
+
+        /* =====================================================
+           NAV MENU
+        ===================================================== */
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 4px;
+
+            list-style: none;
+        }
+
+        .nav-menu > a,
+        .nav-menu .dropdown > a {
+            position: relative;
+
+            padding: 10px 12px;
+
+            border-radius: 8px;
+
+            color: var(--text);
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .nav-menu > a:hover,
+        .nav-menu .dropdown > a:hover {
+            color: var(--secondary);
+
+            background: var(--secondary-light);
+        }
+
+        .nav-menu > a.active {
+            color: var(--primary);
+
+            background: var(--primary-light);
+        }
+
+        .nav-menu > a.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            bottom: 3px;
+
+            width: 20px;
+            height: 2px;
+
+            transform: translateX(-50%);
+
+            background: var(--primary);
+
+            border-radius: 5px;
+        }
+
+
+        /* =====================================================
+           DROPDOWN
+        ===================================================== */
+
+        .dropdown {
+            position: relative;
+            list-style: none;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+
+            top: calc(100% + 10px);
+            left: 0;
+
+            min-width: 150px;
+
+            display: none;
+
+            padding: 8px;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            box-shadow: 0 15px 35px rgba(38, 50, 56, 0.12);
+
+            list-style: none;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+
+            padding: 10px 12px;
+
+            border-radius: 7px;
+
+            color: var(--text);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .dropdown-menu li a:hover {
+            background: var(--secondary-light);
+            color: var(--secondary);
+        }
+
+
+        /* =====================================================
+           NAV ACTIONS
+        ===================================================== */
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            gap: 8px;
+        }
+
+        .icon-button {
+            width: 40px;
+            height: 40px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+            border-radius: 9px;
+
+            background: var(--white);
+            color: var(--text);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .icon-button:hover {
+            color: var(--secondary);
+
+            border-color: var(--secondary);
+
+            background: var(--secondary-light);
+        }
+
+
+        /* =====================================================
+           COMMON BUTTON
+        ===================================================== */
+
+        .btn {
+            min-height: 40px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0 18px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .btn-outline {
+            background: var(--primary);
+            border: 1px solid var(--primary);
+
+            color: #ffffff;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =====================================================
+           SERVICES HERO
+        ===================================================== */
+
+        .services-hero {
+            position: relative;
+
+            min-height: 620px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1920&q=85");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .services-hero-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(13, 71, 33, 0.90) 0%,
+                    rgba(27, 94, 32, 0.72) 45%,
+                    rgba(27, 94, 32, 0.30) 100%
+                );
+        }
+
+        .services-hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(100% - 40px, 1200px);
+
+            margin: 0 auto;
+
+            padding: 110px 0;
+
+            color: #ffffff;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 16px;
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.12);
+
+            color: #ffffff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-badge i {
+            color: #81c784;
+        }
+
+        .services-hero h1 {
+            max-width: 780px;
+
+            margin: 0 0 22px;
+
+            color: #ffffff;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.08;
+
+            font-weight: 700;
+
+            letter-spacing: -1.5px;
+        }
+
+        .services-hero p {
+            max-width: 650px;
+
+            margin: 0 0 34px;
+
+            color: rgba(255,255,255,0.9);
+
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* =====================================================
+           HERO BUTTONS
+        ===================================================== */
+
+        .btn-primary,
+        .btn-secondary {
+            min-height: 52px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 0 25px;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            border: 1px solid var(--primary);
+
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            border: 1px solid var(--secondary);
+
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary-dark);
+            border-color: var(--secondary-dark);
+
+            color: #ffffff;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           SERVICES SECTION
+        ===================================================== */
+
+        .services-section {
+            padding: 100px 0;
+
+            background: var(--bg);
+        }
+
+        .section-heading {
+            max-width: 720px;
+
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 15px;
+
+            color: var(--primary);
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 16px;
+
+            color: var(--text);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 42px;
+            line-height: 1.2;
+
+            font-weight: 700;
+        }
+
+        .section-heading p {
+            margin: 0;
+
+            color: var(--text-light);
+
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           SERVICES GRID
+        ===================================================== */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+        .service-card {
+            overflow: hidden;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            box-shadow: 0 8px 25px rgba(38,50,56,0.08);
+
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #a5d6a7;
+
+            box-shadow: 0 18px 40px rgba(38,50,56,0.15);
+        }
+
+        .service-image {
+            position: relative;
+
+            width: 100%;
+            height: 235px;
+
+            overflow: hidden;
+        }
+
+        .service-image img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.08);
+        }
+
+        .service-number {
+            position: absolute;
+
+            top: 16px;
+            right: 16px;
+
+            z-index: 2;
+
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--primary);
+
+            color: #ffffff;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .service-content {
+            padding: 28px;
+        }
+
+        .service-icon {
+            width: 54px;
+            height: 54px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 13px;
+
+            background: var(--primary-light);
+
+            color: var(--primary);
+
+            font-size: 22px;
+
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+
+            color: #ffffff;
+
+            transform: translateY(-3px);
+        }
+
+        .service-content h3 {
+            margin: 0 0 12px;
+
+            color: var(--text);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 21px;
+            line-height: 1.3;
+
+            font-weight: 700;
+        }
+
+        .service-content p {
+            margin: 0 0 21px;
+
+            color: var(--text-light);
+
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            color: var(--secondary);
+
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            color: var(--secondary-dark);
+        }
+
+        .service-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+
+        /* =====================================================
+           FAQ
+        ===================================================== */
+
+        .faq-section {
+            padding: 100px 0;
+
+            background: var(--bg-soft);
+        }
+
+        .faq-list {
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+        .faq-item {
+            overflow: hidden;
+
+            background: var(--white);
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: #90caf9;
+        }
+
+        .faq-question {
+            width: 100%;
+
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 20px 24px;
+
+            border: none;
+            outline: none;
+
+            background: transparent;
+
+            color: var(--text);
+
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 700;
+
+            text-align: left;
+
+            cursor: pointer;
+        }
+
+        .faq-question i {
+            width: 32px;
+            height: 32px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--secondary-light);
+
+            color: var(--secondary);
+
+            font-size: 13px;
+        }
+
+        .faq-answer {
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-answer p {
+            margin: 0;
+
+            padding: 0 24px 22px;
+
+            color: var(--text-light);
+
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .services-cta {
+            position: relative;
+
+            padding: 90px 0;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 760px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            color: #ffffff;
+        }
+
+        .cta-icon {
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 22px;
+
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.12);
+
+            font-size: 28px;
+        }
+
+        .cta-content h2 {
+            margin: 0 0 16px;
+
+            color: #ffffff;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 42px;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            max-width: 620px;
+
+            margin: 0 auto 30px;
+
+            color: rgba(255,255,255,0.88);
+
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .cta-primary,
+        .cta-secondary {
+            min-height: 52px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 0 25px;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            transition: var(--transition);
+        }
+
+        .cta-primary {
+            background: #ffffff;
+            border: 1px solid #ffffff;
+
+            color: var(--primary);
+        }
+
+        .cta-primary:hover {
+            background: var(--primary-light);
+
+            transform: translateY(-3px);
+        }
+
+        .cta-secondary {
+            background: var(--secondary);
+            border: 1px solid var(--secondary);
+
+            color: #ffffff;
+        }
+
+        .cta-secondary:hover {
+            background: var(--secondary-dark);
+
+            border-color: var(--secondary-dark);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .services-footer {
+            padding: 75px 0 0;
+
+            background: #17221b;
+
+            color: #ffffff;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+
+            gap: 50px;
+
+            padding-bottom: 55px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+
+            margin: 0 0 24px;
+
+            color: #aab9af;
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 9px;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 9px;
+
+            background: rgba(255,255,255,0.05);
+
+            color: #d9e6dc;
+
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+
+            border-color: var(--secondary);
+
+            color: #ffffff;
+
+            transform: translateY(-3px);
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-column h3 {
+            margin: 0 0 20px;
+
+            color: #ffffff;
+
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .footer-column a {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 9px;
+
+            margin-bottom: 12px;
+
+            color: #aab9af;
+
+            font-size: 14px;
+
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: #64b5f6;
+
+            transform: translateX(4px);
+        }
+
+        .footer-column a i {
+            width: 16px;
+
+            color: #64b5f6;
+
+            font-size: 13px;
+        }
+
+        .footer-bottom {
+            min-height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom p,
+        .footer-bottom a {
+            color: #84968b;
+
+            font-size: 13px;
+        }
+
+        .footer-bottom div {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom a:hover {
+            color: #64b5f6;
+        }
+
+
+        /* =====================================================
+           DARK MODE
+        ===================================================== */
+
+        body.dark-mode {
+            --bg: #101713;
+            --bg-soft: #121b16;
+
+            --text: #edf5ef;
+            --text-light: #aab9af;
+
+            --border: rgba(255,255,255,0.10);
+
+            --white: #17221b;
+
+            --header-light: #17221b;
+        }
+
+        body.dark-mode .navbar {
+            background: #17221b;
+            border-bottom-color: rgba(255,255,255,0.10);
+        }
+
+        body.dark-mode .logo {
+            color: #81c784;
+        }
+
+        body.dark-mode .logo-mark {
+            color: #81c784;
+        }
+
+        body.dark-mode .nav-menu > a,
+        body.dark-mode .nav-menu .dropdown > a {
+            color: #e7eee9;
+        }
+
+        body.dark-mode .nav-menu > a:hover,
+        body.dark-mode .nav-menu .dropdown > a:hover {
+            color: #64b5f6;
+            background: rgba(25,118,210,0.15);
+        }
+
+        body.dark-mode .nav-menu > a.active {
+            color: #81c784;
+            background: rgba(46,125,50,0.18);
+        }
+
+        body.dark-mode .nav-menu > a.active::after {
+            background: #81c784;
+        }
+
+        body.dark-mode .dropdown-menu {
+            background: #17221b;
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        body.dark-mode .dropdown-menu li a {
+            color: #e7eee9;
+        }
+
+        body.dark-mode .dropdown-menu li a:hover {
+            background: rgba(25,118,210,0.15);
+            color: #64b5f6;
+        }
+
+        body.dark-mode .icon-button {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.18);
+            color: #e7eee9;
+        }
+
+        body.dark-mode .icon-button:hover {
+            background: rgba(25,118,210,0.15);
+            border-color: #64b5f6;
+            color: #64b5f6;
+        }
+
+        body.dark-mode .service-card,
+        body.dark-mode .faq-item {
+            background: #17221b;
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        body.dark-mode .service-card:hover {
+            border-color: rgba(129,199,132,0.4);
+        }
+
+        body.dark-mode .service-icon {
+            background: rgba(46,125,50,0.18);
+            color: #81c784;
+        }
+
+        body.dark-mode .service-link {
+            color: #64b5f6;
+        }
+
+        body.dark-mode .service-link:hover {
+            color: #90caf9;
+        }
+
+        body.dark-mode .faq-question {
+            color: #edf5ef;
+        }
+
+        body.dark-mode .faq-question i {
+            background: rgba(25,118,210,0.18);
+            color: #64b5f6;
+        }
+
+
+        /* =====================================================
+           RTL
+        ===================================================== */
+
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .nav-container {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .nav-actions {
+            justify-content: flex-start;
+        }
+
+        [dir="rtl"] .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+
+        [dir="rtl"] .services-hero-overlay {
+            background:
+                linear-gradient(
+                    270deg,
+                    rgba(13,71,33,0.90),
+                    rgba(27,94,32,0.72) 45%,
+                    rgba(27,94,32,0.30)
+                );
+        }
+
+        [dir="rtl"] .services-hero-content {
+            text-align: right;
+        }
+
+        [dir="rtl"] .service-number {
+            right: auto;
+            left: 16px;
+        }
+
+        [dir="rtl"] .service-link:hover i {
+            transform: translateX(-5px);
+        }
+
+        [dir="rtl"] .faq-question {
+            text-align: right;
+        }
+
+        [dir="rtl"] .footer-column a:hover {
+            transform: translateX(-4px);
+        }
+
+        [dir="rtl"] .footer-bottom {
+            direction: rtl;
+        }
+
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        .mobile-menu-button {
+            display: none;
+
+            width: 40px;
+            height: 40px;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+            border-radius: 9px;
+
+            background: var(--white);
+            color: var(--text);
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1050px) {
+
+            .nav-container {
+                grid-template-columns: auto 1fr auto;
+                gap: 12px;
+            }
+
+            .nav-menu {
+                gap: 0;
+            }
+
+            .nav-menu > a,
+            .nav-menu .dropdown > a {
+                padding: 9px 7px;
+                font-size: 13px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px 30px;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE NAVIGATION
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .nav-container {
+                grid-template-columns: 1fr auto;
+                min-height: 70px;
+            }
+
+            .mobile-menu-button {
+                display: inline-flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+
+                top: 70px;
+                left: 15px;
+                right: 15px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                padding: 15px;
+
+                background: var(--white);
+
+                border: 1px solid var(--border);
+                border-radius: 14px;
+
+                box-shadow: 0 15px 40px rgba(38,50,56,0.15);
+            }
+
+            .nav-menu.show {
+                display: flex;
+            }
+
+            .nav-menu > a,
+            .nav-menu .dropdown > a {
+                width: 100%;
+
+                padding: 12px 15px;
+            }
+
+            .dropdown-menu {
+                position: static;
+
+                width: 100%;
+
+                margin-top: 5px;
+
+                display: none;
+
+                box-shadow: none;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: none;
+            }
+
+            .dropdown.open .dropdown-menu {
+                display: block;
+            }
+
+            .nav-actions .btn {
+                display: none;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 650px) {
+
+            .container {
+                width: min(100% - 30px, 1200px);
+            }
+
+            .nav-actions {
+                gap: 5px;
+            }
+
+            .icon-button,
+            .mobile-menu-button {
+                width: 37px;
+                height: 37px;
+            }
+
+            .services-hero {
+                min-height: 540px;
+
+                background-position: 60% center;
+            }
+
+            .services-hero-overlay,
+            [dir="rtl"] .services-hero-overlay {
+                background: rgba(13,71,33,0.78);
+            }
+
+            .services-hero-content {
+                width: min(100% - 30px, 1200px);
+
+                padding: 75px 0;
+            }
+
+            .services-hero h1 {
+                font-size: 40px;
+            }
+
+            .services-hero p {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+
+            .services-section,
+            .faq-section {
+                padding: 70px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
+            }
+
+            .service-image {
+                height: 225px;
+            }
+
+            .service-content {
+                padding: 24px;
+            }
+
+            .services-cta {
+                padding: 70px 0;
+            }
+
+            .cta-content h2 {
+                font-size: 32px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom {
+                min-height: auto;
+
+                padding: 22px 0;
+
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 420px) {
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .logo-mark {
+                width: 26px;
+                height: 26px;
+
+                font-size: 20px;
+            }
+
+            .services-hero h1 {
+                font-size: 34px;
+            }
+
+            .section-heading h2 {
+                font-size: 28px;
+            }
+
+            .faq-question {
+                padding: 16px;
+                font-size: 14px;
+            }
+
+            .faq-answer p {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     MAIN SITE
+===================================================== -->
+
+<div id="mainSite">
+
+
+    <!-- =================================================
+         NAVBAR
+    ================================================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">
+                    <i class="fa-solid fa-leaf"></i>
+                </span>
+
+                <span>EcoNest</span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="nav-menu" id="navMenu">
+
+                <div class="dropdown">
+
+                    <a href="#">
+                        Home
+                        <i class="fa-solid fa-chevron-down"
+                           style="font-size:10px;margin-left:4px;">
+                        </i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a href="index.html">
+                                Home 1
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="home2.html">
+                                Home 2
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <a href="services.html" class="active">
+                    Services
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="Gallery.html">
+                    Gallery
+                </a>
+
+                <a href="Pricing.html">
+                    Pricing
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="dasboard.html">
+                    Dashboard
+                </a>
+
+            </nav>
+
+
+            <!-- NAV ACTIONS -->
+
+            <div class="nav-actions">
+
+                <!-- RTL -->
+                <button
+                    class="icon-button"
+                    id="rtlToggle"
+                    type="button"
+                    title="Switch RTL"
+                    aria-label="Switch RTL">
+                    RTL
+                </button>
+
+
+                <!-- DARK MODE -->
+                <button
+                    class="icon-button"
+                    id="themeToggle"
+                    type="button"
+                    title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+
+                <!-- LOGIN -->
+                <a href="login.html" class="btn btn-outline">
+                    Login
+                </a>
+
+
+                <!-- MOBILE MENU -->
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    type="button"
+                    aria-label="Open navigation menu">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         HERO
+    ================================================= -->
+
+    <section class="services-hero">
+
+        <div class="services-hero-overlay"></div>
+
+
+        <div class="services-hero-content">
+
+            <span class="hero-badge">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                Sustainable Living
+
+            </span>
+
+
+            <h1>
+                Smart Services for a Greener Lifestyle
+            </h1>
+
+
+            <p>
+                Discover simple, practical, and eco-friendly solutions
+                designed to help you live sustainably while creating
+                a healthier planet.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#services" class="btn-primary">
+
+                    Explore Services
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+                <a href="contact.html" class="btn-secondary">
+
+                    Get Started
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SERVICES
+    ================================================= -->
+
+    <section class="services-section" id="services">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                    Our Services
+
+                </span>
+
+
+                <h2>
+                    Simple Solutions for Sustainable Living
+                </h2>
+
+
+                <p>
+                    Explore our eco-friendly services designed to help
+                    you reduce waste, save resources, and create a
+                    greener lifestyle.
+                </p>
+
+            </div>
+
+
+
+            <div class="services-grid">
+
+
+                <!-- SERVICE 1 -->
+
+                <article class="service-card">
+
+                    <div class="service-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85"
+                            alt="Eco-friendly home solutions"
+                            loading="lazy"
+                        >
+
+                        <span class="service-number">
+                            01
+                        </span>
+
+                    </div>
+
+
+                    <div class="service-content">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+
+                        <h3>
+                            Eco Home Solutions
+                        </h3>
+
+                        <p>
+                            Make your home healthier and more sustainable
+                            with practical eco-friendly products and
+                            solutions.
+                        </p>
+
+                        <a href="contact.html" class="service-link">
+
+                            Learn More
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SERVICE 2 -->
+
+                <article class="service-card">
+
+                    <div class="service-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=85"
+                            alt="Recycling and waste management"
+                            loading="lazy"
+                        >
+
+                        <span class="service-number">
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div class="service-content">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-recycle"></i>
+                        </div>
+
+                        <h3>
+                            Waste Management
+                        </h3>
+
+                        <p>
+                            Learn smarter ways to reduce, reuse, recycle,
+                            and manage household waste responsibly.
+                        </p>
+
+                        <a href="contact.html" class="service-link">
+
+                            Learn More
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SERVICE 3 -->
+
+                <article class="service-card">
+
+                    <div class="service-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=85"
+                            alt="Solar energy"
+                            loading="lazy"
+                        >
+
+                        <span class="service-number">
+                            03
+                        </span>
+
+                    </div>
+
+
+                    <div class="service-content">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-solar-panel"></i>
+                        </div>
+
+                        <h3>
+                            Solar Energy
+                        </h3>
+
+                        <p>
+                            Discover clean energy options that can help
+                            reduce electricity costs and your carbon footprint.
+                        </p>
+
+                        <a href="contact.html" class="service-link">
+
+                            Learn More
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SERVICE 4 -->
+
+                <article class="service-card">
+
+                    <div class="service-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=85"
+                            alt="Green gardening"
+                            loading="lazy"
+                        >
+
+                        <span class="service-number">
+                            04
+                        </span>
+
+                    </div>
+
+
+                    <div class="service-content">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+
+                        <h3>
+                            Green Gardening
+                        </h3>
+
+                        <p>
+                            Create beautiful green spaces using sustainable
+                            gardening techniques and natural resources.
+                        </p>
+
+                        <a href="contact.html" class="service-link">
+
+                            Learn More
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SERVICE 5 -->
+
+                <article class="service-card">
+
+                    <div class="service-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"
+                            alt="Eco-friendly shopping"
+                            loading="lazy"
+                        >
+
+                        <span class="service-number">
+                            05
+                        </span>
+
+                    </div>
+
+
+                    <div class="service-content">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+
+                        <h3>
+                            Eco Shopping
+                        </h3>
+
+                        <p>
+                            Choose sustainable alternatives and make better
+                            purchasing decisions for the environment.
+                        </p>
+
+                        <a href="contact.html" class="service-link">
+
+                            Learn More
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SERVICE 6 -->
+
+                <article class="service-card">
+
+                    <div class="service-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85"
+                            alt="Green transportation"
+                            loading="lazy"
+                        >
+
+                        <span class="service-number">
+                            06
+                        </span>
+
+                    </div>
+
+
+                    <div class="service-content">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-bicycle"></i>
+                        </div>
+
+                        <h3>
+                            Green Transportation
+                        </h3>
+
+                        <p>
+                            Explore cleaner transportation choices that
+                            reduce emissions and support a healthier
+                            environment.
+                        </p>
+
+                        <a href="contact.html" class="service-link">
+
+                            Learn More
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FAQ
+    ================================================= -->
+
+    <section class="faq-section" id="faq">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    FAQ
+
+                </span>
+
+
+                <h2>
+                    Frequently Asked Questions
+                </h2>
+
+
+                <p>
+                    Find answers to common questions about our sustainable
+                    services and how EcoNest can help you live greener.
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-list">
+
+
+                <!-- FAQ 1 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        type="button">
+
+                        <span>
+                            What services does EcoNest provide?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            EcoNest provides sustainable living services
+                            including eco-home solutions, waste management,
+                            solar energy guidance, green gardening,
+                            eco-friendly shopping, and green transportation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 2 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        type="button">
+
+                        <span>
+                            How can EcoNest help me reduce waste?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            We help you understand practical ways to reduce
+                            household waste, reuse materials, recycle correctly,
+                            and make more sustainable everyday choices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 3 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        type="button">
+
+                        <span>
+                            Are your services suitable for beginners?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. Our services are designed for everyone,
+                            including people who are just beginning their
+                            sustainable lifestyle journey.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 4 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        type="button">
+
+                        <span>
+                            Can I get personalized sustainability advice?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Absolutely. You can contact our team to discuss
+                            your goals and receive practical recommendations
+                            based on your home, lifestyle, and sustainability
+                            needs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 5 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        type="button">
+
+                        <span>
+                            How do I get started with EcoNest?
+                        </span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Simply contact us or explore our services to
+                            find the solution that best fits your needs.
+                            Our team can help you take the next step toward
+                            greener living.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CTA
+    ================================================= -->
+
+    <section class="services-cta">
+
+        <div class="container">
+
+            <div class="cta-content">
+
+                <div class="cta-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+
+                <h2>
+                    Ready to Start Living Greener?
+                </h2>
+
+
+                <p>
+                    Take the first step toward a cleaner, healthier,
+                    and more sustainable lifestyle with EcoNest.
+                </p>
+
+
+                <div class="cta-buttons">
+
+                    <a href="contact.html" class="cta-primary">
+
+                        Get Started
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="#services" class="cta-secondary">
+
+                        Explore Services
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer class="services-footer">
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <!-- FOOTER BRAND -->
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="logo">
+
+                        <span class="logo-mark">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                        </span>
+
+                        <span>EcoNest</span>
+
+                    </a>
+
+
+                    <p>
+                        Making sustainable living simple, practical,
+                        and accessible for everyone.
+                    </p>
+
+
+                    <div class="footer-social">
+
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- QUICK LINKS -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="services.html">
+                        Services
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="Gallery.html">
+                        Gallery
+                    </a>
+
+                </div>
+
+
+
+                <!-- USEFUL LINKS -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Useful Links
+                    </h3>
+
+                    <a href="Pricing.html">
+                        Pricing
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="dasboard.html">
+                        Dashboard
+                    </a>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </div>
+
+
+
+                <!-- CONTACT -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Contact Us
+                    </h3>
+
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Hyderabad, India
+                    </a>
+
+                    <a href="tel:+910000000000">
+                        <i class="fa-solid fa-phone"></i>
+                        +91 00000 00000
+                    </a>
+
+                    <a href="mailto:hello@econest.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        hello@econest.com
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 EcoNest. All Rights Reserved.
+                </p>
+
+
+                <div>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       THEME TOGGLE
+    ===================================================== */
+
+    const themeToggle = document.getElementById("themeToggle");
+
+    const savedTheme =
+        localStorage.getItem("econest-theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+        themeToggle.innerHTML =
+            '<i class="fa-solid fa-sun"></i>';
+
+    }
+
+
+    themeToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark-mode");
+
+        const isDark =
+            document.body.classList.contains("dark-mode");
+
+        localStorage.setItem(
+            "econest-theme",
+            isDark ? "dark" : "light"
+        );
+
+        themeToggle.innerHTML = isDark
+            ? '<i class="fa-solid fa-sun"></i>'
+            : '<i class="fa-solid fa-moon"></i>';
+
+    });
+
+
+
+    /* =====================================================
+       RTL / LTR TOGGLE
+    ===================================================== */
+
+    const rtlToggle =
+        document.getElementById("rtlToggle");
+
+    const savedDirection =
+        localStorage.getItem("econest-direction");
+
+    if (savedDirection === "rtl") {
+
+        document.documentElement.dir = "rtl";
+
+        document.documentElement.lang = "ar";
+
+        rtlToggle.textContent = "LTR";
+
+    } else {
+
+        document.documentElement.dir = "ltr";
+
+        document.documentElement.lang = "en";
+
+        rtlToggle.textContent = "RTL";
+
+    }
+
+
+    rtlToggle.addEventListener("click", function () {
+
+        const currentDirection =
+            document.documentElement.dir;
+
+        if (currentDirection === "ltr") {
+
+            document.documentElement.dir = "rtl";
+
+            document.documentElement.lang = "ar";
+
+            rtlToggle.textContent = "LTR";
+
+            localStorage.setItem(
+                "econest-direction",
+                "rtl"
+            );
+
+        } else {
+
+            document.documentElement.dir = "ltr";
+
+            document.documentElement.lang = "en";
+
+            rtlToggle.textContent = "RTL";
+
+            localStorage.setItem(
+                "econest-direction",
+                "ltr"
+            );
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
+
+    const navMenu =
+        document.getElementById("navMenu");
+
+
+    mobileMenuButton.addEventListener("click", function () {
+
+        navMenu.classList.toggle("show");
+
+        const isOpen =
+            navMenu.classList.contains("show");
+
+        mobileMenuButton.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU WHEN LINK IS CLICKED
+    ===================================================== */
+
+    document.querySelectorAll(
+        ".nav-menu > a, .dropdown-menu a"
+    ).forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navMenu.classList.remove("show");
+
+            mobileMenuButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       MOBILE DROPDOWN
+    ===================================================== */
+
+    const dropdown =
+        document.querySelector(".dropdown");
+
+    const dropdownLink =
+        dropdown.querySelector(":scope > a");
+
+
+    dropdownLink.addEventListener("click", function (event) {
+
+        if (window.innerWidth <= 850) {
+
+            event.preventDefault();
+
+            dropdown.classList.toggle("open");
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       CLOSE MENU WHEN CLICKING OUTSIDE
+    ===================================================== */
+
+    document.addEventListener("click", function (event) {
+
+        if (
+            !navMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+        ) {
+
+            navMenu.classList.remove("show");
+
+            mobileMenuButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       FAQ ACCORDION
+    ===================================================== */
+
+    const faqQuestions =
+        document.querySelectorAll(".faq-question");
+
+
+    faqQuestions.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const currentItem =
+                button.closest(".faq-item");
+
+            const currentAnswer =
+                currentItem.querySelector(".faq-answer");
+
+            const currentIcon =
+                button.querySelector("i");
+
+
+            document.querySelectorAll(".faq-item")
+                .forEach(function (item) {
+
+                    if (item !== currentItem) {
+
+                        item.classList.remove("active");
+
+                        const answer =
+                            item.querySelector(".faq-answer");
+
+                        const icon =
+                            item.querySelector(".faq-question i");
+
+                        answer.style.maxHeight = null;
+
+                        icon.className =
+                            "fa-solid fa-plus";
+
+                    }
+
+                });
+
+
+            const isActive =
+                currentItem.classList.toggle("active");
+
+
+            if (isActive) {
+
+                currentAnswer.style.maxHeight =
+                    currentAnswer.scrollHeight + "px";
+
+                currentIcon.className =
+                    "fa-solid fa-minus";
+
+            } else {
+
+                currentAnswer.style.maxHeight = null;
+
+                currentIcon.className =
+                    "fa-solid fa-plus";
+
+            }
+
+        });
+
+    });
+
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ===================================================== */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            navMenu.classList.remove("show");
+
+            mobileMenuButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+</html>
